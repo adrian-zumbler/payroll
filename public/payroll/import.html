@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payroll</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery.datetimepicker.css">
+    <script src="js/vendor/modernizr.js"></script>
+</head>
+<body>
+	<div id="nav">
+		<div class="row">
+			<div class="large-12 large-centered columns">
+				<p style="text-align: center; font-weight: bold;">PAYROLL</p>
+			</div>
+		</div>
+	</div>
+	<div>
+		<p style="text-align: center; font-size: 25px; font-weight: lighter">Imports</p>
+	</div>
+	<div class="import-box">
+		<div class="import-content">
+			<p class="import-box-title">CMS Export</p>
+			<div>
+				<input type="file" id="file" name="file">
+			</div>
+			<a href="" class="button-import">Import</a>
+		</div>
+	</div>
+	<div class="import-box">
+		<div class="import-content">
+			<p class="import-box-title">Agents</p>
+			<div>
+				<input type="file" id="file" name="file">
+			</div>
+			<a href="" class="button-import">Import</a>
+		</div>
+	</div>
+	<div class="import-box">
+		<div class="import-content">
+			<p class="import-box-title">Schedule</p>
+			<div>
+				<input type="file" id="file" name="file">
+			</div>
+			<div class="box-date">
+				<p class="import-text-date">Date: </p>
+				<input type="text" class="date-select">
+			</div>
+			<a href="" class="button-import">Import</a>
+		</div>
+	</div>
+	<div class="import-box">
+		<div class="import-content">
+			<p class="import-box-title">Occupancy</p>
+			<div>
+				<input type="file" id="file" name="file">
+			</div>
+			<div class="box-date">
+				<p class="import-text-date">Date: </p>
+				<input type="text" class="date-select">
+			</div>
+			<a href="" class="button-import">Import</a>
+		</div>
+	</div>
+
+	<script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/select2.full.min.js"></script>
+    <script src="js/jquery.datetimepicker.js"></script>
+	<script>
+	    moment().format();
+	</script>
+    <script>
+	    $(document).foundation();
+    </script>
+</body>
+</html>

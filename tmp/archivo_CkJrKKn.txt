@@ -1,0 +1,99 @@
+Edgar Adrian	Acosta Rojas	1200297	2015-02-02	35	40	0
+Martin Aldair	Aguilar Santillanes	1200404	1900-01-01	30	35	0
+Daniel	Banuelos Barrera	1200447	1900-01-01	35	48	0
+Jose Roberto	Bencomo Lujan 	1200239	2015-01-01	26	30	6145024127
+Ana Karen	Camacho Maynez          	1200230	2014-12-01	30	35	0
+Sarai	Cano Saenz	1200069	1900-01-01	35	35	6142770276
+Ivan Alfredo	Castillo Ruiz	1200367	2015-03-01	40	45	0
+Vera Marlen	Cazares Cataño	1200363	2015-03-01	40	45	0
+Josue	Chacon Arzaga	1200442	1900-01-01	35	40	0
+Rocio Ivette	Chacon Reyes	1200372	2015-03-01	40	45	0
+Cristopher	Chaparro Maicol	1200438	1900-01-01	35	45	0
+Linda	Chavez Solis 	1200432	1900-01-01	35	40	0
+Josue Aaron	ChavezQuiñonez	1200269	1900-01-01	40	45	0
+Cristal Adriana	Chavira Sifuentes	1200181	2014-10-20	35	40	6142309901
+Ivan Antonio	Colomo Diaz	1200203	2014-10-20	40	45	0
+Rafael Antonio	Cordero Marquez	1200293	2015-02-02	30	32	0
+Veronica	Corral Ponce	1200389	1900-01-01	40	45	0
+Ivan Alejandro	Cortez Valdez	1200140	1900-01-01	40	48	0
+Christian Dionicio	De Los Angeles Segura	1200350	2015-03-01	40	45	0
+Itzel Alejandra	Diaz Rivera	1200316	2015-02-02	28	30	0
+Isaac Jacob	Dominguez Alarcon	1200159	2015-02-01	30	35	0
+Missdalia Suge	Dominguez Garcia	1200319	2015-02-02	28	30	0
+Bianca Lizbeth	Escobedo Morales	1200018	2015-03-01	35	40	0
+Armando Daniel	Espinoza Quinonez 	1200307	2015-02-02	28	35	0
+Luis Armando	Falcon Perez	1200205	2014-10-20	32	35	0
+Karen Andrea	Fernandez Balvanera	1200158	1900-01-01	30	35	6141607779
+Karla Ivette	Fierro Alvarado	1200204	2014-10-20	28	30	0
+Adriana Bianey	Figueroa Marrufo          	1200191	2014-10-20	32	35	0
+Claudia Alejandra	Flores Arras	1200355	2015-03-01	40	45	0
+Denisse Angelica	Flores Murillo	1200207	2014-10-20	40	45	0
+Jose Francisco	Frias Ruiz	1200180	2014-10-20	40	45	0
+Ever Aaron	Garcia Ortiz	1200449	1900-01-01	35	48	0
+Perla Kari	Garcia Urtuzastegui	1200149	1900-01-01	35	40	0
+Arely	Garcia Urtuzuastegui	1200099	2015-01-01	30	32	0
+Victor Hugo	Gaytan  Gallardo 	1200277	1900-01-01	35	40	0
+Nancy	Gonzalez Gonzalez	1200380	2015-03-01	40	45	0
+Leslie	Haro Chavez 	1200273	1900-01-01	30	35	0
+Sabrina Sarahi	Hernandez Griego 	1200436	1900-01-01	35	48	0
+Ana Gabriela	Hernandez Macias 	1200284	1900-01-01	40	45	0
+Daniel Arturo	Herrera Torres	1200309	2015-02-02	28	30	0
+Diego	Hinostroza Lozano	1200294	2015-02-01	28	30	0
+Stephanie	Honorato Dominguez	1200443	1900-01-01	35	40	0
+Mario Alberto	Ibarra Enriquez	1200141	1900-01-01	35	40	0
+Sergio Cruz	Jaramillo Flores	1200430	1900-01-01	35	40	0
+Sylvia Cristina	Lara Clift	1200270	1900-01-01	28	30	0
+Teresita de Jesus	Lara Garcia	1200376	2015-03-01	35	40	0
+Ana Paola	Leyva Rodriguez	1200229	1900-01-01	40	45	0
+Sergio Armando	Leyva Rodriguez	1200397	1900-01-01	35	45	0
+Tanya Berenice	Lopez Garcia	1200212	2014-12-01	30	35	0
+Luis Enrique	Lopez Torres	1200445	1900-01-01	35	35	0
+Bannely Georgina  	Loya Martinez	1200262	1900-01-01	30	32	0
+Sara del Carmen	Lujan Arias	1200390	1900-01-01	32	35	0
+Iliana Lizdebeth	Macias Jurado 	1200326	1900-01-01	40	45	0
+Isis Jocelyn	Mancha Castañeda	1200132	1900-01-01	40	48	6142185148
+Cinthia Edith	Marrufo Martinez       	1200215	2014-12-01	28	30	6144272010
+Esmeralda	Martinez Maldonado	1200107	2014-05-01	35	40	6141695516
+Perla	Martinez Maldonado	1200108	2014-05-01	35	40	6142551209
+Jazmin Nabil	Medina Rivas	1200216	2014-12-01	32	35	0
+Dayan Itzel	Medrano Cordero	1200349	2015-03-01	35	35	0
+Nancy	Melendez Ramirez	1200353	2015-03-01	35	35	0
+Rene Emmanuel	Mendoza Ruiz          	1200218	2014-12-01	30	35	0
+Luis Angel	Moreno Hernandez	1200439	1900-01-01	35	40	0
+Erick	Muñoz Acosta	1200343	2015-03-01	40	45	0
+Angel Daniria	Murillo  Valenzuela	1200435	1900-01-01	40	40	0
+Jose Antonio	Ordonez Grajeda	1200113	2014-05-01	30	32	6141759591
+Ileana Vanessa	Ortega Ortiz              	1200217	2014-12-01	28	30	0
+Alejandro	Ortiz Lopez	1200046	1900-01-01	45	48	044-614-202-44-28
+Cesar Alejandro	Ortiz Valenzuela	1200441	1900-01-01	35	45	0
+Mario Alejandro 	Palomino Zaragoza	1200253	2014-08-01	30	35	0
+Luis Alberto	Peña Avalos	1200394	1900-01-01	40	45	0
+Laura Cristina	Peña Caro	1200338	2015-02-01	35	40	0
+Gabriela Edith	Perez Chavarria 	1200431	1900-01-01	35	40	0
+Estefania Ibet	Perez Escobar	1200448	1900-01-01	35	40	0
+Mauricio Fabian	Perez Perez	1200393	1900-01-01	35	45	0
+Yasmin Adriana	Perez Silva	1200391	1900-01-01	35	45	0
+Melissa	Perez Talamantes	1200177	2014-10-20	40	45	0
+Luis Alberto	Pretty Tam	1200342	2015-03-01	40	45	0
+Ricardo	Ramirez Martinez 	1200247	1900-01-01	26	30	0
+Selene Araly	Renova Banda 	1200254	1900-01-01	26	30	0
+Alba Fernanda	Reyes Balbuena	0	1900-01-01	35	40	0
+Karina Eden	Rios Cervantes 	1200276	1900-01-01	30	35	0
+Cecilia Pamela	Rodriguez Santana	1200429	1900-01-01	35	40	0
+Javier Alberto 	Romero Gamboa 	1200242	1900-01-01	30	35	0
+Sandra Yunue	Ruiz Grajeda	1200298	2015-02-02	30	35	6141126360
+Jorge Antonio	Salais Rincon	1200388	1900-01-01	30	35	0
+Ivan Vicente	Salcedo Amezquita	1200195	2014-10-20	30	35	6142413902
+Daniel Alexis	Salinas  Gonzalez 	1200278	1900-01-01	28	30	0
+Ever	Sauzameda Garcia	1200299	2015-02-02	28	30	0
+Teresa Ivonne	Soto Bustillos	1200345	2015-03-01	40	45	0
+Nidia Denisse	Torres Madrigal 	1200395	1900-01-01	30	32	0
+Miguel Angel	Uribe Moya	1200073	1900-01-01	35	45	6143423010
+Jessica	Valverde Villezcas	1200303	2015-02-02	30	35	6142189207
+Julio Josue	Vasquez Contreras	1200314	2015-02-02	28	30	0
+Gerardo	Villalba Grimaldo	1200315	2015-02-02	28	30	0
+Adriana	Zavala Velazquillo	1200151	1900-01-01	30	35	6142767484
+Yolanda Mariana	Zubia Ballestero	1200379	2015-03-01	35	40	0
+Paulina	Zubiate Carrillo	1200210	2015-01-01	26	30	0
+						
+						

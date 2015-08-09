@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payroll</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery.datetimepicker.css">
+    <script src="js/vendor/modernizr.js"></script>
+
+    
+</head>
+<body>
+	<div id="nav">
+		<div class="row">
+			<div class="large-12 large-centered columns">
+				<p style="text-align: center; font-weight: bold;">PAYROLL</p>
+			</div>
+		</div>
+	</div>
+	<div id="content-day">
+		<p id="super-text">Daniel Ruiz</p>
+		<div id="fecha">
+			<p style="width: 50px; float: left;">Date:</p>
+			<input type="text" class="date-select">
+			<a href="javascript:changeDate();">Reload</a>
+		</div>
+		
+		<br>
+		<br>
+		<div id="content-table-day">
+			<table>
+				<thead>
+					<tr>
+						<th>Payroll ID</th>
+						<th>Name</th>
+						<th>AHT</th>
+						<th>Scheduled</th>
+						<th>Softphone</th>
+						<th>Aux Time</th>
+						<th>QA Score</th>
+						<th>Abbr</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>250175</td>
+						<td>Tony Ordoñez</td>
+						<td>25.0</td>
+						<td>6.0</td>
+						<td>5.0</td>
+						<td>4.0</td>
+						<td>5.0</td>
+						<td><select name="abbr" class="select-abbr">
+							<option value="W">W</option>
+							<option value="T">T</option>
+							<option value="R">R</option>
+							<option value="Z">Z</option>
+							<option value="H">H</option>
+							<option value="V">V</option>
+							<option value="O">O</option>
+							<option value="A">A</option>
+							<option value="I">I</option>
+							<option value="U">U</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td>250175</td>
+						<td>Tony Ordoñez</td>
+						<td>25.0</td>
+						<td>6.0</td>
+						<td>5.0</td>
+						<td>4.0</td>
+						<td>5.0</td>
+						<td><select name="abbr" class="select-abbr">
+							<option value="W">W</option>
+							<option value="T">T</option>
+							<option value="R">R</option>
+							<option value="Z">Z</option>
+							<option value="H">H</option>
+							<option value="V">V</option>
+							<option value="O">O</option>
+							<option value="A">A</option>
+							<option value="I">I</option>
+							<option value="U">U</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td>250175</td>
+						<td>Tony Ordoñez</td>
+						<td>25.0</td>
+						<td>6.0</td>
+						<td>5.0</td>
+						<td>4.0</td>
+						<td>5.0</td>
+						<td><select name="abbr" class="select-abbr">
+							<option value="W">W</option>
+							<option value="T">T</option>
+							<option value="R">R</option>
+							<option value="Z">Z</option>
+							<option value="H">H</option>
+							<option value="V">V</option>
+							<option value="O">O</option>
+							<option value="A">A</option>
+							<option value="I">I</option>
+							<option value="U">U</option>
+						</select></td>
+					</tr>
+				</tbody>
+			</table>
+			<div>
+				<a href="#" id="checkpay">Check</a>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/select2.full.min.js"></script>
+    <script src="js/jquery.datetimepicker.js"></script>
+	<script>
+	    moment().format();
+	</script>
+    <script>
+      $(document).foundation();
+    </script>
+</body>
+</html>

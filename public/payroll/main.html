@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payroll</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery.datetimepicker.css">
+    <script src="js/vendor/modernizr.js"></script>
+</head>
+<body>
+	<div id="nav">
+		<div class="row">
+			<div class="large-12 large-centered columns">
+				<p style="text-align: center; font-weight: bold;">PAYROLL</p>
+			</div>
+		</div>
+	</div>
+	<div id="content">
+		<p id="super-text">Daniel Ruiz</p>
+		<div id="fecha">
+			<p style="width: 150px; float: left;">Start date of week:</p>
+			<select name="" id="date-select" style="width: 150px; float: left;">
+				<option value="2015/07/20">2015/07/20</option>
+				<option value="2015/07/13">2015/07/13</option>
+			</select>
+			<a href="javascript:changeDate();">Reload</a>
+		</div>
+		
+		<br>
+		<br>
+		<div id="content-table">
+			<table>
+				<thead>
+					<tr>
+						<th>Payroll ID</th>
+						<th>Name</th>
+						<th>Scheduled Time</th>
+						<th>Monday<span id="day1"></span></th>
+						<th>Tuesday<span id="day2"></span></th>
+						<th>Wednesday<span id="day3"></span></th>
+						<th>Thursday<span id="day4"></span></th>
+						<th>Friday<span id="day5"></span></th>
+						<th>Saturday<span id="day6"></span></th>
+						<th>Sunday<span id="day7"></span></th>
+						<th>Paid Hours</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>250175</td>
+						<td>Tony Ordoñez</td>
+						<td>25.0</td>
+						<td>6.0</td>
+						<td>5.0</td>
+						<td>4.0</td>
+						<td>5.0</td>
+						<td>3.0</td>
+						<td>0.0</td>
+						<td>0.0</td>
+						<td>48.0</td>
+					</tr>
+					<tr>
+						<td>250175</td>
+						<td>Tony Ordoñez</td>
+						<td>25.0</td>
+						<td>6.0</td>
+						<td>5.0</td>
+						<td>4.0</td>
+						<td>5.0</td>
+						<td>3.0</td>
+						<td>0.0</td>
+						<td>0.0</td>
+						<td>48.0</td>
+					</tr>
+					<tr>
+						<td>250175</td>
+						<td>Tony Ordoñez</td>
+						<td>25.0</td>
+						<td>6.0</td>
+						<td>5.0</td>
+						<td>4.0</td>
+						<td>5.0</td>
+						<td>3.0</td>
+						<td>0.0</td>
+						<td>0.0</td>
+						<td>48.0</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div id="detail">
+		<div id="detail-content">
+			<div id="title-detail">
+				<p>Tony Ordoñez</p>
+			</div>
+			<div>
+				<div class="detail-box">
+					<p>AHT</p>
+					<p class="yellow">10:25</p>
+				</div>
+				<div class="detail-box">
+					<p>Scheduled Time</p>
+					<p class="green">5:00</p>
+				</div>
+				<div class="detail-box">
+					<p>Auxiliar Time</p>
+					<p class="red">1:25</p>
+				</div>
+				<div class="detail-box">
+					<p>Softphone Time</p>
+					<p>3:45</p>
+				</div>
+				<div class="detail-box">
+					<p>QA Score</p>
+					<p class="">70%</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/select2.full.min.js"></script>
+    <script src="js/jquery.datetimepicker.js"></script>
+	<script>
+	    moment().format();
+	</script>
+    <script>
+	    $(document).foundation();
+    </script>
+</body>
+</html>

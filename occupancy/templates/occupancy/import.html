@@ -1,0 +1,16 @@
+<h1>Exporte</h1>
+
+<form action="/occupancy/import/" method="POST" enctype="multipart/form-data" >
+{% csrf_token %}
+	<input type="text" name="fecha">
+	<input type="file" name="archivo" >
+	<button>Enviar</button>
+</form>
+{{hola}}
+{{success}}
+{% if path %}
+	<h1>{{success}}</h1>
+	<p>Si entro</p>
+{% endif%}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

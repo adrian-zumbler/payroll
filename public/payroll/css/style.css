@@ -1,0 +1,283 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,700);
+
+* {
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	background-color: #CDD2D4;
+}
+
+#backgroundimg {
+	background-size: cover;
+	background-color: #3498db;
+	height: 764px;
+	position: absolute;
+	width: 100%;
+}
+
+#nav {
+	background-color: #3498db;
+	width: 100%;
+	height: 40px;
+	-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+}
+
+#nav p {
+	color: white;
+	margin-top: 3px;
+	font-size: 18px;
+}
+
+#login {
+	margin-top: 150px;
+
+}
+
+#login p{
+	text-align: center;
+	color: #ABABAB;
+	font-size: 20px;
+}
+
+#title-login p {
+	color: white;
+}
+
+
+#login-form {
+	background-color: #EDEDED;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow:    0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+	box-shadow:         0px 0px 10px 0px rgba(0, 0, 0, 0.);
+}
+
+#login-form input {
+	width: 100%;
+	margin-bottom: 8px;
+	margin-top: 8px;
+	border: none;
+	height: auto;
+	font-size: 20px;
+	padding: 5px 10px 5px 10px;
+	background-color: white;
+	color: black;
+	border: 2px solid #E3E3E3;
+}
+
+#login-form input:focus {
+	border: 2px solid #3498db;
+}
+
+#login-form button {
+	width: 100%;
+	background-color: #e67e22;
+	padding: 8px;
+	margin-top: 15px;
+	border-radius: 4px;
+}
+
+/*main.html*/
+
+span {
+	display: block;
+}
+#content {
+	width: 85%;
+	float: left;
+}
+
+#super-text {
+	font-size: 25px;
+	padding-left: 25px;
+	font-weight: lighter;
+}
+
+#content-table {
+	width: 99%;
+	float: right;
+}
+#fecha {
+	padding-left: 25px
+}
+
+#fecha a {
+	padding: 4px 10px 4px 10px;
+	background-color: #3498db;
+	color: white;	
+	margin-left: 15px;
+	border-bottom: 3px solid #2980b9;
+	border-radius: 4px;
+}
+
+table {
+	width: 100%;
+	background-color: white;
+	border-radius: 10px
+	-webkit-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, .75);
+	-moz-box-shadow:    1px 2px 2px 0px rgba(0, 0, 0, .75);
+	box-shadow:         1px 2px 2px 0px rgba(0, 0, 0, .75);
+}
+
+th {
+	font-size: 12px;
+	border-bottom: 1px solid #ECEFF0;
+	background-color: #ECEFF0;
+	color: #39434D;
+	font-size: 12px;
+}
+
+td {
+	font-size: 12px;
+	text-align: center;
+	border-bottom: 1px solid #d2d2d2;
+	cursor: pointer;
+}
+
+tr:nth-child(even) {
+	background-color: #F2F2F2;
+}
+
+#detail {
+	width: 14%;
+	float: right;
+
+}
+
+#detail-content {
+	width: 100%;
+	background-color: #303A45;
+	height: 100vh;
+	-webkit-box-shadow: -1px 4px 5px 0px rgba(50, 50, 50, 0.71);
+	-moz-box-shadow:    -1px 4px 5px 0px rgba(50, 50, 50, 0.71);
+	box-shadow:         -1px 4px 5px 0px rgba(50, 50, 50, 0.71);
+}
+
+#title-detail{
+	background-color: #1F2123;
+	width: 100%;
+}
+
+#title-detail p {
+	color: white;
+	text-align: center;
+	font-size: 16px;
+	font-weight: lighter;
+}
+
+.detail-box {
+	margin: 0 auto;
+	padding-left: 5px;
+	border-bottom: 1px solid #606A75;
+}
+
+.detail-box p:nth-child(1) {
+	font-size: 15px;
+	font-weight: normal;
+	margin-bottom: 0px;
+	color: #6F7E88;
+}
+
+.detail-box p:nth-child(2) {
+	font-size: 25px;
+	font-weight: lighter;
+	margin: 0;
+	color: white;
+}
+
+
+.yellow {
+	color: #E5DD31 !important;
+}
+
+.red {
+	color: #f93c3c !important;
+}
+
+.green {
+	color: #15c10f !important;
+}
+
+
+/*Payday.html*/
+
+#content-day {
+	width: 100%;
+
+}
+
+#content-table-day {
+	width: 85%;
+	float: none;
+	margin: 0 auto;
+}
+
+#checkpay {
+	padding: 4px 10px 4px 10px;
+	background-color: #e67e22;
+	color: white;	
+	margin-left: 15px;
+	margin-top: 25px;
+	border-bottom: 3px solid #d35400;
+	border-radius: 4px;
+	float: right;
+}
+
+table .select2-container {
+	width: 50px !important;
+}
+
+
+/*import.html*/
+
+.import-box {
+	width: 50%;
+	height: 35%;
+	float: left;
+}
+
+.import-content {
+	width: 98%;
+	height: 96%;
+	padding: 2%;
+	background-color: #FFF;
+	margin: 0 auto;
+	border-radius: 5px;
+}
+
+.button-import {
+	padding: 4px 10px 4px 10px;
+	background-color: #e67e22;
+	color: white;	
+	margin-left: 15px;
+	margin-top: 25px;
+	border-bottom: 3px solid #d35400;
+	border-radius: 4px;
+	float: right;
+}
+
+.button-import:hover {
+	color: white;
+}
+
+.import-box-title {
+	text-align: center;
+	font-weight: lighter;
+	font-size: 25px;
+}
+
+.import-text-date {
+	float: left;
+	padding-left: 5px;
+	margin-right: 10px;
+	color: #3498DB;
+}
+
+.box-date {
+	margin-top: 25px;
+}
+

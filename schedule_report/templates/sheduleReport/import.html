@@ -1,0 +1,14 @@
+<h1>Schedule Report</h1>
+
+<form action="/scheduleReport/import/" method="POST" enctype="multipart/form-data" >
+{% csrf_token %}
+	<input type="text" name="fecha">
+	<input type="file" name="archivo" >
+	<button>Enviar</button>
+</form>
+{{hola}}
+{{success}}
+{% if path %}
+	<h1>{{success}}</h1>
+	<p>Si entro</p>
+{% endif%}
