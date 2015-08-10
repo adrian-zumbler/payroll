@@ -22,7 +22,41 @@ $(document).ready(function () {
 		format: 'd/m/Y'
 	});
 	$('.select-abbr').select2();
-})
+	$('#payday-Reload').click(changeDay());
+});
+
+
+function changeDay () {
+	$.getJSON("http://localhost:8000/payroll/paid", function (data) {
+		var line = '';
+		$.each(data, function(i, csr) {
+			line += '<tr>' +
+						'<td>250175</td>' +
+						'<td>' + csr.name + '</td>' + 
+						'<td>' + csr.schedule + '</td>' + 
+						'<td>' + Math.round(csr.paid_time * 10) / 10 + '</td>' + 
+						'<td>' + Math.round(csr.time_softphone *10) /10 + '</td>' +
+						'<td>' + Math.round(csr.time_avaya * 10) / 10+ '</td>' +
+						'<td>' + Math.round(csr.aux_paid *10) /10 +'</td>' +
+						'<td>' + Math.round(csr.paid_total *10) /10 + '</td>' +
+						'<td><select name="abbr" class="select-abbr">' +
+							'<option value="W">W</option>' +
+							'<option value="T">T</option>' +
+							'<option value="R">R</option>' +
+							'<option value="Z">Z</option>' +
+							'<option value="H">H</option>' +
+							'<option value="V">V</option>' +
+							'<option value="O">O</option>'+
+							'<option value="A">A</option>'+ 
+							'<option value="I">I</option>' +
+							'<option value="U">U</option>' +
+						'</select></td>' +
+					'</tr>';
+					console.log(line);
+		});
+		$("#payday-BodyTable").html(line);
+	});
+}
 
 window.onload = function() {
 	var day = moment().isoWeekday(1);

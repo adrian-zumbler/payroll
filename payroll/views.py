@@ -8,6 +8,7 @@ from auxiliar_report.models import AuxiliarReport
 from schedule_report.models import ScheduleReport
 import json
 from django.http import HttpResponse
+from django.template.response import TemplateResponse
 
 
 class PayrollView(View):
@@ -27,12 +28,12 @@ class PayrollView(View):
 			data['time_softphone'] = 0
 			data['name'] = '%s %s' % (agent.first_name,agent.last_name)
 			if agent.id_softphone != "":
-				occupancy = Occupancy.objects.all().filter(id_softphone = agent.id_softphone).filter(date='2015-08-07')
+				occupancy = Occupancy.objects.all().filter(id_softphone = agent.id_softphone).filter(date='2015-08-03')
 				for oc in occupancy:
 					data['time_softphone'] = oc.assigned_time
 			if agent.name_avaya != "":
 				try:
-					schedule =  ScheduleReport.objects.all().filter(name = agent.name_avaya).filter(date='2015-08-07')
+					schedule =  ScheduleReport.objects.all().filter(name = agent.name_avaya).filter(date='2015-08-03')
 					for sh in schedule:
 						data['schedule'] = sh.dayly_hours
 						data['time_off'] = sh.no_paid_time  
@@ -41,7 +42,7 @@ class PayrollView(View):
 					pass	
 			if agent.id_avaya != "":
 				try:
-					avaya = AuxiliarReport.objects.all().filter(id_avaya = agent.id_avaya).filter(date='2015-08-07')
+					avaya = AuxiliarReport.objects.all().filter(id_avaya = agent.id_avaya).filter(date='2015-08-03')
 					for a in avaya:
 						if a.skill == CARTERA_PAID:
 							data['time_avaya'] += a.assigned_time/3600
@@ -55,3 +56,10 @@ class PayrollView(View):
 			data['paid_total'] = data['paid_total'] if data['paid_total'] > 0 else 0
 			payroll.append(data)
 		return HttpResponse(json.dumps(payroll))
+
+
+class PayrollDayView(View):
+
+	def get(self,request):
+		return render(request,'payroll/payday.html')
+

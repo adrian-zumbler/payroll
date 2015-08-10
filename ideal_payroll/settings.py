@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'activities',
     'schedule_report',
     'profiles',
+    'payroll',
 )
 
 
@@ -87,23 +88,23 @@ WSGI_APPLICATION = 'ideal_payroll.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'db'
-    }
-}
-
 #DATABASES = {
 #    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': 'ideal_payroll',
-#        'USER': 'root',
-#        'PASSWORD': 'donzalog',
-#        'HOST': 'localhost',
-#        'PORT': '',
-#    }
+ #       'ENGINE': 'django.db.backends.sqlite3',
+ #       'NAME': 'db'
+ #   }
 #}
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ideal_payroll',
+        'USER': 'root',
+        'PASSWORD': 'donzalog',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
 
 # Internationalization

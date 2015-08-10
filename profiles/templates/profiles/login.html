@@ -11,7 +11,8 @@
 </head>
 <body>
 	<div id="backgroundimg">
-		<div class="row" id="login">
+		<form action="/profile/login/" class="row" id="login" method="POST">
+			{% csrf_token %}
 			<div class="small-11 large-6 small-centered large-centered columns">
 				<div class="row">
 					<div class="large-12 columns" id="title-login">
@@ -27,12 +28,13 @@
 						</div>
 						<div class="row">
 							<div class="large-10 large-centered columns">
-								<input type="text" placeholder="username">
+								<input type="text" placeholder="username" name="username"
+								>
 							</div>
 						</div>
 						<div class="row">
 							<div class="large-10 large-centered columns">
-								<input type="password" placeholder="password">
+								<input type="password" placeholder="password" name="password">
 							</div>
 						</div>
 						<div class="row">
@@ -43,9 +45,9 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</form>
 	</div>
-
+	
 
 
 

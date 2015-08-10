@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load staticfiles %}
+    <title>Payroll</title>
+    <link rel="stylesheet" href="{% static "profiles/css/normalize.css" %}">
+    <link rel="stylesheet" href="{% static "profiles/css/foundation.css" %}">
+    <link rel="stylesheet" href="{% static "profiles/css/select2.min.css" %}">
+    <link rel="stylesheet" href="{% static "profiles/css/style.css" %}">
+    <link rel="stylesheet" href="{% static "profiles/css/jquery.datetimepicker.css" %}">
+    <script src="{% static "profiles/js/vendor/modernizr.js" %}"></script>
+
+    
+</head>
+<body>
+	<div id="nav">
+		<div class="row">
+			<div class="large-12 large-centered columns">
+				<p style="text-align: center; font-weight: bold;">PAYROLL</p>
+			</div>
+		</div>
+	</div>
+	<div id="content-day">
+		<p id="super-text">Daniel Ruiz</p>
+		<div id="fecha">
+			<p style="width: 50px; float: left;">Date:</p>
+			<input type="text" class="date-select">
+			<a href="" id="payday-Reload">Reload</a>
+		</div>
+		
+		<br>
+		<br>
+		<div id="content-table-day">
+			<table>
+				<thead>
+					<tr>
+						<th>Payroll ID</th>
+						<th>Name</th>
+						<th>Scheduled Time</th>
+						<th>Adjusted</th>
+						<th>Softphone</th>
+						<th>Avaya</th>
+						<th>Aux</th>
+						<th>Total</th>
+						<th>Abbr</th>
+					</tr>
+				</thead>
+				<tbody id="payday-BodyTable">
+					<!--<tr>
+						<td>250175</td>
+						<td>Tony Ordoñez</td>
+						<td>25.0</td>
+						<td>6.0</td>
+						<td>5.0</td>
+						<td>4.0</td>
+						<td>5.0</td>
+						<td><select name="abbr" class="select-abbr">
+							<option value="W">W</option>
+							<option value="T">T</option>
+							<option value="R">R</option>
+							<option value="Z">Z</option>
+							<option value="H">H</option>
+							<option value="V">V</option>
+							<option value="O">O</option>
+							<option value="A">A</option>
+							<option value="I">I</option>
+							<option value="U">U</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td>250175</td>
+						<td>Tony Ordoñez</td>
+						<td>25.0</td>
+						<td>6.0</td>
+						<td>5.0</td>
+						<td>4.0</td>
+						<td>5.0</td>
+						<td><select name="abbr" class="select-abbr">
+							<option value="W">W</option>
+							<option value="T">T</option>
+							<option value="R">R</option>
+							<option value="Z">Z</option>
+							<option value="H">H</option>
+							<option value="V">V</option>
+							<option value="O">O</option>
+							<option value="A">A</option>
+							<option value="I">I</option>
+							<option value="U">U</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td>250175</td>
+						<td>Tony Ordoñez</td>
+						<td>25.0</td>
+						<td>6.0</td>
+						<td>5.0</td>
+						<td>4.0</td>
+						<td>5.0</td>
+						<td><select name="abbr" class="select-abbr">
+							<option value="W">W</option>
+							<option value="T">T</option>
+							<option value="R">R</option>
+							<option value="Z">Z</option>
+							<option value="H">H</option>
+							<option value="V">V</option>
+							<option value="O">O</option>
+							<option value="A">A</option>
+							<option value="I">I</option>
+							<option value="U">U</option>
+						</select></td>
+					</tr>-->
+				</tbody>
+			</table>
+			<div>
+				<a href="#" id="checkpay">Check</a>
+			</div>
+		</div>
+	</div>
+
+	<script src="{% static "profiles/js/vendor/jquery.js" %}"></script>
+    <script src="{% static "profiles/js/foundation.min.js" %}"></script>
+    <script src="{% static "profiles/js/main.js" %}"></script>
+    <script src="{% static "profiles/js/moment.js" %}"></script>
+    <script src="{% static "profiles/js/select2.full.min.js" %}"></script>
+    <script src="{% static "profiles/js/jquery.datetimepicker.js" %}"></script>
+	<script>
+	    moment().format();
+	</script>
+    <script>
+      $(document).foundation();
+    </script>
+</body>
+</html>
