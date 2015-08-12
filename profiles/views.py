@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.views.generic import View
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 
 
 class ProfileLoginView(View):
@@ -15,6 +15,7 @@ class ProfileLoginView(View):
 		user = authenticate(username= username,password = password)
 		if user is not None:
 			if user.is_active:
+				login(request,user)
 				return redirect('/payroll/paid')
 		else:
 			return redirect('/profile/login')		

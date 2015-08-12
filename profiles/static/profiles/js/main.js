@@ -38,7 +38,7 @@ function changeDay () {
 						'<td>' + Math.round(csr.time_softphone *10) /10 + '</td>' +
 						'<td>' + Math.round(csr.time_avaya * 10) / 10+ '</td>' +
 						'<td>' + Math.round(csr.aux_paid *10) /10 +'</td>' +
-						'<td>' + Math.round(csr.paid_total *10) /10 + '</td>' +
+						'<td style="font-weight: bold;">' + Math.round(csr.paid_total *10) /10 + '</td>' +
 						'<td><select name="abbr" class="select-abbr">' +
 							'<option value="W">W</option>' +
 							'<option value="T">T</option>' +

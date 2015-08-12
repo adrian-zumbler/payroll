@@ -231,6 +231,19 @@ table .select2-container {
 	width: 50px !important;
 }
 
+#content-table-day th:nth-child(2) {
+	width: 300px;
+}
+
+#content-table-day th {
+	width: 100px;
+}
+
+#content-table-day tr {
+	height: 25px;
+}
+
+
 
 /*import.html*/
 

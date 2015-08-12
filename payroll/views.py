@@ -17,7 +17,7 @@ class PayrollView(View):
 		
 		payroll = []
 		CARTERA_PAID = 'Cartera Desborde'
-		agents = Agent.objects.all()
+		agents = Agent.objects.all().filter(user__username=request.user.username)
 		for agent in agents:
 			data = {}
 			data['schedule'] = 0
@@ -61,5 +61,5 @@ class PayrollView(View):
 class PayrollDayView(View):
 
 	def get(self,request):
-		return render(request,'payroll/payday.html')
+		return render(request,'payroll/payday.html',{'user':request.user})
 
