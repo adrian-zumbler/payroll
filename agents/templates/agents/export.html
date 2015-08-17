@@ -1,13 +1,17 @@
-<h1>Exporte</h1>
+{% extends 'occupancy/base.html'%}
 
+<h1>Exporte</h1>
+{% block content %}
 <form action="/agents/export/" method="POST" enctype="multipart/form-data" >
 {% csrf_token %}
 	<input type="file" name="archivo" >
 	<button>Enviar</button>
 </form>
+
 {{hola}}
 {{success}}
 {% if path %}
 	<h1>{{success}}</h1>
 	<p>Si entro</p>
 {% endif%}
+{% endblock content %}

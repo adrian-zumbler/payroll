@@ -29,8 +29,7 @@ def export(request):
 					name_avaya = unicodedata.normalize('NFKD',line[9].decode('latin-1')).encode('ASCII','ignore'),
 				)
 				agent.save()
-				x = x + 1 
+				x = x + 1
 
 		return render(request,'agents/export.html',{'success': "Se han agregado %s agentes" %(x)})
 	return render(request,'agents/export.html')
-

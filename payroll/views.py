@@ -15,7 +15,6 @@ from django.template.response import TemplateResponse
 class PayrollView(View):
 
 	def post(self,request):
-		
 		payroll = []
 		date = request.POST.get('day')
 		CARTERA_PAID = 'Cartera Desborde'
