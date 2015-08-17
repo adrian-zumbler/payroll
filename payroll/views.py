@@ -11,6 +11,7 @@ from django.http import HttpResponse
 from django.template.response import TemplateResponse
 
 
+
 class PayrollView(View):
 
 	def post(self,request):
@@ -56,7 +57,11 @@ class PayrollView(View):
 			data['paid_total'] = (data['time_softphone'] + data['time_avaya'] + data['aux_paid']) 
 			data['paid_total'] = data['paid_total'] if data['paid_total'] > 0 else 0
 			payroll.append(data)
-		return HttpResponse(json.dumps(payroll))
+
+		payroll = Task.objects.all()
+		data_send = serializers.serialize("json", payroll)
+
+		return HttpResponse(json.dumps(payroll), content_type='application/json')
 
 
 class PayrollDayView(View):

@@ -4,8 +4,12 @@ $(document).ready(function () {
 		format: 'd/m/Y'
 	});
 	$('.select-abbr').select2();
-	$('#payday-Reload').click(changeDay());
+	$('#payday-Reload').click(function () {
+		console.log("click");
+		changeDay();
+	});
 });
+
 
 //var csrftoken = $.cookie('csrftoken');
 
@@ -39,7 +43,7 @@ function changeDate() {
 
 
 function changeDay () {
-
+	console.log("Daychange")
 	var date = moment($('.date-select').val().split("/").reverse().join("/")).format("YYYY-MM-DD");
 	$.ajax({
 		type: "POST",
@@ -81,8 +85,8 @@ function changeDay () {
 		}
 	});
 }
-
+/*
 window.onload = function() {
 	var day = moment().isoWeekday(1);
 	updateDate(day);
-}
+}*/
