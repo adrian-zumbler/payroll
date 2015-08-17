@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^scheduleReport/', include('schedule_report.urls',namespace="shedule_report")),
     url(r'^payroll/', include('payroll.urls',namespace="payroll")),
     url(r'^profile/', include('profiles.urls',namespace="profiles")),
+    url(r'^import/',include('import_files.urls',namespace="import_files")),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^__debug__/', include(debug_toolbar.urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

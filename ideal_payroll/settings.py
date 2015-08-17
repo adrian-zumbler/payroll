@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'schedule_report',
     'profiles',
     'payroll',
+    'import_files',
 )
 
 

@@ -1,0 +1,48 @@
+{% extends 'occupancy/base.html' %}
+
+{% block content %}
+<div class="import-box">
+  <div class="import-content">
+    <p class="import-box-title">CMS Export</p>
+    <div>
+      <input type="file" id="file" name="file">
+    </div>
+    <a href="" class="button-import">Import</a>
+  </div>
+</div>
+<div class="import-box">
+  <div class="import-content">
+    <p class="import-box-title">Agents</p>
+    <div>
+      <input type="file" id="file" name="file">
+    </div>
+    <a href="" class="button-import">Import</a>
+  </div>
+</div>
+<div class="import-box">
+  <div class="import-content">
+    <p class="import-box-title">Schedule</p>
+    <div>
+      <input type="file" id="file" name="file">
+    </div>
+    <div class="box-date">
+      <p class="import-text-date">Date: </p>
+      <input type="text" class="date-select">
+    </div>
+    <a href="" class="button-import">Import</a>
+  </div>
+</div>
+<div class="import-box">
+  <div class="import-content">
+    <p class="import-box-title">Occupancy</p>
+    <div>
+      <input type="file" id="file" name="file">
+    </div>
+    <div class="box-date">
+      <p class="import-text-date">Date: </p>
+      <input type="text" class="date-select">
+    </div>
+    <a href="" class="button-import">Import</a>
+  </div>
+</div>
+{% endblock content%}
