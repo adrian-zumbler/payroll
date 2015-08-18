@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payroll</title>
     {% load staticfiles %}
+    <title>Payroll</title>
+    <link rel="stylesheet" href="{% static "profiles/css/normalize.css" %}">
     <link rel="stylesheet" href="{% static "profiles/css/foundation.css" %}">
+    <link rel="stylesheet" href="{% static "profiles/css/select2.min.css" %}">
     <link rel="stylesheet" href="{% static "profiles/css/style.css" %}">
-    <script src="js/vendor/modernizr.js"></script>
+    <link rel="stylesheet" href="{% static "profiles/css/jquery.datetimepicker.css" %}">
 </head>
 <body>
 	<div id="nav">
@@ -21,8 +24,16 @@
 		<p style="text-align: center; font-size: 25px; font-weight: lighter">Imports</p>
 	</div>
 	 {% block content %}{% endblock %}
-	<script src="js/vendor/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
+	<script src="{% static "profiles/js/vendor/jquery.js" %}"></script>
+    <script src="{% static "profiles/js/foundation.min.js" %}"></script>
+    <script src="{% static "profiles/js/moment.js" %}"></script>
+    <script src="{% static "profiles/js/select2.full.min.js" %}"></script>
+    <script src="{% static "profiles/js/jquery.datetimepicker.js" %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="{% static "profiles/js/main.js" %}"></script>
+	<script>
+	    moment().format();
+	</script>
     <script>
       $(document).foundation();
     </script>

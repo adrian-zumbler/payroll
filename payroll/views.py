@@ -9,6 +9,7 @@ from schedule_report.models import ScheduleReport
 import json
 from django.http import HttpResponse
 from django.template.response import TemplateResponse
+import pdb
 
 
 
@@ -16,7 +17,8 @@ class PayrollView(View):
 
 	def post(self,request):
 		payroll = []
-		date = request.POST.get('day')
+		day = request.POST.get('day')
+		print request.POST
 		CARTERA_PAID = 'Cartera Desborde'
 		agents = Agent.objects.all().filter(user__username=request.user.username)
 		for agent in agents:
@@ -29,12 +31,14 @@ class PayrollView(View):
 			data['time_softphone'] = 0
 			data['name'] = '%s %s' % (agent.first_name,agent.last_name)
 			if agent.id_softphone != "":
-				occupancy = Occupancy.objects.all().filter(id_softphone = agent.id_softphone).filter(date=date)
+				occupancy = Occupancy.objects.all().filter(id_softphone = agent.id_softphone).filter(date=day)
+				
+				
 				for oc in occupancy:
 					data['time_softphone'] = oc.assigned_time
 			if agent.name_avaya != "":
 				try:
-					schedule =  ScheduleReport.objects.all().filter(name = agent.name_avaya).filter(date=date)
+					schedule =  ScheduleReport.objects.all().filter(name = agent.name_avaya).filter(date=day)
 					for sh in schedule:
 						data['schedule'] = sh.dayly_hours
 						data['time_off'] = sh.no_paid_time  
@@ -43,7 +47,7 @@ class PayrollView(View):
 					pass	
 			if agent.id_avaya != "":
 				try:
-					avaya = AuxiliarReport.objects.all().filter(id_avaya = agent.id_avaya).filter(date=date)
+					avaya = AuxiliarReport.objects.all().filter(id_avaya = agent.id_avaya).filter(date=day)
 					for a in avaya:
 						if a.skill == CARTERA_PAID:
 							data['time_avaya'] += a.assigned_time/3600
@@ -57,8 +61,8 @@ class PayrollView(View):
 			data['paid_total'] = data['paid_total'] if data['paid_total'] > 0 else 0
 			payroll.append(data)
 
-		payroll = Task.objects.all()
-		data_send = serializers.serialize("json", payroll)
+		#payroll = Task.objects.all()
+		#data_send = serializers.serialize("json", payroll)
 
 		return HttpResponse(json.dumps(payroll), content_type='application/json')
 

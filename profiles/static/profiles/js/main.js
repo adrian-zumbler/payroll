@@ -1,30 +1,19 @@
+
 $(document).ready(function () {
 	$('.date-select').datetimepicker({
 		timepicker: false,
 		format: 'd/m/Y'
 	});
 	$('.select-abbr').select2();
-	$('#payday-Reload').click(function () {
-		console.log("click");
+	$('#payday-Reload').click(function (event) {
+		event.preventDefault();
 		changeDay();
 	});
+	
 });
 
 
-//var csrftoken = $.cookie('csrftoken');
-
-function csrfSafeMethod(method) {
-    // these HTTP methods do not require CSRF protection
-    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-}
-
-$.ajaxSetup({
-    beforeSend: function(xhr, settings) {
-        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-            xhr.setRequestHeader("X-CSRFToken", $.cookie('csrftoken'));
-        }
-    }
-});
+var csrftoken = $.cookie('csrftoken');
 
 function updateDate(day) {
 	$('#day1').html(day.format("DD/MM/YYYY"));
@@ -43,19 +32,49 @@ function changeDate() {
 
 
 function changeDay () {
-	console.log("Daychange")
+	console.log("Enter Daychange");
+	var data_s = [];
 	var date = moment($('.date-select').val().split("/").reverse().join("/")).format("YYYY-MM-DD");
+	console.log(date);
+	function csrfSafeMethod(method) {
+	    // these HTTP methods do not require CSRF protection
+	    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+	}
+	function sameOrigin(url) {
+	    // test that a given url is a same-origin URL
+	    // url could be relative or scheme relative or absolute
+	    var host = document.location.host; // host + port
+	    var protocol = document.location.protocol;
+	    var sr_origin = '//' + host;
+	    var origin = protocol + sr_origin;
+	    // Allow absolute or scheme relative URLs to same origin
+	    return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
+	        (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
+	        // or any other URL that isn't scheme relative or absolute i.e relative.
+	        !(/^(\/\/|http:|https:).*/.test(url));
+	}
+	$.ajaxSetup({
+	    beforeSend: function(xhr, settings) {
+	        if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
+	            // Send the token to same-origin, relative URLs only.
+	            // Send the token only if the method warrants CSRF protection
+	            // Using the CSRFToken value acquired earlier
+	            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+	        }
+	    }
+	});
+	var send_data = {'day': date};
+	console.log(send_data);
+	//data_s.push('{"day":' + date + '}');
+	//data_s.push('{"csrfmiddlewaretoken":' + $.cookie("csrftoken") + '}');
 	$.ajax({
 		type: "POST",
 		url: "http://localhost:8000/payroll/paid/", 
-		data: {
-			day: date,
-			csrfmiddlewaretoken: $.cookie("csrftoken")
-		},
-		contentType: "application/json; charset=utf-8",
+		data: send_data,
+		//contentType: "application/json; charset=utf-8",
 		dataType: "json",
 		success: function (data) {
-			console.log("Daychange")
+			console.log(data);
 			var line = '';
 			$.each(data, function(i, csr) {
 				line += '<tr>' +
@@ -82,8 +101,12 @@ function changeDay () {
 						'</tr>';
 			});
 			$("#payday-BodyTable").html(line);
+		},
+		fail: function(msg) {
+			console.log(msg);
 		}
 	});
+	//alert("enter daychange");
 }
 /*
 window.onload = function() {
