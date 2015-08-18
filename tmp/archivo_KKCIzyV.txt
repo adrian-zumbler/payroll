@@ -1,0 +1,97 @@
+Edgar Adrian	Acosta Rojas	1200297	2015-02-02	35	40	0	1786	2253	Acosta Rojas Edgar Adrian	16455	eacosta
+Martin Aldair	Aguilar Santillanes	1200404	1900-01-01	30	35	0	1818	2346	Aguilar Santillanes Martin Aldair	15213	maguilar
+Daniel	Banuelos Barrera	1200447	1900-01-01	35	48	0	1899	2370	Banuelos Barrera Daniel	15213	dbanuelos
+Jose Roberto	Bencomo Lujan 	1200239	2015-01-01	26	30	6145024127	1962	2202	Bencomo Lujan  Jose Roberto	16455	jbencomo
+Ana Karen	Camacho Maynez          	1200230	2014-12-01	30	35	0	1951	2195	Camacho Maynez           Ana Karen	16455	akcamacho
+Sarai	Cano Saenz	1200069	1900-01-01	35	35	6142770276	1871	2049	Cano Saenz Sarai	15223	scano
+Ivan Alfredo	Castillo Ruiz	1200367	2015-03-01	40	45	0	1859	2314	Castillo Ruiz Ivan Alfredo	16455	iacastillo
+Vera Marlen	Cazares Catano	1200363	2015-03-01	40	45	0	1860	2310	Cazares Cata뿯½o Vera Marlen	16455	vcazares
+Josue	Chacon Arzaga	1200442	1900-01-01	35	40	0	1933	2365	Chacon Arzaga Josue	15213	jchacon
+Rocio Ivette	Chacon Reyes	1200372	2015-03-01	40	45	0	1861	2319	Chacon Reyes Rocio Ivette	16455	rchacon
+Cristopher	Chaparro Maicol	1200438	1900-01-01	35	45	0	1783	2358	Chaparro Maicol Cristopher	15213	chchaparro
+Linda	Chavez Solis 	1200432	1900-01-01	35	40	0	1789	2352	Chavez Solis  Linda	15213	lchavez
+Josue Aaron	ChavezQuinonez	1200269	1900-01-01	40	45	0	1804	2228	ChavezQui뿯½onez Josue Aaron	16455	jchavez
+Cristal Adriana	Chavira Sifuentes	1200181	2014-10-20	35	40	6142309901	1822	2146	Chavira Sifuentes Cristal Adriana	16455	cchavira
+Ivan Antonio	Colomo Diaz	1200203	2014-10-20	40	45	0	1876	2168	Colomo Diaz Ivan Antonio	16455	icolomo
+Rafael Antonio	Cordero Marquez	1200293	2015-02-02	30	32	0	1792	2251	Cordero Marquez Rafael Antonio	16455	rcordero
+Veronica	Corral Ponce	1200389	1900-01-01	40	45	0	1827	2331	Corral Ponce Veronica	15213	vcorral
+Ivan Alejandro	Cortez Valdez	1200140	1900-01-01	40	48	0	1896	2106	Cortez Valdez Ivan Alejandro	16455	icortez
+Christian Dionicio	De Los Angeles Segura	1200350	2015-03-01	40	45	0	1821	2298	De Los Angeles Segura Christian Dionicio	16455	cdelosangeles
+Itzel Alejandra	Diaz Rivera	1200316	2015-02-02	28	30	0	1780	2268	Diaz Rivera Itzel Alejandra	16455	idiaz
+Isaac Jacob	Dominguez Alarcon	1200159	2015-02-01	30	35	0	1843	2125	Dominguez Alarcon Isaac Jacob	16455	idominguez
+Missdalia Suge	Dominguez Garcia	1200319	2015-02-02	28	30	0	1777	2271	Dominguez Garcia Missdalia Suge	16455	mdominguez
+Bianca Lizbeth	Escobedo Morales	1200018	2015-03-01	35	40	0	1784	2010	Escobedo Morales Bianca Lizbeth		bescobedo
+Armando Daniel	Espinoza Quinonez 	1200307	2015-02-02	28	35	0	1778	2261	Espinoza Quinonez  Armando Daniel	16455	aespinoza
+Luis Armando	Falcon Perez	1200205	2014-10-20	32	35	0	1887	2170	Falcon Perez Luis Armando	16455	lfalcon
+Karen Andrea	Fernandez Balvanera	1200158	1900-01-01	30	35	6141607779	1844	2124	Fernandez Balvanera Karen Andrea	16455	kfernandez
+Karla Ivette	Fierro Alvarado	1200204	2014-10-20	28	30	0	1888	2169	Fierro Alvarado Karla Ivette	16455	kfierro
+Adriana Bianey	Figueroa Marrufo          	1200191	2014-10-20	32	35	0	1889	2156	Figueroa Marrufo           Adriana Bianey	16455	afigueroa
+Claudia Alejandra	Flores Arras	1200355	2015-03-01	40	45	0	1824	2303	Flores Murillo Denisse Angelica	16455	cflores
+Denisse Angelica	Flores Murillo	1200207	2014-10-20	40	45	0	1891	2172	Flores Arras Claudia Alejandra	16455	dflores
+Jose Francisco	Frias Ruiz	1200180	2014-10-20	40	45	0	1846	2145	Frias Ruiz Jose Francisco	16455	jfrias
+Ever Aaron	Garcia Ortiz	1200449	1900-01-01	35	48	0	1947	2372	Garcia Ortiz Ever Aaron	15213	egarcia
+Perla Kari	Garcia Urtuzastegui	1200149	1900-01-01	35	40	0	1907	2115	Garcia Urtuzastegui Perla Kari	16455	pgarcia
+Arely	Garcia Urtuzuastegui	1200099	2015-01-01	30	32	0	1909	2072	Garcia Urtuzuastegui Arely	15223	agarcia
+Victor Hugo	Gaytan  Gallardo 	1200277	1900-01-01	35	40	0	1807	2236	Gaytan  Gallardo  Victor Hugo	16455	vgaytan
+Nancy	Gonzalez Gonzalez	1200380	2015-03-01	40	45	0	1873	2327	Gonzalez Gonzalez Nancy	16455	nagonzalez
+Leslie	Haro Chavez 	1200273	1900-01-01	30	35	0	1809	2232	Haro Chavez  Leslie	16455	lharo
+Sabrina Sarahi	Hernandez Griego 	1200436	1900-01-01	35	48	0				15213	shernandez
+Ana Gabriela	Hernandez Macias 	1200284	1900-01-01	40	45	0	1811	2243	Hernandez Macias  Ana Gabriela	16455	ahernandez
+Daniel Arturo	Herrera Torres	1200309	2015-02-02	28	30	0	1791	2262	Herrera Torres Daniel Arturo	16455	dherrera
+Diego	Hinostroza Lozano	1200294	2015-02-01	28	30	0	1798	2252	Hinostroza Lozano Diego	16455	dhinostroza
+Stephanie	Honorato Dominguez	1200443	1900-01-01	35	40	0	1948	2366	Honorato Dominguez Stephanie	15213	shonorato
+Mario Alberto	Ibarra Enriquez	1200141	1900-01-01	35	40	0	1848	2107	Ibarra Enriquez Mario Alberto	16455	mibarra
+Sergio Cruz	Jaramillo Flores	1200430	1900-01-01	35	40	0	1805	2350	Jaramillo Flores Sergio Cruz	15213	sjaramillo
+Sylvia Cristina	Lara Clift	1200270	1900-01-01	28	30	0	1812	2229	Lara Clift Sylvia Cristina	16455	slara
+Teresita de Jesus	Lara Garcia	1200376	2015-03-01	35	40	0	1877	2323	Lara Garcia Teresita de Jesus	16455	tlara
+Ana Paola	Leyva Rodriguez	1200229	1900-01-01	40	45	0	1949	2194	Leyva Rodriguez Ana Paola	16455	aleyva
+Sergio Armando	Leyva Rodriguez	1200397	1900-01-01	35	45	0	1901	2339	Leyva Rodriguez Sergio Armando	15213	sleyva
+Tanya Berenice	Lopez Garcia	1200212	2014-12-01	30	35	0	1946	2177	Lopez Garcia Tanya Berenice	16455	tlopez
+Luis Enrique	Lopez Torres	1200445	1900-01-01	35	35	0	1950	2368	Lopez Torres Luis Enrique	15213	lulopez
+Bannely Georgina  	Loya Martinez	1200262	1900-01-01	30	32	0	1858	2224	Loya Martinez Bannely Georgina  	16455	bloya
+Sara del Carmen	Lujan Arias	1200390	1900-01-01	32	35	0	1905	2332	Lujan Arias Sara del Carmen	15213	slujan
+Iliana Lizdebeth	Macias Jurado 	1200326	1900-01-01	40	45	0	1806	2278	Macias Jurado  Iliana Lizdebeth	16455	imacias
+Isis Jocelyn	Mancha Castaneda	1200132	1900-01-01	40	48	6142185148	1912	2098	Mancha Casta뿯½eda Isis Jocelyn	16455	imancha
+Cinthia Edith	Marrufo Martinez       	1200215	2014-12-01	28	30	6144272010	1941	2180	Marrufo Martinez        Cinthia Edith	16455	cmarrufo
+Esmeralda	Martinez Maldonado	1200107	2014-05-01	35	40	6141695516	1898	2080	Martinez Maldonado Esmeralda	15223	emartinez
+Perla	Martinez Maldonado	1200108	2014-05-01	35	40	6142551209	1862	2081	Martinez Maldonado Perla	15223	pmartinez
+Jazmin Nabil	Medina Rivas	1200216	2014-12-01	32	35	0	1938	2181	Medina Rivas Jazmin Nabil	16455	jmedina
+Dayan Itzel	Medrano Cordero	1200349	2015-03-01	35	35	0	1834	2297	Medrano Cordero Dayan Itzel	16455	dmedrano
+Nancy	Melendez Ramirez	1200353	2015-03-01	35	35	0	1836	2301	Melendez Ramirez Nancy	16455	nmelendez
+Rene Emmanuel	Mendoza Ruiz          	1200218	2014-12-01	30	35	0	1932	2183	Mendoza Ruiz           Rene Emmanuel	16455	rmendoza
+Luis Angel	Moreno Hernandez	1200439	1900-01-01	35	40	0	1815	2359	Moreno Hernandez Luis Angel	15213	lmoreno
+Erick	Munoz Acosta	1200343	2015-03-01	40	45	0	1837	2293	Mu뿯½oz Acosta Erick	16455	emunoz
+Angel Daniria	Murillo  Valenzuela	1200435	1900-01-01	40	40	0	1817	2361	Murillo  Valenzuela Angel Daniria	15213	amurillo
+Jose Antonio	Ordonez Grajeda	1200113	2014-05-01	30	32	6141759591	1841	2086	Ordonez Grajeda Jose Antonio	15223	jordonez
+Ileana Vanessa	Ortega Ortiz              	1200217	2014-12-01	28	30	0	1935	2182	Ortega Ortiz               Ileana Vanessa	16455	iortega
+Alejandro	Ortiz Lopez	1200046	1900-01-01	45	48	044-614-202-44-28	1853	2032	Ortiz Lopez Alejandro	14753	aortiz
+Cesar Alejandro	Ortiz Valenzuela	1200441	1900-01-01	35	45	0	1954	2364	Ortiz Valenzuela Cesar Alejandro	15213	cortiz
+Mario Alejandro 	Palomino Zaragoza	1200253	2014-08-01	30	35	0	1970	2215	Palomino Zaragoza Mario Alejandro 	16455	mpalomino
+Luis Alberto	Pena Avalos	1200394	1900-01-01	40	45	0	1917	2336	Pe뿯½a Avalos Luis Alberto	15213	lupena
+Laura Cristina	Pena Caro	1200338	2015-02-01	35	40	0	1885	2289	Pe뿯½a Caro Laura Cristina	16455	lpena
+Gabriela Edith	Perez Chavarria 	1200431	1900-01-01	35	40	0	1825	2351	Perez Chavarria  Gabriela Edith	15213	gperez
+Estefania Ibet	Perez Escobar	1200448	1900-01-01	35	40	0	1955	2371	Perez Escobar Estefania Ibet	15213	eperez
+Mauricio Fabian	Perez Perez	1200393	1900-01-01	35	45	0	1923	2335	Perez Perez Mauricio Fabian	15213	maperez
+Yasmin Adriana	Perez Silva	1200391	1900-01-01	35	45	0	1926	2333	Perez Silva Yasmin Adriana	15213	yaperez
+Melissa	Perez Talamantes	1200177	2014-10-20	40	45	0	1867	2142	Perez Talamantes Melissa	16455	mperez
+Luis Alberto	Pretty Tam	1200342	2015-03-01	40	45	0	1838	2292	Pretty Tam Luis Alberto	16455	lpretty
+Ricardo	Ramirez Martinez 	1200247	1900-01-01	26	30	0	1957	2209	Ramirez Martinez  Ricardo	16455	rramirez
+Selene Araly	Renova Banda 	1200254	1900-01-01	26	30	0	1971	2216	Renova Banda  Selene Araly	16455	srenova
+Alba Fernanda	Reyes Balbuena	0	1900-01-01	35	40	0					areyes
+Karina Eden	Rios Cervantes 	1200276	1900-01-01	30	35	0	1893	2235	Rios Cervantes  Karina Eden	16455	krios
+Cecilia Pamela	Rodriguez Santana	1200429	1900-01-01	35	40	0				15213	crodriguez
+Javier Alberto 	Romero Gamboa 	1200242	1900-01-01	30	35	0	1968	2205	Romero Gamboa  Javier Alberto 	16455	jromero
+Sandra Yunue	Ruiz Grajeda	1200298	2015-02-02	30	35	6141126360	1785	2254	Ruiz Grajeda Sandra Yunue	16455	sruiz
+Jorge Antonio	Salais Rincon	1200388	1900-01-01	30	35	0	1928	2330	Salais Rincon Jorge Antonio	15213	jsalais
+Ivan Vicente	Salcedo Amezquita	1200195	2014-10-20	30	35	6142413902	1924	2160	Salcedo Amezquita Ivan Vicente	16455	isalcedo
+Daniel Alexis	Salinas  Gonzalez 	1200278	1900-01-01	28	30	0	1978	2237	Salinas  Gonzalez  Daniel Alexis	16455	dsalinas
+Ever	Sauzameda Garcia	1200299	2015-02-02	28	30	0	1776	2259	Sauzameda Garcia Ever	16455	esauzameda
+Teresa Ivonne	Soto Bustillos	1200345	2015-03-01	40	45	0	1840	2294	Soto Bustillos Teresa Ivonne	16455	tsoto
+Nidia Denisse	Torres Madrigal 	1200395	1900-01-01	30	32	0	1940	2337	Torres Madrigal  Nidia Denisse	15213	ntorres
+Miguel Angel	Uribe Moya	1200073	1900-01-01	35	45	6143423010	1894	2052	Uribe Moya Miguel Angel	15223	muribe
+Jessica	Valverde Villezcas	1200303	2015-02-02	30	35	6142189207	1775	2258	Valverde Villezcas Jessica	16455	jvalverde
+Julio Josue	Vasquez Contreras	1200314	2015-02-02	28	30	0	1797	2266	Vasquez Contreras Julio Josue	16455	jvasquez
+Gerardo	Villalba Grimaldo	1200315	2015-02-02	28	30	0	1781	2267	Villalba Grimaldo Gerardo	16455	ggrimaldo
+Adriana	Zavala Velazquillo	1200151	1900-01-01	30	35	6142767484	1832	2117	Zavala Velazquillo Adriana	16455	azavala
+Yolanda Mariana	Zubia Ballestero	1200379	2015-03-01	35	40	0	1904	2326	Zubia Ballestero Yolanda Mariana	16455	yzubia
+Paulina	Zubiate Carrillo	1200210	2015-01-01	26	30	0	1931	2175	Zubiate Carrillo Paulina	16455	pzubiate

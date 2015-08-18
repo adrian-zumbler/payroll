@@ -108,7 +108,7 @@ span {
 #fecha a {
 	padding: 4px 10px 4px 10px;
 	background-color: #3498db;
-	color: white;	
+	color: white;
 	margin-left: 15px;
 	border-bottom: 3px solid #2980b9;
 	border-radius: 4px;
@@ -219,7 +219,7 @@ tr:nth-child(even) {
 #checkpay {
 	padding: 4px 10px 4px 10px;
 	background-color: #e67e22;
-	color: white;	
+	color: white;
 	margin-left: 15px;
 	margin-top: 25px;
 	border-bottom: 3px solid #d35400;
@@ -230,6 +230,19 @@ tr:nth-child(even) {
 table .select2-container {
 	width: 50px !important;
 }
+
+#content-table-day th:nth-child(2) {
+	width: 300px;
+}
+
+#content-table-day th {
+	width: 100px;
+}
+
+#content-table-day tr {
+	height: 25px;
+}
+
 
 
 /*import.html*/
@@ -252,7 +265,7 @@ table .select2-container {
 .button-import {
 	padding: 4px 10px 4px 10px;
 	background-color: #e67e22;
-	color: white;	
+	color: white;
 	margin-left: 15px;
 	margin-top: 25px;
 	border-bottom: 3px solid #d35400;
@@ -281,3 +294,6 @@ table .select2-container {
 	margin-top: 25px;
 }
 
+.sucess {
+	color: green;
+}

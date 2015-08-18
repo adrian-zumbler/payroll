@@ -13,8 +13,9 @@ class OccupancyImportView(View):
 		return render(request,'occupancy/import.html')
 
 	def post(self,request):
-		fecha = request.POST.get('fecha')
-		data = request.FILES.get('archivo',False)
+		fecha = request.POST.get('fecha').split('/')
+		fecha = '%s-%s-%s' %(fecha[2],fecha[1],fecha[0])
+		data = request.FILES.get('file',False)
 		path = default_storage.save('tmp/occupancy.txt',ContentFile(data.read()))
 		file = default_storage.open(path)
 		actual_id = 0
@@ -40,17 +41,17 @@ class OccupancyImportView(View):
 				if flag == False:
 					sum_assigned_time = float(line[6])
 					sum_conversation_time = float(line[7])
-					try:	
+					try:
 						sum_calls_handled = (float(line[7])/float(line[8]))
 					except ZeroDivisionError:
-						sum_calls_handled = 0	
+						sum_calls_handled = 0
 					flag = True
 					last_id = actual_id
 
 				if actual_id == last_id:
 					sum_assigned_time += float(line[6])
 					sum_conversation_time += float(line[7])
-					try:	
+					try:
 						sum_calls_handled += (float(line[7])/float(line[8]))
 					except ZeroDivisionError:
 						sum_calls_handled += 0
@@ -60,7 +61,7 @@ class OccupancyImportView(View):
 					interval_end = line[2]
 					piloto = unicodedata.normalize('NFKD',line[5].decode('latin-1')).encode('ASCII','ignore'),
 					aht = 0
-					occupancy_percentage = 0	
+					occupancy_percentage = 0
 					occupancy = Occupancy.objects.create(
 					date = fecha,
 					business_line = business_line,
@@ -80,9 +81,9 @@ class OccupancyImportView(View):
 					sum_conversation_time = 0
 					flag = False
 
-				last_id = actual_id	
+				last_id = actual_id
 				last_name = aux_name
-		
+
 		occupancy = Occupancy.objects.create(
 			date = fecha,
 			business_line = business_line,
@@ -98,7 +99,4 @@ class OccupancyImportView(View):
 			calls_handled = 0,
 		)
 		occupancy.save()
-		return render(request,'occupancy/import.html',{'success':'Se han cargado los datos con exito'})	
-
-		 	
-	
+		return render(request,'importFiles/import.html',{'success':'Se han cargado los datos con exito'})

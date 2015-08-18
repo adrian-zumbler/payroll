@@ -7,7 +7,7 @@ import unicodedata
 
 def export(request):
 	if request.method == 'POST':
-		data = request.FILES.get('archivo',False)
+		data = request.FILES.get('file',False)
 		path = default_storage.save('tmp/archivo.txt',ContentFile(data.read()))
 		file = default_storage.open(path)
 		x = 0
@@ -31,5 +31,6 @@ def export(request):
 				agent.save()
 				x = x + 1
 
-		return render(request,'agents/export.html',{'success': "Se han agregado %s agentes" %(x)})
+		return render(request,'importFiles/import.html',{'success': "Se han agregado %s registros" %(x)})
+		
 	return render(request,'agents/export.html')
