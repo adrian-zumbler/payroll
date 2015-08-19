@@ -16,12 +16,6 @@ class ProfileLoginView(View):
 		if user is not None:
 			if user.is_active:
 				login(request,user)
-				return redirect('/payroll/paid')
+				return redirect('/payroll/day')
 		else:
-			return redirect('/profile/login')		
-
-
-
-
-
-
+			return redirect('/profile/login',)
