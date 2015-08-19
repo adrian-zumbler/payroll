@@ -13,7 +13,7 @@
 
 
 
-    
+
 </head>
 <body>
 	<div id="nav">
@@ -24,13 +24,13 @@
 		</div>
 	</div>
 	<div id="content-day">
-		<p id="super-text">{{user.first_name }} {{ user.last_name }}</p>
+		<p id="super-text">{{request.user.first_name }} {{ request.user.last_name }}</p>
 		<div id="fecha">
 			<p style="width: 50px; float: left;">Date:</p>
 			<input type="text" class="date-select">
 			<a href="" id="payday-Reload">Reload</a>
 		</div>
-		
+
 		<br>
 		<br>
 		<div id="content-table-day">

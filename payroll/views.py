@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.http import JsonResponse
 from django.core import serializers
@@ -10,6 +10,8 @@ import json
 from django.http import HttpResponse
 from django.template.response import TemplateResponse
 import pdb
+from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -20,7 +22,10 @@ class PayrollView(View):
 		day = request.POST.get('day')
 		print request.POST
 		CARTERA_PAID = 'Cartera Desborde'
-		agents = Agent.objects.all().filter(user__username=request.user.username)
+		if request.user.is_staff:
+			agents = Agent.objects.all()
+		else:
+			agents = Agent.objects.all().filter(user__username=request.user.username)
 		for agent in agents:
 			data = {}
 			data['schedule'] = 0
@@ -32,8 +37,8 @@ class PayrollView(View):
 			data['name'] = '%s %s' % (agent.first_name,agent.last_name)
 			if agent.id_softphone != "":
 				occupancy = Occupancy.objects.all().filter(id_softphone = agent.id_softphone).filter(date=day)
-				
-				
+
+
 				for oc in occupancy:
 					data['time_softphone'] = oc.assigned_time
 			if agent.name_avaya != "":
@@ -41,10 +46,10 @@ class PayrollView(View):
 					schedule =  ScheduleReport.objects.all().filter(name = agent.name_avaya).filter(date=day)
 					for sh in schedule:
 						data['schedule'] = sh.dayly_hours
-						data['time_off'] = sh.no_paid_time  
-						data['paid_time'] = sh.paid_time	
+						data['time_off'] = sh.no_paid_time
+						data['paid_time'] = sh.paid_time
 				except Exception:
-					pass	
+					pass
 			if agent.id_avaya != "":
 				try:
 					avaya = AuxiliarReport.objects.all().filter(id_avaya = agent.id_avaya).filter(date=day)
@@ -55,9 +60,9 @@ class PayrollView(View):
 							data['aux_paid'] += (a.assigned_time - a.available_time)/3600
 
 				except Exception:
-					pass		
+					pass
 
-			data['paid_total'] = (data['time_softphone'] + data['time_avaya'] + data['aux_paid']) 
+			data['paid_total'] = (data['time_softphone'] + data['time_avaya'] + data['aux_paid'])
 			data['paid_total'] = data['paid_total'] if data['paid_total'] > 0 else 0
 			payroll.append(data)
 
@@ -69,6 +74,8 @@ class PayrollView(View):
 
 class PayrollDayView(View):
 
-	def get(self,request):
-		return render(request,'payroll/payday.html',{'user':request.user})
-
+	def get(self, request):
+		if request.user.is_authenticated:
+			return render(request,'payroll/payday.html')
+		else:
+			return redirect(settings.LOGIN_URL)

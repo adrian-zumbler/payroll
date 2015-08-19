@@ -61,7 +61,7 @@ class ScheduleReportImportView(View):
 							if activityObject.paid == False:
 								NoPaidTime += float(((t2.hour*60) + t2.minute)) - float(((t1.hour*60) + t1.minute))
 						except:
-							pass		
+							pass
 				if x == 'Off':
 					paid_time = 0
 					stayTime = 0
