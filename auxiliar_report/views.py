@@ -12,7 +12,7 @@ class AuxiliarReportImportView(View):
 		return render(request,'auxiliarReport/import.html')
 
 	def post(self,request):
-		data = request.FILES.get('archivo',False)
+		data = request.FILES.get('file',False)
 		path = default_storage.save('tmp/auxiliar_report.txt',ContentFile(data.read()))
 		file = default_storage.open(path)
 		for l in file:
@@ -45,7 +45,4 @@ class AuxiliarReportImportView(View):
 				assigned_time = line[24]
 				)
 			auxiliarReport.save()
-		return render(request,'auxiliarReport/import.html',{'sucess':'Los dato se guardaron con exito'})
-
-
-
+		return render(request,'importFiles/import.html',{'success':'Los dato se guardaron con exito'})

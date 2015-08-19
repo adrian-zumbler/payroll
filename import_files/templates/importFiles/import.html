@@ -1,15 +1,16 @@
 {% extends 'occupancy/base.html' %}
 
 {% block content %}
-<div class="import-box">
+<form method="POST" action="/auxiliarReport/import/" enctype="multipart/form-data" class="import-box">
+  {% csrf_token %}
   <div class="import-content">
     <p class="import-box-title">CMS Export</p>
     <div>
       <input type="file" id="file" name="file">
     </div>
-    <a href="" class="button-import">Import</a>
+    <button href="" class="button-import">Import</button>
   </div>
-</div>
+</form>
 <form method="POST" action="/agents/export/" class="import-box" enctype="multipart/form-data">
   {% csrf_token %}
   <div class="import-content">
