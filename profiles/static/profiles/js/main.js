@@ -1,3 +1,4 @@
+var csrftoken = $.cookie('csrftoken');
 
 $(document).ready(function () {
 	$('.date-select').datetimepicker({
@@ -12,9 +13,7 @@ $(document).ready(function () {
 	
 });
 
-
-var csrftoken = $.cookie('csrftoken');
-
+//Update date in week view
 function updateDate(day) {
 	$('#day1').html(day.format("DD/MM/YYYY"));
 	$('#day2').html(day.add(1, 'd').format("DD/MM/YYYY"));
@@ -30,12 +29,8 @@ function changeDate() {
 	updateDate(day);
 }
 
-
-function changeDay () {
-	console.log("Enter Daychange");
-	var data_s = [];
-	var date = moment($('.date-select').val().split("/").reverse().join("/")).format("YYYY-MM-DD");
-	console.log(date);
+//CSRFToken for ajax requests
+function ajaxSetup() {
 	function csrfSafeMethod(method) {
 	    // these HTTP methods do not require CSRF protection
 	    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
@@ -63,30 +58,28 @@ function changeDay () {
 	        }
 	    }
 	});
-	var send_data = {'day': date};
-	console.log(send_data);
-	//data_s.push('{"day":' + date + '}');
-	//data_s.push('{"csrfmiddlewaretoken":' + $.cookie("csrftoken") + '}');
-	$.ajax({
-		type: "POST",
-		url: "http://localhost:8000/payroll/paid/", 
-		data: send_data,
-		//contentType: "application/json; charset=utf-8",
-		dataType: "json",
-		success: function (data) {
-			console.log(data);
-			var line = '';
-			$.each(data, function(i, csr) {
-				line += '<tr>' +
-							'<td>250175</td>' +
-							'<td>' + csr.name + '</td>' + 
-							'<td>' + csr.schedule + '</td>' + 
-							'<td>' + Math.round(csr.paid_time * 10) / 10 + '</td>' + 
-							'<td>' + Math.round(csr.time_softphone *10) /10 + '</td>' +
-							'<td>' + Math.round(csr.time_avaya * 10) / 10+ '</td>' +
-							'<td>' + Math.round(csr.aux_paid *10) /10 +'</td>' +
-							'<td style="font-weight: bold;">' + Math.round(csr.paid_total *10) /10 + '</td>' +
-							'<td><select name="abbr" class="select-abbr">' +
+}
+
+//Set the attribute value for the csr in day view
+function setAttrValue(scheduled, paid) {
+	var data_send = "";
+	if(scheduled > 0) {
+		if(paid == 0) {
+			data_send = '<td><select name="abbr" class="select-abbr">' +
+								'<option value="W">W</option>' +
+								'<option value="T">T</option>' +
+								'<option value="R">R</option>' +
+								'<option value="Z">Z</option>' +
+								'<option value="H">H</option>' +
+								'<option value="V">V</option>' +
+								'<option value="O">O</option>'+
+								'<option selected value="A">A</option>'+ 
+								'<option value="I">I</option>' +
+								'<option value="U">U</option>' +
+							'</select></td>' +
+						'</tr>';
+		} else {
+			data_send = '<td><select name="abbr" class="select-abbr">' +
 								'<option value="W">W</option>' +
 								'<option value="T">T</option>' +
 								'<option value="R">R</option>' +
@@ -99,6 +92,53 @@ function changeDay () {
 								'<option value="U">U</option>' +
 							'</select></td>' +
 						'</tr>';
+		}
+	} else if (scheduled == 0) {
+		data_send = '<td><select name="abbr" class="select-abbr">' +
+								'<option value="W">W</option>' +
+								'<option value="T">T</option>' +
+								'<option selected value="R">R</option>' +
+								'<option value="Z">Z</option>' +
+								'<option value="H">H</option>' +
+								'<option value="V">V</option>' +
+								'<option value="O">O</option>'+
+								'<option value="A">A</option>'+ 
+								'<option value="I">I</option>' +
+								'<option value="U">U</option>' +
+							'</select></td>' +
+						'</tr>';
+	}
+	return data_send;
+}
+
+
+
+/*AJAX Request*/
+//Ajax request for the day view
+function changeDay () {
+	var data_s = [];
+	var date = moment($('.date-select').val().split("/").reverse().join("/")).format("YYYY-MM-DD");
+	var send_data = {'day': date};
+	ajaxSetup();
+	$.ajax({
+		type: "POST",
+		url: "http://localhost:8000/payroll/paid/", 
+		data: send_data,
+		dataType: "json",
+		success: function (data) {
+			console.log(data);
+			var line = '';
+			$.each(data, function(i, csr) {
+				line += '<tr>' +
+							'<td  class="payroll-user">250175</td>' +
+							'<td>' + csr.name + '</td>' + 
+							'<td>' + csr.schedule + '</td>' + 
+							'<td>' + Math.round(csr.paid_time * 10) / 10 + '</td>' + 
+							'<td>' + Math.round(csr.time_softphone *10) /10 + '</td>' +
+							'<td>' + Math.round(csr.time_avaya * 10) / 10+ '</td>' +
+							'<td>' + Math.round(csr.aux_paid *10) /10 +'</td>' +
+							'<td style="font-weight: bold;">' + Math.round(csr.paid_total *10) /10 + '</td>';
+				line += setAttrValue(csr.schedule, (Math.round(csr.paid_total *10) /10));			
 			});
 			$("#payday-BodyTable").html(line);
 		},
@@ -106,10 +146,26 @@ function changeDay () {
 			console.log(msg);
 		}
 	});
-	//alert("enter daychange");
 }
-/*
+
+//AJAX request for the supervisor to check the day to ok
+function checkDay() {
+	var array_id = $('.payroll-user').toArray();
+	var array_attr = $('.select-abbr').toArray();
+	ajaxSetup();
+	$.ajax({
+		type: "POST",
+		url: undefined,
+		data: JSON.stringify({id: array_id, attr: array_attr}),
+		dataType: "json",
+		success: function (data) {
+			alert(data);
+		}
+	});
+}
+
+
 window.onload = function() {
 	var day = moment().isoWeekday(1);
 	updateDate(day);
-}*/
+}

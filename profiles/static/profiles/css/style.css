@@ -249,8 +249,9 @@ table .select2-container {
 
 .import-box {
 	width: 50%;
-	height: 35%;
+	height: 240px;
 	float: left;
+	overflow: hidden;
 }
 
 .import-content {
@@ -275,6 +276,7 @@ table .select2-container {
 
 .button-import:hover {
 	color: white;
+	background-color: #D35400;
 }
 
 .import-box-title {

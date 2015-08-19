@@ -1,53 +1,64 @@
 {% extends 'occupancy/base.html' %}
 
 {% block content %}
-<form method="POST" action="/auxiliarReport/import/" enctype="multipart/form-data" class="import-box">
-  {% csrf_token %}
-  <div class="import-content">
-    <p class="import-box-title">CMS Export</p>
+<div id="global-content">
+  <div id="import-content">
     <div>
-      <input type="file" id="file" name="file">
+      <p style="text-align: center; font-size: 25px; font-weight: lighter">Imports</p>
     </div>
-    <button href="" class="button-import">Import</button>
-  </div>
-</form>
-<form method="POST" action="/agents/export/" class="import-box" enctype="multipart/form-data">
-  {% csrf_token %}
-  <div class="import-content">
-    <p class="import-box-title">Agents</p>
+    <form method="POST" action="/auxiliarReport/import/" enctype="multipart/form-data" class="import-box">
+      {% csrf_token %}
+      <div class="import-content">
+        <p class="import-box-title">CMS Export</p>
+        <div>
+          <input type="file" id="file" name="file">
+        </div>
+        <button href="" class="button-import">Import</button>
+      </div>
+    </form>
+    <form method="POST" action="/agents/export/" class="import-box" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="import-content">
+        <p class="import-box-title">Agents</p>
+        <div>
+          <input type="file" id="file" name="file">
+        </div>
+        <button class="button-import">Import</button>
+      </div>
+    </form>
+    <form method="POST" action="/scheduleReport/import/" class="import-box" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="import-content">
+        <p class="import-box-title">Schedule</p>
+        <div>
+          <input type="file" id="file" name="file">
+        </div>
+        <div class="box-date">
+          <p class="import-text-date">Date: </p>
+          <input type="text" class="date-select" name="date">
+        </div>
+        <button href="" class="button-import">Import</button>
+      </div>
+    </form>
+    <form method="POST" action="/occupancy/import/" class="import-box" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="import-content">
+        <p class="import-box-title">Occupancy</p>
+        <div>
+          <input type="file" id="file" name="file">
+        </div>
+        <div class="box-date">
+          <p class="import-text-date">Date: </p>
+          <input type="text" class="date-select" name="date">
+        </div>
+        <button class="button-import">Import</button>
+      </div>
+    </form>
     <div>
-      <input type="file" id="file" name="file">
+      <span class="success">{{success}}</span>
     </div>
-    <button class="button-import">Import</button>
   </div>
-</form>
-<form method="POST" action="/scheduleReport/import/" class="import-box" enctype="multipart/form-data">
-  <{% csrf_token %}
-  <div class="import-content">
-    <p class="import-box-title">Schedule</p>
-    <div>
-      <input type="file" id="file" name="file">
-    </div>
-    <div class="box-date">
-      <p class="import-text-date">Date: </p>
-      <input type="text" class="date-select" name="date">
-    </div>
-    <button href="" class="button-import">Import</button>
-  </div>
-</form>
-<form method="POST" action="/occupancy/import/" class="import-box" enctype="multipart/form-data">
-  {% csrf_token %}
-  <div class="import-content">
-    <p class="import-box-title">Occupancy</p>
-    <div>
-      <input type="file" id="file" name="file">
-    </div>
-    <div class="box-date">
-      <p class="import-text-date">Date: </p>
-      <input type="text" class="date-select" name="date">
-    </div>
-    <button class="button-import">Import</button>
-  </div>
-</form>
-<span class="success">{{success}}</span>
+</div>
+
+
 {% endblock content%}
