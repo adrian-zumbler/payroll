@@ -13,8 +13,9 @@ class ScheduleReportImportView(View):
 		return render(request,'sheduleReport/import.html')
 
 	def post(self,request):
-		fecha = request.POST.get('fecha')
-		data = request.FILES.get('archivo',False)
+		fecha = request.POST.get('date').split('/')
+		fecha = '%s-%s-%s' %(fecha[2],fecha[1],fecha[0])
+		data = request.FILES.get('file',False)
 		path = default_storage.save('tmp/schedule_export.txt',ContentFile(data.read()))
 		file = default_storage.open(path)
 		activity = str()

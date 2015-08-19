@@ -22,6 +22,7 @@
   </div>
 </form>
 <form method="POST" action="/scheduleReport/import/" class="import-box" enctype="multipart/form-data">
+  <{% csrf_token %}
   <div class="import-content">
     <p class="import-box-title">Schedule</p>
     <div>
@@ -29,7 +30,7 @@
     </div>
     <div class="box-date">
       <p class="import-text-date">Date: </p>
-      <input type="text" class="date-select">
+      <input type="text" class="date-select" name="date">
     </div>
     <button href="" class="button-import">Import</button>
   </div>
@@ -43,7 +44,7 @@
     </div>
     <div class="box-date">
       <p class="import-text-date">Date: </p>
-      <input type="text" class="date-select" name="fecha">
+      <input type="text" class="date-select" name="date">
     </div>
     <button class="button-import">Import</button>
   </div>
