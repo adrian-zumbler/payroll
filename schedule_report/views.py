@@ -38,7 +38,7 @@ class ScheduleReportImportView(View):
 			for x in line:
 
 				activity = x[:len(x) - ACTCOUNT]
-				if activity in ('Break','Lunch','Immediate','Green Time','Shift/Overtime Gap','General Absence'): 
+				if activity in ('Break','Lunch','Immediate','Green Time','Shift/Overtime Gap','General Absence'):
 					time = x[len(x) - TIMECOUNT:]
 					end = time[len(time)-5:]
 					start = time[:len(time)-8]
@@ -50,7 +50,7 @@ class ScheduleReportImportView(View):
 						stayTime = float(((t2.hour*60) + t2.minute)) - float(((t1.hour*60) + t1.minute))
 						start_turn = start
 						end_turn = end
-						paid_time = stayTime	
+						paid_time = stayTime
 					else:
 						activityObject = Activity.objects.get(name=activity)
 						if activity == lunch:
@@ -63,7 +63,7 @@ class ScheduleReportImportView(View):
 					stayTime = 0
 					start_turn = ''
 					end_turn = ''
-					 		
+
 			schedule = ScheduleReport.objects.create(
 				date = fecha,
 				name = unicodedata.normalize('NFKD',line[0].decode('latin-1')).encode('ASCII','ignore'),
@@ -79,16 +79,5 @@ class ScheduleReportImportView(View):
 			lunchpaid = 0
 			stayTime = 0
 			start_turn = ''
-			end_turn = '' 
-		return render(request,'sheduleReport/import.html')				
-
-
-
-				
-
-
-
-
-
-
-
+			end_turn = ''
+		return render(request,'importFiles/import.html',{'success' : 'Se cargaron los datos con exito'})
