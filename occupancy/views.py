@@ -13,7 +13,7 @@ class OccupancyImportView(View):
 		return render(request,'occupancy/import.html')
 
 	def post(self,request):
-		fecha = request.POST.get('fecha').split('/')
+		fecha = request.POST.get('date').split('/')
 		fecha = '%s-%s-%s' %(fecha[2],fecha[1],fecha[0])
 		data = request.FILES.get('file',False)
 		path = default_storage.save('tmp/occupancy.txt',ContentFile(data.read()))

@@ -89,14 +89,14 @@ WSGI_APPLICATION = 'ideal_payroll.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'db'
     }
-}
+}"""
 
-"""DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ideal_payroll',
@@ -105,7 +105,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '',
     }
-}"""
+}
 
 
 # Internationalization

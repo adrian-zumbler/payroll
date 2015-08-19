@@ -53,12 +53,15 @@ class ScheduleReportImportView(View):
 						end_turn = end
 						paid_time = stayTime
 					else:
-						activityObject = Activity.objects.get(name=activity)
-						if activity == lunch:
-								lunchpaid = (float(((t2.hour*60) + t2.minute)) - float(((t1.hour*60) + t1.minute)))
-								stayTime = stayTime - lunchpaid
-						if activityObject.paid == False:
-							NoPaidTime += float(((t2.hour*60) + t2.minute)) - float(((t1.hour*60) + t1.minute))
+						try:
+							activityObject = Activity.objects.get(name=activity)
+							if activity == lunch:
+									lunchpaid = (float(((t2.hour*60) + t2.minute)) - float(((t1.hour*60) + t1.minute)))
+									stayTime = stayTime - lunchpaid
+							if activityObject.paid == False:
+								NoPaidTime += float(((t2.hour*60) + t2.minute)) - float(((t1.hour*60) + t1.minute))
+						except:
+							pass		
 				if x == 'Off':
 					paid_time = 0
 					stayTime = 0
