@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.views.generic import View
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 
 class ProfileLoginView(View):
@@ -18,4 +18,10 @@ class ProfileLoginView(View):
 				login(request,user)
 				return redirect('/payroll/day')
 		else:
-			return redirect('/profile/login',)
+			return redirect('/profile/login')
+
+class ProfileLogoutView(View):
+
+	def get(self, request):
+		logout(request)
+		return redirect('/profile/login')
