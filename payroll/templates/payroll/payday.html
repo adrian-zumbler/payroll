@@ -1,28 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {% load staticfiles %}
-    <title>Payroll</title>
-    <link rel="stylesheet" href="{% static "profiles/css/normalize.css" %}">
-    <link rel="stylesheet" href="{% static "profiles/css/foundation.css" %}">
-    <link rel="stylesheet" href="{% static "profiles/css/select2.min.css" %}">
-    <link rel="stylesheet" href="{% static "profiles/css/style.css" %}">
-    <link rel="stylesheet" href="{% static "profiles/css/jquery.datetimepicker.css" %}">
+{% extends 'occupancy/base.html' %}
 
-
-
-
-</head>
-<body>
-	<div id="nav">
-		<div class="row">
-			<div class="large-12 large-centered columns">
-				<p style="text-align: center; font-weight: bold;">PAYROLL</p>
-			</div>
-		</div>
-	</div>
+{% block content %}
+<div class="global-content">
 	<div id="content-day">
 		<p id="super-text">{{request.user.first_name }} {{ request.user.last_name }}</p>
 		<div id="fecha">
@@ -56,19 +35,5 @@
 			</div>
 		</div>
 	</div>
-
-	<script src="{% static "profiles/js/vendor/jquery.js" %}"></script>
-    <script src="{% static "profiles/js/foundation.min.js" %}"></script>
-    <script src="{% static "profiles/js/moment.js" %}"></script>
-    <script src="{% static "profiles/js/select2.full.min.js" %}"></script>
-    <script src="{% static "profiles/js/jquery.datetimepicker.js" %}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-    <script src="{% static "profiles/js/main.js" %}"></script>
-	<script>
-	    moment().format();
-	</script>
-    <script>
-      $(document).foundation();
-    </script>
-</body>
-</html>
+</div>
+{% endblock content%}

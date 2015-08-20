@@ -1,4 +1,4 @@
-var csrftoken = $.cookie('csrftoken');
+
 
 $(document).ready(function () {
 	$('.date-select').datetimepicker({
@@ -6,6 +6,7 @@ $(document).ready(function () {
 		format: 'd/m/Y'
 	});
 	$('.select-abbr').select2();
+	$('.menu').dropit();
 	$('#payday-Reload').click(function (event) {
 		event.preventDefault();
 		changeDay();
@@ -13,6 +14,7 @@ $(document).ready(function () {
 	
 });
 
+//var csrftoken = $.cookie('csrftoken');
 //Update date in week view
 function updateDate(day) {
 	$('#day1').html(day.format("DD/MM/YYYY"));
@@ -54,7 +56,7 @@ function ajaxSetup() {
 	            // Send the token to same-origin, relative URLs only.
 	            // Send the token only if the method warrants CSRF protection
 	            // Using the CSRFToken value acquired earlier
-	            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+	            xhr.setRequestHeader("X-CSRFToken", $.cookie('csrftoken'));
 	        }
 	    }
 	});
@@ -126,7 +128,6 @@ function changeDay () {
 		data: send_data,
 		dataType: "json",
 		success: function (data) {
-			console.log(data);
 			var line = '';
 			$.each(data, function(i, csr) {
 				line += '<tr>' +
