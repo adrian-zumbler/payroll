@@ -22,7 +22,10 @@ class ProfileLoginView(View):
 		if user is not None:
 			if user.is_active:
 				login(request,user)
-				return redirect('/payroll/day/')
+				if request.GET.get('next',False):
+					return redirect(request.GET.get('next'))
+				else:
+					return redirect('/payroll/day/')
 		else:
 			return redirect('/profile/login')
 
