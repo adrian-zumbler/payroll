@@ -11,7 +11,7 @@ $(document).ready(function () {
 		event.preventDefault();
 		changeDay();
 	});
-	
+
 });
 
 //var csrftoken = $.cookie('csrftoken');
@@ -75,7 +75,7 @@ function setAttrValue(scheduled, paid) {
 								'<option value="H">H</option>' +
 								'<option value="V">V</option>' +
 								'<option value="O">O</option>'+
-								'<option selected value="A">A</option>'+ 
+								'<option selected value="A">A</option>'+
 								'<option value="I">I</option>' +
 								'<option value="U">U</option>' +
 							'</select></td>' +
@@ -89,7 +89,7 @@ function setAttrValue(scheduled, paid) {
 								'<option value="H">H</option>' +
 								'<option value="V">V</option>' +
 								'<option value="O">O</option>'+
-								'<option value="A">A</option>'+ 
+								'<option value="A">A</option>'+
 								'<option value="I">I</option>' +
 								'<option value="U">U</option>' +
 							'</select></td>' +
@@ -104,7 +104,7 @@ function setAttrValue(scheduled, paid) {
 								'<option value="H">H</option>' +
 								'<option value="V">V</option>' +
 								'<option value="O">O</option>'+
-								'<option value="A">A</option>'+ 
+								'<option value="A">A</option>'+
 								'<option value="I">I</option>' +
 								'<option value="U">U</option>' +
 							'</select></td>' +
@@ -124,7 +124,7 @@ function changeDay () {
 	ajaxSetup();
 	$.ajax({
 		type: "POST",
-		url: "http://localhost:8000/payroll/paid/", 
+		url: "http://localhost:8000/payroll/paid/",
 		data: send_data,
 		dataType: "json",
 		success: function (data) {
@@ -132,14 +132,14 @@ function changeDay () {
 			$.each(data, function(i, csr) {
 				line += '<tr>' +
 							'<td  class="payroll-user">250175</td>' +
-							'<td>' + csr.name + '</td>' + 
-							'<td>' + csr.schedule + '</td>' + 
-							'<td>' + Math.round(csr.paid_time * 10) / 10 + '</td>' + 
+							'<td>' + csr.name + '</td>' +
+							'<td>' + csr.schedule + '</td>' +
+							'<td>' + Math.round(csr.paid_time * 10) / 10 + '</td>' +
 							'<td>' + Math.round(csr.time_softphone *10) /10 + '</td>' +
 							'<td>' + Math.round(csr.time_avaya * 10) / 10+ '</td>' +
 							'<td>' + Math.round(csr.aux_paid *10) /10 +'</td>' +
 							'<td style="font-weight: bold;">' + Math.round(csr.paid_total *10) /10 + '</td>';
-				line += setAttrValue(csr.schedule, (Math.round(csr.paid_total *10) /10));			
+				line += setAttrValue(csr.schedule, (Math.round(csr.paid_total *10) /10));
 			});
 			$("#payday-BodyTable").html(line);
 		},

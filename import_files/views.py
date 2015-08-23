@@ -6,6 +6,9 @@ class ImportView(View):
 
     def get(self,request):
         if request.user.is_authenticated():
-			return render(request, 'importFiles/import.html')
+            if request.user.is_staff:
+                return render(request, 'importFiles/import.html')
+            else:
+                return redirect(settings.LOGIN_URL)    
         else:
 			return redirect('%s?next=%s' % (settings.LOGIN_URL,request.path))
