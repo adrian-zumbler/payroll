@@ -12,6 +12,7 @@ from django.template.response import TemplateResponse
 import pdb
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
+from .models import Payroll
 
 
 
@@ -23,9 +24,9 @@ class PayrollView(View):
 		print request.POST
 		CARTERA_PAID = 'Cartera Desborde'
 		if request.user.is_staff:
-			agents = Agent.objects.all()
+			agents = Agent.objects.all().filter(status='Activo')
 		else:
-			agents = Agent.objects.all().filter(user__username=request.user.username)
+			agents = Agent.objects.all().filter(user__username=request.user.username).filter(status='Activo')
 		for agent in agents:
 			data = {}
 			data['schedule'] = 0
@@ -35,6 +36,7 @@ class PayrollView(View):
 			data['aux_paid'] = 0
 			data['time_softphone'] = 0
 			data['name'] = '%s %s' % (agent.first_name,agent.last_name)
+			data['payroll_number'] =  agent.payroll_number
 			if agent.id_softphone != "":
 				occupancy = Occupancy.objects.all().filter(id_softphone = agent.id_softphone).filter(date=day)
 

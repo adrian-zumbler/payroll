@@ -11,6 +11,9 @@ $(document).ready(function () {
 		event.preventDefault();
 		changeDay();
 	});
+	$('#comment-button').click(function(){
+		$('.comment-content').toggle();
+	})
 
 });
 
@@ -75,7 +78,7 @@ function setAttrValue(scheduled, paid) {
 								'<option value="H">H</option>' +
 								'<option value="V">V</option>' +
 								'<option value="O">O</option>'+
-								'<option selected value="A">A</option>'+
+								'<option class="selected" selected value="A">A</option>'+
 								'<option value="I">I</option>' +
 								'<option value="U">U</option>' +
 							'</select></td>' +
@@ -99,7 +102,7 @@ function setAttrValue(scheduled, paid) {
 		data_send = '<td><select name="abbr" class="select-abbr">' +
 								'<option value="W">W</option>' +
 								'<option value="T">T</option>' +
-								'<option selected value="R">R</option>' +
+								'<option class="selected" selected value="R">R</option>' +
 								'<option value="Z">Z</option>' +
 								'<option value="H">H</option>' +
 								'<option value="V">V</option>' +
@@ -131,7 +134,7 @@ function changeDay () {
 			var line = '';
 			$.each(data, function(i, csr) {
 				line += '<tr>' +
-							'<td  class="payroll-user">250175</td>' +
+							'<td  class="payroll-user">'+ csr.payroll_number +'</td>' +
 							'<td>' + csr.name + '</td>' +
 							'<td>' + csr.schedule + '</td>' +
 							'<td>' + Math.round(csr.paid_time * 10) / 10 + '</td>' +
