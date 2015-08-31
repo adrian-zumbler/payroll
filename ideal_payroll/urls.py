@@ -28,7 +28,7 @@ urlpatterns = [
     url(r'^payroll/', include('payroll.urls',namespace="payroll")),
     url(r'^profile/', include('profiles.urls',namespace="profiles")),
     url(r'^import/',include('import_files.urls',namespace="import_files")),
-    url(r'^validate/',include('validate_payroll.urls',namespace="validate")),
+    url(r'^validate/',include('validate_payroll.urls',namespace="validate_payroll")),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^__debug__/', include(debug_toolbar.urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -15,7 +15,9 @@ $(document).ready(function () {
 		$('.comment-content').toggle();
 	});
 	$('#checkpay').click(function(){
+		saveValidate();
 		savePayroll();
+
 	});
 
 });
@@ -216,7 +218,7 @@ function validatePayroll(){
 	ajaxSetup();
 	$.ajax({
 			type: "POST",
-			url: "http://localhost:8000/validate/",
+			url: "http://localhost:8000/validate/status/",
 			async: false,
 			data: send_data,
 			dataType: "json",
@@ -230,6 +232,25 @@ function validatePayroll(){
 
 function test() {
 	return validatePayroll();
+}
+
+function saveValidate() {
+	var date = moment($('.date-select').val().split("/").reverse().join("/")).format("YYYY-MM-DD");
+	var send_data = {'day': date};
+	var ret;
+	ajaxSetup();
+	$.ajax({
+			type: "POST",
+			url: "http://localhost:8000/validate/save/",
+			async: false,
+			data: send_data,
+			dataType: "json",
+			success: function(data) {
+				ret = data.status;
+				//console.log(ret);
+			}
+		});
+	return ret;
 }
 
 
