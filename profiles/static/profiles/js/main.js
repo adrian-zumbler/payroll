@@ -1,7 +1,6 @@
-
+var validate;
 
 $(document).ready(function () {
-	var validate;
 	$('.date-select').datetimepicker({
 		timepicker: false,
 		format: 'd/m/Y'
@@ -131,11 +130,7 @@ function changeDay () {
 	ajaxSetup();
 	$.ajax({
 		type: "POST",
-<<<<<<< HEAD
-		url: "http://172.31.48.248:8000/payroll/paid/", 
-=======
 		url: "http://localhost:8000/payroll/paid/",
->>>>>>> 961c02ecd8d922af191c2f3074c25ff5c0219d89
 		data: send_data,
 		dataType: "json",
 		success: function (data) {
@@ -214,22 +209,31 @@ function savePayroll() {
 
 
 
-function validatePayroll(handleData){
-
+function validatePayroll(){
 	var date = moment($('.date-select').val().split("/").reverse().join("/")).format("YYYY-MM-DD");
 	var send_data = {'day': date};
+	var ret;
 	ajaxSetup();
 	$.ajax({
 			type: "POST",
 			url: "http://localhost:8000/validate/",
+			async: false,
 			data: send_data,
 			dataType: "json",
 			success: function(data) {
-				handleData(data);
+				ret = data.exist;
+				//console.log(ret);
 			}
 		});
+	return ret;
 }
 
+function test() {
+	return validatePayroll();
+}
+
+
+/*
 function validateState() {
 	var s;
 	validatePayroll(function(output){
@@ -238,10 +242,7 @@ function validateState() {
 	});
 	return s;
 }
-
-
-
-
+*/
 
 window.onload = function() {
 	var day = moment().isoWeekday(1);
