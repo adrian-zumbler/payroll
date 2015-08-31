@@ -30,10 +30,19 @@
 				<tbody id="payday-BodyTable">
 				</tbody>
 			</table>
+			{% if request.user.is_staff %}
+			{% else %}
 			<div>
-				<a href="#" id="checkpay">Check</a>
+				<button id="checkpay" class="button-orange" >Check</button>
+				<button id="comment-button" class="button-orange">Comentario</button>
 			</div>
+			<div class="comment-content">
+				<textarea class="comment" name="comment" rows="8" cols="40"></textarea>
+			</div>
+
+			{% endif %}
 		</div>
+
 	</div>
 </div>
 {% endblock content%}

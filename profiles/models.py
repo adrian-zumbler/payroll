@@ -7,6 +7,6 @@ class Profile(models.Model):
 	phone = models.CharField(max_length=255)
 	user = models.OneToOneField(User)
 
-	
+
 
 # Create your models here.

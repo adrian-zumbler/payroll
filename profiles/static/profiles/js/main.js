@@ -1,6 +1,7 @@
 
 
 $(document).ready(function () {
+	var validate;
 	$('.date-select').datetimepicker({
 		timepicker: false,
 		format: 'd/m/Y'
@@ -11,7 +12,13 @@ $(document).ready(function () {
 		event.preventDefault();
 		changeDay();
 	});
-	
+	$('#comment-button').click(function(){
+		$('.comment-content').toggle();
+	});
+	$('#checkpay').click(function(){
+		savePayroll();
+	});
+
 });
 
 //var csrftoken = $.cookie('csrftoken');
@@ -75,21 +82,21 @@ function setAttrValue(scheduled, paid) {
 								'<option value="H">H</option>' +
 								'<option value="V">V</option>' +
 								'<option value="O">O</option>'+
-								'<option selected value="A">A</option>'+ 
+								'<option class="selected" selected value="A">A</option>'+
 								'<option value="I">I</option>' +
 								'<option value="U">U</option>' +
 							'</select></td>' +
 						'</tr>';
 		} else {
 			data_send = '<td><select name="abbr" class="select-abbr">' +
-								'<option value="W">W</option>' +
+								'<option class="selected value="W">W</option>' +
 								'<option value="T">T</option>' +
 								'<option value="R">R</option>' +
 								'<option value="Z">Z</option>' +
 								'<option value="H">H</option>' +
 								'<option value="V">V</option>' +
 								'<option value="O">O</option>'+
-								'<option value="A">A</option>'+ 
+								'<option value="A">A</option>'+
 								'<option value="I">I</option>' +
 								'<option value="U">U</option>' +
 							'</select></td>' +
@@ -99,12 +106,12 @@ function setAttrValue(scheduled, paid) {
 		data_send = '<td><select name="abbr" class="select-abbr">' +
 								'<option value="W">W</option>' +
 								'<option value="T">T</option>' +
-								'<option selected value="R">R</option>' +
+								'<option class="selected" selected value="R">R</option>' +
 								'<option value="Z">Z</option>' +
 								'<option value="H">H</option>' +
 								'<option value="V">V</option>' +
 								'<option value="O">O</option>'+
-								'<option value="A">A</option>'+ 
+								'<option value="A">A</option>'+
 								'<option value="I">I</option>' +
 								'<option value="U">U</option>' +
 							'</select></td>' +
@@ -124,22 +131,26 @@ function changeDay () {
 	ajaxSetup();
 	$.ajax({
 		type: "POST",
+<<<<<<< HEAD
 		url: "http://172.31.48.248:8000/payroll/paid/", 
+=======
+		url: "http://localhost:8000/payroll/paid/",
+>>>>>>> 961c02ecd8d922af191c2f3074c25ff5c0219d89
 		data: send_data,
 		dataType: "json",
 		success: function (data) {
 			var line = '';
 			$.each(data, function(i, csr) {
 				line += '<tr>' +
-							'<td  class="payroll-user">250175</td>' +
-							'<td>' + csr.name + '</td>' + 
-							'<td>' + csr.schedule + '</td>' + 
-							'<td>' + Math.round(csr.paid_time * 10) / 10 + '</td>' + 
+							'<td  class="payroll-user">'+ csr.payroll_number +'</td>' +
+							'<td>' + csr.name + '</td>' +
+							'<td>' + csr.schedule + '</td>' +
+							'<td>' + Math.round(csr.paid_time * 10) / 10 + '</td>' +
 							'<td>' + Math.round(csr.time_softphone *10) /10 + '</td>' +
 							'<td>' + Math.round(csr.time_avaya * 10) / 10+ '</td>' +
 							'<td>' + Math.round(csr.aux_paid *10) /10 +'</td>' +
 							'<td style="font-weight: bold;">' + Math.round(csr.paid_total *10) /10 + '</td>';
-				line += setAttrValue(csr.schedule, (Math.round(csr.paid_total *10) /10));			
+				line += setAttrValue(csr.schedule, (Math.round(csr.paid_total *10) /10));
 			});
 			$("#payday-BodyTable").html(line);
 		},
@@ -150,20 +161,86 @@ function changeDay () {
 }
 
 //AJAX request for the supervisor to check the day to ok
-function checkDay() {
-	var array_id = $('.payroll-user').toArray();
-	var array_attr = $('.select-abbr').toArray();
+function savePayroll() {
+	$father = document.getElementById('payday-BodyTable');
+	var date = moment($('.date-select').val().split("/").reverse().join("/")).format("YYYY-MM-DD");
+	var payroll_number;
+	var name;
+	var schedule;
+	var adjusted;
+	var softphone;
+	var avaya;
+	var aux;
+	var paid_total;
+	var status;
+	ajaxSetup();
+	for(x = 0; x < $father.children.length;x++){
+		payroll_number = $father.children[x].children[0].innerText;
+		name = $father.children[x].children[1].innerText;
+		schedule = parseFloat($father.children[x].children[2].innerText);
+		adjusted = parseFloat($father.children[x].children[3].innerText);
+		softphone =  parseFloat($father.children[x].children[4].innerText);
+		avaya =  parseFloat($father.children[x].children[5].innerText);
+		aux =  parseFloat($father.children[x].children[6].innerText);
+		paid_total =  parseFloat($father.children[x].children[7].innerText);
+		status = $father.children[x].children[8].children[0].getElementsByClassName('selected')[0].value;
+		var send_data = {
+			'day' : date,
+			'payroll_number': payroll_number,
+			'name': name,
+			'schedule':schedule,
+			'adjusted': adjusted,
+			'softphone':softphone,
+			'avaya': avaya,
+			'aux': aux,
+			'paid_total': paid_total,
+			'status': status
+		}
+		$.ajax({
+			type: "POST",
+			url: "http://localhost:8000/payroll/save/",
+			data: send_data,
+			dataType: "json",
+			success: function (data) {
+				console.log('Se enviaron con exitos los datos')
+			},
+			fail: function(msg) {
+				console.log(msg);
+			}
+		});
+
+	}
+}
+
+
+
+function validatePayroll(handleData){
+
+	var date = moment($('.date-select').val().split("/").reverse().join("/")).format("YYYY-MM-DD");
+	var send_data = {'day': date};
 	ajaxSetup();
 	$.ajax({
-		type: "POST",
-		url: undefined,
-		data: JSON.stringify({id: array_id, attr: array_attr}),
-		dataType: "json",
-		success: function (data) {
-			alert(data);
-		}
-	});
+			type: "POST",
+			url: "http://localhost:8000/validate/",
+			data: send_data,
+			dataType: "json",
+			success: function(data) {
+				handleData(data);
+			}
+		});
 }
+
+function validateState() {
+	var s;
+	validatePayroll(function(output){
+		console.log(output);
+		s = output;
+	});
+	return s;
+}
+
+
+
 
 
 window.onload = function() {
