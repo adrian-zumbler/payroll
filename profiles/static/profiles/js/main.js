@@ -124,7 +124,7 @@ function changeDay () {
 	ajaxSetup();
 	$.ajax({
 		type: "POST",
-		url: "http://localhost:8000/payroll/paid/", 
+		url: "http://172.31.48.248:8000/payroll/paid/", 
 		data: send_data,
 		dataType: "json",
 		success: function (data) {

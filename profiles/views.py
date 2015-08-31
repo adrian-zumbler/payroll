@@ -7,7 +7,13 @@ from django.contrib.auth import authenticate, login, logout
 class ProfileLoginView(View):
 
 	def get(self,request):
-		return render(request,'profiles/login.html')
+
+		if request.GET.get('next',False):
+			return render(request,'profiles/login.html',{'next' : request.GET['next']})
+		else:
+			return render(request,'profiles/login.html')
+
+
 
 	def post(self,request):
 		username = request.POST.get('username')
@@ -16,7 +22,7 @@ class ProfileLoginView(View):
 		if user is not None:
 			if user.is_active:
 				login(request,user)
-				return redirect('/payroll/day')
+				return redirect('/payroll/day/')
 		else:
 			return redirect('/profile/login')
 
