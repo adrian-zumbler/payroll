@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'payroll',
     'import_files',
     'period',
+    'validate_payroll'
 )
 
 

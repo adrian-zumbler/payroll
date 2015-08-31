@@ -9,6 +9,6 @@ class ImportView(View):
             if request.user.is_staff:
                 return render(request, 'importFiles/import.html')
             else:
-                return redirect(settings.LOGIN_URL)    
+                return redirect(settings.LOGIN_URL)
         else:
 			return redirect('%s?next=%s' % (settings.LOGIN_URL,request.path))

@@ -1,6 +1,7 @@
 
 
 $(document).ready(function () {
+	var validate;
 	$('.date-select').datetimepicker({
 		timepicker: false,
 		format: 'd/m/Y'
@@ -13,7 +14,10 @@ $(document).ready(function () {
 	});
 	$('#comment-button').click(function(){
 		$('.comment-content').toggle();
-	})
+	});
+	$('#checkpay').click(function(){
+		savePayroll();
+	});
 
 });
 
@@ -85,7 +89,7 @@ function setAttrValue(scheduled, paid) {
 						'</tr>';
 		} else {
 			data_send = '<td><select name="abbr" class="select-abbr">' +
-								'<option value="W">W</option>' +
+								'<option class="selected value="W">W</option>' +
 								'<option value="T">T</option>' +
 								'<option value="R">R</option>' +
 								'<option value="Z">Z</option>' +
@@ -153,20 +157,86 @@ function changeDay () {
 }
 
 //AJAX request for the supervisor to check the day to ok
-function checkDay() {
-	var array_id = $('.payroll-user').toArray();
-	var array_attr = $('.select-abbr').toArray();
+function savePayroll() {
+	$father = document.getElementById('payday-BodyTable');
+	var date = moment($('.date-select').val().split("/").reverse().join("/")).format("YYYY-MM-DD");
+	var payroll_number;
+	var name;
+	var schedule;
+	var adjusted;
+	var softphone;
+	var avaya;
+	var aux;
+	var paid_total;
+	var status;
+	ajaxSetup();
+	for(x = 0; x < $father.children.length;x++){
+		payroll_number = $father.children[x].children[0].innerText;
+		name = $father.children[x].children[1].innerText;
+		schedule = parseFloat($father.children[x].children[2].innerText);
+		adjusted = parseFloat($father.children[x].children[3].innerText);
+		softphone =  parseFloat($father.children[x].children[4].innerText);
+		avaya =  parseFloat($father.children[x].children[5].innerText);
+		aux =  parseFloat($father.children[x].children[6].innerText);
+		paid_total =  parseFloat($father.children[x].children[7].innerText);
+		status = $father.children[x].children[8].children[0].getElementsByClassName('selected')[0].value;
+		var send_data = {
+			'day' : date,
+			'payroll_number': payroll_number,
+			'name': name,
+			'schedule':schedule,
+			'adjusted': adjusted,
+			'softphone':softphone,
+			'avaya': avaya,
+			'aux': aux,
+			'paid_total': paid_total,
+			'status': status
+		}
+		$.ajax({
+			type: "POST",
+			url: "http://localhost:8000/payroll/save/",
+			data: send_data,
+			dataType: "json",
+			success: function (data) {
+				console.log('Se enviaron con exitos los datos')
+			},
+			fail: function(msg) {
+				console.log(msg);
+			}
+		});
+
+	}
+}
+
+
+
+function validatePayroll(handleData){
+
+	var date = moment($('.date-select').val().split("/").reverse().join("/")).format("YYYY-MM-DD");
+	var send_data = {'day': date};
 	ajaxSetup();
 	$.ajax({
-		type: "POST",
-		url: undefined,
-		data: JSON.stringify({id: array_id, attr: array_attr}),
-		dataType: "json",
-		success: function (data) {
-			alert(data);
-		}
-	});
+			type: "POST",
+			url: "http://localhost:8000/validate/",
+			data: send_data,
+			dataType: "json",
+			success: function(data) {
+				handleData(data);
+			}
+		});
 }
+
+function validateState() {
+	var s;
+	validatePayroll(function(output){
+		console.log(output);
+		s = output;
+	});
+	return s;
+}
+
+
+
 
 
 window.onload = function() {
