@@ -1,0 +1,111 @@
+{% extends 'occupancy/base.html' %}
+
+{% block content %}
+<div class="global-content">
+	<div id="week-content">
+		<p id="super-text">Daniel Ruiz</p>
+		<div id="fecha">
+			<p style="width: 150px; float: left;">Start date of week:</p>
+			<select name="" id="date-select" style="width: 150px; float: left;" class="date-select">
+				<option value="24/08/2015">24/07/2015</option>
+			</select>
+			<a href="javascript:changeDate();">Reload</a>
+		</div>
+
+		<br>
+		<br>
+		<div id="content-table">
+			<table>
+				<thead>
+					<tr>
+						<th>Payroll ID</th>
+						<th>Name</th>
+						<th>Scheduled Time</th>
+						<th>Monday<span id="day1"></span></th>
+						<th>Tuesday<span id="day2"></span></th>
+						<th>Wednesday<span id="day3"></span></th>
+						<th>Thursday<span id="day4"></span></th>
+						<th>Friday<span id="day5"></span></th>
+						<th>Saturday<span id="day6"></span></th>
+						<th>Sunday<span id="day7"></span></th>
+						<th>Paid Hours</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>250175</td>
+						<td>Tony Ordoñez</td>
+						<td>25.0</td>
+						<td>6.0</td>
+						<td>5.0</td>
+						<td>4.0</td>
+						<td>5.0</td>
+						<td>3.0</td>
+						<td>0.0</td>
+						<td>0.0</td>
+						<td>48.0</td>
+					</tr>
+					<tr>
+						<td>250175</td>
+						<td>Tony Ordoñez</td>
+						<td>25.0</td>
+						<td>6.0</td>
+						<td>5.0</td>
+						<td>4.0</td>
+						<td>5.0</td>
+						<td>3.0</td>
+						<td>0.0</td>
+						<td>0.0</td>
+						<td>48.0</td>
+					</tr>
+					<tr>
+						<td>250175</td>
+						<td>Tony Ordoñez</td>
+						<td>25.0</td>
+						<td>6.0</td>
+						<td>5.0</td>
+						<td>4.0</td>
+						<td>5.0</td>
+						<td>3.0</td>
+						<td>0.0</td>
+						<td>0.0</td>
+						<td>48.0</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div id="detail">
+		<div id="detail-content">
+			<div id="title-detail">
+				<p>Tony Ordoñez</p>
+			</div>
+			<div>
+				<div class="detail-box">
+					<p>AHT</p>
+					<p class="yellow">10:25</p>
+				</div>
+				<div class="detail-box">
+					<p>Scheduled Time</p>
+					<p class="green">5:00</p>
+				</div>
+				<div class="detail-box">
+					<p>Auxiliar Time</p>
+					<p class="red">1:25</p>
+				</div>
+				<div class="detail-box">
+					<p>Softphone Time</p>
+					<p>3:45</p>
+				</div>
+				<div class="detail-box">
+					<p>QA Score</p>
+					<p class="">70%</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+
+{% endblock content%}

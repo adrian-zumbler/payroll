@@ -14,7 +14,7 @@ $(document).ready(function () {
 	$('#comment-button').click(function(){
 		$('.comment-content').toggle();
 	});
-	$('#checkpay').click(function(){
+	$('#payday-check').click(function(){
 		savePayroll();
 	});
 
@@ -148,8 +148,11 @@ function changeDay () {
 				line += setAttrValue(csr.schedule, (Math.round(csr.paid_total *10) /10));
 			});
 			$("#payday-BodyTable").html(line);
-		},
-		fail: function(msg) {
+			if(validateState() == true) {
+				$('#payday-check').prop("disabled", true).html("Ready");
+			}
+		}
+		,fail: function(msg) {
 			console.log(msg);
 		}
 	});
@@ -170,14 +173,14 @@ function savePayroll() {
 	var status;
 	ajaxSetup();
 	for(x = 0; x < $father.children.length;x++){
-		payroll_number = $father.children[x].children[0].innerText;
-		name = $father.children[x].children[1].innerText;
-		schedule = parseFloat($father.children[x].children[2].innerText);
-		adjusted = parseFloat($father.children[x].children[3].innerText);
-		softphone =  parseFloat($father.children[x].children[4].innerText);
-		avaya =  parseFloat($father.children[x].children[5].innerText);
-		aux =  parseFloat($father.children[x].children[6].innerText);
-		paid_total =  parseFloat($father.children[x].children[7].innerText);
+		payroll_number = $father.children[x].children[0].innerHTML;
+		name = $father.children[x].children[1].innerHTML;
+		schedule = parseFloat($father.children[x].children[2].innerHTML);
+		adjusted = parseFloat($father.children[x].children[3].innerHTML);
+		softphone =  parseFloat($father.children[x].children[4].innerHTML);
+		avaya =  parseFloat($father.children[x].children[5].innerHTML);
+		aux =  parseFloat($father.children[x].children[6].innerHTML);
+		paid_total =  parseFloat($father.children[x].children[7].innerHTML);
 		status = $father.children[x].children[8].children[0].getElementsByClassName('selected')[0].value;
 		var send_data = {
 			'day' : date,
@@ -191,6 +194,8 @@ function savePayroll() {
 			'paid_total': paid_total,
 			'status': status
 		}
+		//console.log(send_data);
+		
 		$.ajax({
 			type: "POST",
 			url: "http://localhost:8000/payroll/save/",
@@ -203,7 +208,7 @@ function savePayroll() {
 				console.log(msg);
 			}
 		});
-
+			
 	}
 }
 
@@ -228,7 +233,7 @@ function validatePayroll(){
 	return ret;
 }
 
-function test() {
+function validateState() {
 	return validatePayroll();
 }
 
