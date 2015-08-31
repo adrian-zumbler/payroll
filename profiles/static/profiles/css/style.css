@@ -110,12 +110,12 @@ body {
 	border-radius: 4px;
 }
 
-/*main.html*/
+/*payweek.html*/
 
 span {
 	display: block;
 }
-#content {
+#week-content {
 	width: 85%;
 	float: left;
 }
@@ -175,6 +175,7 @@ tr:nth-child(even) {
 #detail {
 	width: 14%;
 	float: right;
+	margin-top: -11px;
 
 }
 

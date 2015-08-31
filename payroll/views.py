@@ -124,3 +124,12 @@ class PayrollDayView(View):
 			return render(request,'payroll/payday.html')
 		else:
 			return redirect('%s?next=%s' % (settings.LOGIN_URL,request.path))
+
+
+class PayrollWeekView(View):
+
+	def get(self, request):
+		if request.user.is_authenticated():
+			return render(request, 'payroll/payweek.html')
+		else:
+			return redirect('%s?next=%s' % (settings.LOGIN_URL,request.path))
