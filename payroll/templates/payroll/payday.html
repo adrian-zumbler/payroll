@@ -34,10 +34,11 @@
 			{% else %}
 			<div>
 				<button id="payday-check" class="button-orange">Check</button>
-				<button id="comment-button" class="button-orange">Comentario</button>
+				<button id="comment-button" class="button-orange">Comment</button>
 			</div>
 			<div class="comment-content">
-				<textarea class="comment" name="comment" rows="8" cols="40"></textarea>
+				<textarea class="comment" name="comment" id="comment-text" rows="8" cols="40"></textarea>
+				<button id="send-comment" class="button-orange">Send Comment</button>
 			</div>
 
 			{% endif %}

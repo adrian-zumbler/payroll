@@ -20,6 +20,9 @@ $(document).ready(function () {
 		savePayroll();
 
 	});
+	$('#send-comment').click(function(){
+		saveComment()
+	})
 
 });
 
@@ -260,6 +263,32 @@ function saveValidate() {
 		});
 	return ret;
 }
+
+function saveComment() {
+	var date = moment($('.date-select').val().split("/").reverse().join("/")).format("YYYY-MM-DD");
+	var $text = $('#comment-text').val()
+	var send_data = {
+		'day': date,
+		'comment': $text
+	};
+	var ret;
+	ajaxSetup();
+	$.ajax({
+			type: "POST",
+			url: "http://localhost:8000/comments/create/",
+			async: false,
+			data: send_data,
+			dataType: "json",
+			success: function(data) {
+				$('.comment-content').hide();
+				ret = data.success;
+				alert(ret);
+			}
+		});
+	return ret;
+}
+
+
 
 
 /*

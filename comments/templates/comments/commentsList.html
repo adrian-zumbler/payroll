@@ -1,0 +1,15 @@
+{% extends 'occupancy/base.html' %}
+
+{% block content %}
+{% for comment in comments_list%}
+  <div class="">
+    {{comment.text}}
+  </div>
+  <div class="">
+    {{comment.date}}
+  </div>
+  <div class="">
+    {{comment.user.username}}  
+  </div>
+{% endfor %}
+{% endblock content%}
