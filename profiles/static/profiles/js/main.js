@@ -19,6 +19,12 @@ $(document).ready(function () {
 		saveValidate();
 		savePayroll();
 
+<<<<<<< HEAD
+	});
+	$('#send-comment').click(function(){
+		saveComment();
+=======
+>>>>>>> 9aeae14766874c083d999a2e2f2f89510d05353f
 	});
 	$('#send-comment').click(function(){
 		saveComment()
@@ -263,6 +269,8 @@ function saveValidate() {
 		});
 	return ret;
 }
+<<<<<<< HEAD
+=======
 
 function saveComment() {
 	var date = moment($('.date-select').val().split("/").reverse().join("/")).format("YYYY-MM-DD");
@@ -290,17 +298,34 @@ function saveComment() {
 
 
 
+>>>>>>> 9aeae14766874c083d999a2e2f2f89510d05353f
 
-/*
-function validateState() {
-	var s;
-	validatePayroll(function(output){
-		console.log(output);
-		s = output;
-	});
-	return s;
+function saveComment() {
+	var date = moment($('.date-select').val().split("/").reverse().join("/")).format("YYYY-MM-DD");
+	var $text = $('#comment-text').val();
+	var send_data = {
+		'day': date,
+		'comment': $text
+	};
+	var ret;
+	ajaxSetup();
+	$.ajax({
+			type: "POST",
+			url: "http://localhost:8000/comments/create/",
+			async: false,
+			data: send_data,
+			dataType: "json",
+			success: function(data) {
+				$('.comment-content').hide();
+				ret = data.success;
+				alert(ret);
+			}
+		});
+	return ret;
 }
-*/
+
+
+
 
 window.onload = function() {
 	var day = moment().isoWeekday(1);

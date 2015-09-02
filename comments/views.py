@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.views.generic import View, ListView
+
 from django.http import JsonResponse, HttpResponse
 from django.contrib.auth.models import User
 from .models import Comment
 from django.core import serializers
 import json
+
 class CommentCreateView(View):
 
     def post(self,request):
@@ -22,6 +24,7 @@ class CommentCreateView(View):
         comment.save()
 
         return JsonResponse({'success': 'The comment has been sended succesfull'})
+
 
 class CommentList(View):
 
@@ -42,6 +45,7 @@ class CommentView(View):
 
     def get(self,request):
         return render(request,'comments/commentsList.html')
+
 
 
 

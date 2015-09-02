@@ -1,1 +1,26 @@
 
+{% extends 'occupancy/base.html' %}
+
+{% block content %}
+<div class="global-content">
+	<div class="content-comment">
+		<div class="comment-table">
+			<div class="select-date">
+				<p>Select date:</p>
+				<input type="text" class="date-select">
+				<a href="" id="comment-Reload">Reload</a>
+			</div>
+			<table>
+				<thead>
+					<th>Date</th>
+					<th>Supervisor</th>
+					<th>Comment</th>
+				</thead>
+				<tbody id="comment-BodyTable">
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock content%}
+

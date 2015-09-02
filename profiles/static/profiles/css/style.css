@@ -8,6 +8,10 @@ body {
 	background-color: #CDD2D4;
 }
 
+#main-content {
+	height: 100vh;
+}
+
 #backgroundimg {
 	background-size: cover;
 	background-color: #3498db;
@@ -346,7 +350,35 @@ table .select2-container {
 	height: 150px;
 }
 
-.comment-container {
-	margin: 1em;
-	background: red;
+<<<<<<< HEAD
+/*commentList.html*/
+.comment-table {
+	width: 80%;
+	margin: 0 auto;
 }
+
+.comment-table table {
+	width: 100%;
+	float: left;
+}
+
+.select-date {
+	width: 450px;
+}
+
+.select-date p {
+	width: 90px;
+	display: inline-block;
+	float: left;
+}
+
+#comment-Reload {
+	padding: 4px 10px;
+	background-color: #3498DB;
+	color: #FFF;
+	margin-left: 15px;
+	border-bottom: 3px solid #2980B9;
+	border-radius: 4px;
+	display: inline;
+}
+
