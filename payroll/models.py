@@ -11,3 +11,6 @@ class Payroll(models.Model):
     paid_total = models.FloatField()
     status = models.CharField(max_length=2)
     agent = models.ForeignKey(Agent)
+
+    def __unicode__(self):
+        return ('%s %s') % (agent.first_name, agent.last_name)

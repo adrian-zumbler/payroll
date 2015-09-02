@@ -14,8 +14,14 @@ $(document).ready(function () {
 	$('#comment-button').click(function(){
 		$('.comment-content').toggle();
 	});
+
 	$('#payday-check').click(function(){
+		saveValidate();
 		savePayroll();
+
+	});
+	$('#send-comment').click(function(){
+		saveComment();
 	});
 
 });
@@ -150,6 +156,8 @@ function changeDay () {
 			$("#payday-BodyTable").html(line);
 			if(validateState() == true) {
 				$('#payday-check').prop("disabled", true).html("Ready");
+			}else {
+				$('#payday-check').prop("disabled", false).html("Check");
 			}
 		}
 		,fail: function(msg) {
@@ -195,7 +203,7 @@ function savePayroll() {
 			'status': status
 		}
 		//console.log(send_data);
-		
+
 		$.ajax({
 			type: "POST",
 			url: "http://localhost:8000/payroll/save/",
@@ -208,7 +216,7 @@ function savePayroll() {
 				console.log(msg);
 			}
 		});
-			
+
 	}
 }
 
@@ -221,7 +229,7 @@ function validatePayroll(){
 	ajaxSetup();
 	$.ajax({
 			type: "POST",
-			url: "http://localhost:8000/validate/",
+			url: "http://localhost:8000/validate/status/",
 			async: false,
 			data: send_data,
 			dataType: "json",
@@ -237,17 +245,51 @@ function validateState() {
 	return validatePayroll();
 }
 
-
-/*
-function validateState() {
-	var s;
-	validatePayroll(function(output){
-		console.log(output);
-		s = output;
-	});
-	return s;
+function saveValidate() {
+	var date = moment($('.date-select').val().split("/").reverse().join("/")).format("YYYY-MM-DD");
+	var send_data = {'day': date};
+	var ret;
+	ajaxSetup();
+	$.ajax({
+			type: "POST",
+			url: "http://localhost:8000/validate/save/",
+			async: false,
+			data: send_data,
+			dataType: "json",
+			success: function(data) {
+				ret = data.status;
+				//console.log(ret);
+			}
+		});
+	return ret;
 }
-*/
+
+function saveComment() {
+	var date = moment($('.date-select').val().split("/").reverse().join("/")).format("YYYY-MM-DD");
+	var $text = $('#comment-text').val();
+	var send_data = {
+		'day': date,
+		'comment': $text
+	};
+	var ret;
+	ajaxSetup();
+	$.ajax({
+			type: "POST",
+			url: "http://localhost:8000/comments/create/",
+			async: false,
+			data: send_data,
+			dataType: "json",
+			success: function(data) {
+				$('.comment-content').hide();
+				ret = data.success;
+				alert(ret);
+			}
+		});
+	return ret;
+}
+
+
+
 
 window.onload = function() {
 	var day = moment().isoWeekday(1);

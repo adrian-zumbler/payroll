@@ -132,7 +132,7 @@ function changeDay () {
 	$.ajax({
 		type: "POST",
 <<<<<<< HEAD
-		url: "http://172.31.48.248:8000/payroll/paid/", 
+		url: "http://172.31.48.248:8000/payroll/paid/",
 =======
 		url: "http://localhost:8000/payroll/paid/",
 >>>>>>> 961c02ecd8d922af191c2f3074c25ff5c0219d89
@@ -237,6 +237,24 @@ function validateState() {
 		s = output;
 	});
 	return s;
+}
+
+function saveComment() {
+	var date = moment($('.date-select').val().split("/").reverse().join("/")).format("YYYY-MM-DD");
+	$text = $('#comment-text').val()
+	var send_data = {
+		'day': date,
+		'text': $text };
+	ajaxSetup();
+	$.ajax({
+			type: "POST",
+			url: "http://localhost:8000/comments/create",
+			data: send_data,
+			dataType: "json",
+			success: function(data) {
+				handleData(data);
+			}
+		});
 }
 
 

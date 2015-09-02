@@ -1,0 +1,87 @@
+ChavezQuiñonez Josue Aaron	Immediate 08:30 - 20:00	Restricted (Special) 06:30 - 08:30	Break 10:15 - 10:30	Lunch 14:00 - 15:00	Break 15:45 - 16:00	Shift/Overtime Gap 18:30 - 18:45	0	0
+Haro Chavez  Leslie	Immediate 09:00 - 14:00	Restricted (Child Care) 06:30 - 08:00	Green Time 09:00 - 14:00	Break 11:30 - 11:50	Restricted (Child Care) 16:00 - 20:00	0	0	0
+Gaytan  Gallardo  Victor Hugo	Immediate 15:30 - 20:00	Restricted (School) 06:30 - 07:00	General Absence 15:30 - 15:42	Break 17:45 - 18:00	0	0	0	0
+Espinoza Quinonez  Armando Daniel	Off	0	0	0	0	0	0	0
+Vasquez Contreras Julio Josue	Immediate 15:30 - 20:00	Restricted (School) 07:00 - 15:30	Break 17:30 - 17:45	0	0	0	0	0
+Peña Caro Laura Cristina	Immediate 07:00 - 16:00	General Unavailability 06:30 - 07:00	Incapacity 07:00 - 16:00	Break 08:45 - 09:00	Lunch 12:00 - 13:00	Break 14:00 - 14:15	Restricted (School) 16:00 - 20:00	0
+Chacon Reyes Rocio Ivette	Immediate 08:00 - 17:00	Restricted (Special) 06:30 - 08:00	Break 09:45 - 10:00	Lunch 11:00 - 12:00	Break 14:15 - 14:30	Restricted (Special) 19:00 - 20:00	0	0
+Aguilar Santillanes Martin Aldair	Immediate 08:00 - 15:00	Restricted (Special) 06:30 - 08:00	Break 10:15 - 10:30	Break 12:45 - 13:00	Restricted (Special) 16:00 - 20:00	0	0	0
+Garcia Ortiz Ever Aaron	Immediate 08:00 - 18:00	Restricted (Special) 06:30 - 08:00	Break 10:00 - 10:15	Lunch 12:30 - 13:30	Break 16:00 - 16:15	Restricted (Special) 18:00 - 20:00	0	0
+Ortiz Lopez Alejandro	Immediate 06:30 - 16:30	Break 08:15 - 08:30	Lunch 10:00 - 11:00	Break 14:30 - 14:45	Restricted (Special) 16:30 - 20:00	0	0	0
+Morquecho Bonilla Alejandra Melissa	Immediate 08:00 - 15:00	Restricted (Special) 06:30 - 08:00	Break 10:45 - 11:00	Break 13:15 - 13:30	Restricted (Special) 15:00 - 20:00	0	0	0
+Cano Saenz Sarai	Off	Restricted (School) 10:30 - 15:30	0	0	0	0	0	0
+Uribe Moya Miguel Angel	Immediate 08:00 - 15:00	Restricted (Special) 06:30 - 07:00	Green Time 09:20 - 15:00	Break 10:00 - 10:15	Break 12:30 - 12:45	Restricted (Special) 16:00 - 20:00	0	0
+Falcon Perez Luis Armando	Immediate 15:30 - 20:00	Restricted (School) 08:00 - 15:30	Break 17:00 - 17:15	0	0	0	0	0
+Martinez Maldonado Esmeralda	Immediate 06:30 - 15:30	Break 08:15 - 08:30	Green Time 09:25 - 15:30	Break 13:15 - 13:30	Restricted (Child Care) 15:30 - 20:00	0	0	0
+Ordonez Grajeda Jose Antonio	Immediate 06:30 - 11:00	Break 08:00 - 08:15	Restricted (School) 13:30 - 18:00	0	0	0	0	0
+Escobedo Morales Bianca Lizbeth	Immediate 07:30 - 14:30	Restricted (Special) 06:30 - 07:30	Green Time 07:30 - 08:30	General Absence 08:30 - 09:54	Break 09:45 - 10:00	Break 12:30 - 12:45	Restricted (Special) 14:30 - 18:00	0
+Lara Clift Sylvia Cristina	Immediate 08:30 - 15:30	Restricted (Child Care) 06:30 - 08:30	Incapacity 08:30 - 15:30	Break 11:00 - 11:15	Break 13:15 - 13:30	Restricted (Child Care) 16:30 - 20:00	0	0
+Medrano Cordero Dayan Itzel	Immediate 08:00 - 15:00	Restricted (Special) 06:30 - 08:00	General Absence 08:00 - 08:31	Break 10:45 - 11:00	Break 13:00 - 13:15	Restricted (Special) 15:30 - 20:30	0	0
+Perez Silva Yasmin Adriana	Immediate 10:00 - 20:00	Restricted (School) 06:30 - 10:00	Break 12:15 - 12:30	Lunch 15:00 - 16:00	Break 17:15 - 17:30	0	0	0
+Martinez Maldonado Perla	Immediate 08:15 - 15:15	Restricted (Child Care) 06:30 - 08:00	General Absence 08:15 - 08:31	Green Time 09:25 - 15:15	Break 10:45 - 11:00	Break 13:00 - 13:15	Restricted (Child Care) 16:00 - 20:00	0
+Jaramillo Flores Sergio Cruz	Immediate 08:00 - 18:00	Restricted (Special) 06:30 - 08:00	Break 09:45 - 10:00	Lunch 13:30 - 14:30	Break 15:45 - 16:00	Restricted (Special) 18:00 - 20:00	0	0
+Chavez Solis  Linda	Immediate 08:00 - 18:00	Restricted (Special) 06:30 - 08:00	Break 10:00 - 10:15	Lunch 12:30 - 13:30	Break 15:45 - 16:00	Restricted (Special) 18:00 - 20:00	0	0
+Chaparro Maicol Cristopher	Immediate 08:00 - 18:00	Restricted (Special) 06:30 - 08:00	Break 10:15 - 10:30	Lunch 13:30 - 14:30	Break 15:30 - 15:45	Restricted (Special) 18:00 - 20:00	0	0
+Moreno Hernandez Luis Angel	Immediate 10:00 - 20:00	Restricted (Special) 06:30 - 08:00	General Absence 10:00 - 10:30	Break 12:15 - 12:30	Lunch 15:30 - 16:30	Break 17:30 - 17:45	0	0
+Cortez Valdez Ivan Alejandro	Immediate 11:00 - 20:00	Restricted (Special) 06:30 - 11:00	General Absence 11:00 - 20:00	Break 13:15 - 13:30	Lunch 16:00 - 17:00	Break 18:30 - 18:45	0	0
+Ibarra Enriquez Mario Alberto	Immediate 09:00 - 14:00	Restricted (Special) 06:30 - 07:00	Green Time 09:26 - 14:00	Break 11:00 - 11:20	Restricted (Special) 17:00 - 20:00	0	0	0
+Dominguez Alarcon Isaac Jacob	Immediate 09:00 - 13:00	Restricted (Special) 06:30 - 07:00	Restricted (School) 07:00 - 09:00	Break 10:15 - 10:30	Restricted (School) 13:00 - 20:00	0	0	0
+Garcia Urtuzuastegui Arely	Off	General Unavailability 06:30 - 07:00	Restricted (School) 07:00 - 13:00	Restricted (School) 17:00 - 20:00	0	0	0	0
+Perez Chavarria  Gabriela Edith	Immediate 08:00 - 18:00	Restricted (Special) 06:30 - 08:00	Break 10:00 - 10:15	Lunch 12:15 - 13:15	Break 15:30 - 15:45	Restricted (Special) 18:00 - 20:00	0	0
+Melendez Ramirez Nancy	Immediate 08:30 - 15:30	Restricted (Special) 06:30 - 08:30	Break 10:30 - 10:45	Break 13:00 - 13:15	Restricted (Special) 15:30 - 20:00	0	0	0
+Colomo Diaz Ivan Antonio	Immediate 06:30 - 10:30	Break 08:00 - 08:15	Restricted (School) 10:30 - 16:00	0	0	0	0	0
+Flores Arras Claudia Alejandra	Immediate 08:00 - 17:00	General Unavailability 06:30 - 07:00	Restricted (Special) 07:00 - 08:00	General Absence 08:00 - 17:00	Break 09:45 - 10:00	Lunch 12:00 - 13:00	Break 14:30 - 14:45	Restricted (Special) 18:00 - 20:00
+Salais Rincon Jorge Antonio	Immediate 15:00 - 20:00	Restricted (School) 06:30 - 15:00	Break 17:15 - 17:35	0	0	0	0	0
+Corral Ponce Veronica	Immediate 15:00 - 20:00	Restricted (Special) 06:30 - 07:00	General Absence 15:00 - 15:02	Break 16:45 - 17:05	0	0	0	0
+Ortiz Valenzuela Cesar Alejandro	Immediate 07:00 - 13:00	General Absence 07:00 - 07:46	Break 09:45 - 10:05	Restricted (School) 13:00 - 20:00	0	0	0	0
+Hernandez Ramirez Gabriela Patricia	Immediate 15:00 - 20:00	Restricted (Special) 06:30 - 15:00	General Absence 15:00 - 20:00	Break 17:15 - 17:35	0	0	0	0
+Lopez Meraz Yessica Daniela	Immediate 08:00 - 18:00	Restricted (Special) 06:30 - 08:00	Break 10:15 - 10:30	Lunch 13:30 - 14:30	Break 15:45 - 16:00	Restricted (Special) 18:00 - 20:00	0	0
+Zavala Velazquillo Adriana	Immediate 07:30 - 14:30	General Unavailability 06:30 - 07:00	Break 10:00 - 10:15	Break 12:00 - 12:15	Restricted (Child Care) 15:00 - 19:30	0	0	0
+Fernandez Balvanera Karen Andrea	Immediate 12:00 - 18:30	Restricted (Special) 06:30 - 12:00	General Absence 12:00 - 18:30	Break 14:15 - 14:25	Break 16:15 - 16:35	Restricted (Special) 18:30 - 20:00	0	0
+Diaz Rivera Itzel Alejandra	Immediate 15:30 - 20:00	Restricted (School) 07:00 - 15:00	General Absence 15:30 - 20:00	Break 17:00 - 17:15	0	0	0	0
+Marrufo Martinez        Cinthia Edith	Immediate 07:00 - 14:00	Break 09:00 - 09:15	Break 11:30 - 11:45	Restricted (School) 14:00 - 20:00	0	0	0	0
+Mendoza Ruiz           Rene Emmanuel	Off	Restricted (School) 06:30 - 20:00	0	0	0	0	0	0
+Figueroa Marrufo           Adriana Bianey	Immediate 09:00 - 13:00	Restricted (Special) 06:30 - 09:00	Break 10:15 - 10:30	Restricted (School) 13:15 - 20:00	0	0	0	0
+Cordero Marquez Rafael Antonio	Immediate 08:30 - 12:30	Break 09:45 - 10:00	0	0	0	0	0	0
+Bencomo Lujan  Jose Roberto	Immediate 15:00 - 20:00	Restricted (School) 07:00 - 15:00	Break 17:00 - 17:20	0	0	0	0	0
+Romero Gamboa  Javier Alberto 	Immediate 09:30 - 14:30	Restricted (School) 06:30 - 09:30	General Absence 09:30 - 14:30	Break 12:00 - 12:20	Restricted (School) 14:30 - 20:00	0	0	0
+Banuelos Barrera Daniel	Immediate 07:30 - 14:30	Restricted (Special) 06:30 - 07:30	Break 09:45 - 10:00	Break 12:15 - 12:30	Restricted (Special) 16:00 - 20:00	0	0	0
+Castillo Ruiz Ivan Alfredo	Immediate 08:00 - 18:00	General Unavailability 06:30 - 07:00	Restricted (Special) 07:00 - 08:00	General Absence 08:00 - 08:06	Break 10:15 - 10:30	Lunch 13:30 - 14:30	Break 15:45 - 16:00	Restricted (Special) 18:00 - 20:00
+Soto Marquez Laura Cristina	Immediate 07:00 - 14:00	Break 09:15 - 09:30	Break 12:15 - 12:30	Restricted (Special) 14:00 - 20:00	0	0	0	0
+Lujan Arias Sara del Carmen	Immediate 08:00 - 15:00	Break 10:00 - 10:15	Break 12:30 - 12:45	Restricted (School) 15:00 - 20:00	0	0	0	0
+Salinas  Gonzalez  Daniel Alexis	Immediate 06:30 - 13:30	Green Time 07:30 - 13:30	Break 08:30 - 08:45	Break 11:30 - 11:45	Restricted (School) 13:30 - 20:00	0	0	0
+Frias Ruiz Jose Francisco	Immediate 06:30 - 16:00	General Absence 06:30 - 16:00	Break 08:15 - 08:30	Lunch 11:15 - 12:15	Break 13:15 - 13:30	Restricted (Another Job) 16:00 - 20:00	0	0
+Chavira Sifuentes Cristal Adriana	Immediate 09:00 - 13:30	General Unavailability 06:30 - 07:00	Break 11:00 - 11:15	Restricted (Another Job) 16:30 - 20:00	0	0	0	0
+Hernandez Macias  Ana Gabriela	Immediate 09:30 - 18:30	Restricted (Special) 06:30 - 09:30	Break 11:30 - 11:45	Lunch 14:00 - 15:00	Break 16:30 - 16:45	Restricted (Special) 18:30 - 20:00	0	0
+Leyva Rodriguez Sergio Armando	Immediate 08:30 - 17:30	Restricted (Special) 06:30 - 07:00	Break 11:00 - 11:15	Lunch 13:30 - 14:30	Break 15:00 - 15:15	Restricted (Special) 18:00 - 20:00	0	0
+Ruiz Grajeda Sandra Yunue	Immediate 10:00 - 14:00	Break 11:15 - 11:30	0	0	0	0	0	0
+Fierro Alvarado Karla Ivette	Immediate 13:30 - 20:00	Restricted (School) 07:00 - 13:00	Break 15:00 - 15:10	Break 17:15 - 17:35	0	0	0	0
+Valverde Villezcas Jessica	Immediate 07:45 - 12:45	Restricted (Special) 06:30 - 07:30	Break 09:30 - 09:50	Restricted (School) 13:00 - 20:00	0	0	0	0
+Flores Murillo Denisse Angelica	Immediate 06:30 - 16:30	Break 08:15 - 08:30	Lunch 10:00 - 11:00	Break 14:30 - 14:45	Restricted (Special) 16:30 - 20:00	0	0	0
+Salcedo Amezquita Ivan Vicente	Immediate 15:00 - 20:00	Restricted (School) 07:00 - 15:00	General Absence 15:00 - 15:14	Break 16:45 - 17:05	0	0	0	0
+Perez Talamantes Melissa	Immediate 09:30 - 19:30	Break 12:00 - 12:15	Green Time 12:45 - 19:30	Break 17:00 - 17:15	0	0	0	0
+Zubiate Carrillo Paulina	Immediate 08:15 - 15:15	Restricted (Child Care) 06:30 - 08:15	General Absence 08:15 - 15:15	Break 11:00 - 11:15	Break 13:15 - 13:30	Restricted (Child Care) 16:00 - 20:00	0	0
+Leyva Rodriguez Ana Paola	Immediate 08:00 - 17:30	General Unavailability 06:30 - 07:00	Restricted (Special) 07:00 - 08:00	General Absence 08:00 - 08:15	Break 10:00 - 10:15	Lunch 12:15 - 13:15	Break 15:00 - 15:15	Restricted (Special) 17:30 - 20:00
+Medina Rivas Jazmin Nabil	Off	Restricted (School) 06:30 - 15:00	Restricted (Special) 19:30 - 20:00	0	0	0	0	0
+Chacon Arzaga Josue	Immediate 08:00 - 18:00	Restricted (Special) 06:30 - 08:00	Break 10:00 - 10:15	Lunch 12:15 - 13:15	Break 15:45 - 16:00	Restricted (Special) 18:00 - 20:00	0	0
+Lira Torres Adriana Lizeth	Immediate 14:00 - 20:00	Restricted (Special) 06:30 - 14:00	Break 17:00 - 17:20	0	0	0	0	0
+Palomino Zaragoza Mario Alejandro 	Immediate 13:00 - 20:00	Restricted (School) 08:00 - 13:00	Break 15:00 - 15:15	Break 17:45 - 18:00	0	0	0	0
+Renova Banda  Selene Araly	Immediate 15:00 - 20:00	Restricted (School) 07:00 - 15:00	Break 16:45 - 17:05	0	0	0	0	0
+Loya Martinez Bannely Georgina  	Immediate 08:00 - 13:00	Restricted (School) 06:30 - 08:00	Break 09:45 - 10:05	Restricted (School) 13:00 - 20:00	0	0	0	0
+Grajeda Favela Jesus Alberto	Immediate 09:00 - 18:00	Restricted (Special) 06:30 - 08:00	Break 11:00 - 11:15	Lunch 14:00 - 15:00	Break 15:45 - 16:00	Restricted (Special) 18:00 - 20:00	0	0
+Soto Bustillos Teresa Ivonne	Immediate 07:00 - 16:00	Restricted (Special) 06:30 - 07:00	Break 08:45 - 09:00	Lunch 11:15 - 12:15	Break 14:00 - 14:15	Restricted (Special) 17:00 - 20:00	0	0
+De Los Angeles Segura Christian Dionicio	Immediate 08:30 - 18:30	Restricted (Special) 06:30 - 08:00	Break 11:00 - 11:15	Lunch 14:00 - 15:00	Break 15:45 - 16:00	Restricted (Special) 18:30 - 20:00	0	0
+Lara Garcia Teresita de Jesus	Immediate 08:30 - 18:30	General Unavailability 06:30 - 07:00	Restricted (School) 07:00 - 08:00	Break 10:45 - 11:00	Lunch 13:30 - 14:30	Break 16:00 - 16:15	0	0
+Gonzalez Gonzalez Nancy	Immediate 10:00 - 19:00	General Unavailability 06:30 - 07:00	Restricted (Special) 07:00 - 08:00	General Absence 10:00 - 10:02	Break 11:45 - 11:55	Lunch 13:30 - 14:30	Break 16:30 - 16:50	0
+Ruiz Pallares  Joanna Alejandra	Immediate 10:00 - 20:00	Break 12:15 - 12:30	Lunch 15:15 - 16:15	Break 17:45 - 18:00	0	0	0	0
+Muñoz Acosta Erick	Immediate 08:00 - 18:00	Restricted (Special) 06:30 - 08:00	Break 10:00 - 10:15	Lunch 13:30 - 14:30	Break 15:30 - 15:45	Restricted (Special) 18:00 - 20:00	0	0
+Flores Heredia Keyla sarahi	Immediate 08:00 - 14:00	Restricted (Special) 06:30 - 08:00	Break 10:45 - 11:05	Restricted (Special) 14:00 - 20:00	0	0	0	0
+Rivera Chavez Omar Alejandro	Immediate 08:00 - 18:00	Restricted (Special) 06:30 - 08:00	General Absence 08:00 - 18:00	Break 09:45 - 10:00	Lunch 12:15 - 13:15	Break 15:30 - 15:45	Restricted (School) 18:00 - 20:00	0
+Almora Hernandez Damaris	Immediate 09:00 - 18:00	Restricted (Special) 06:30 - 09:00	Break 11:30 - 11:45	Lunch 13:45 - 14:45	Break 15:15 - 15:30	Restricted (Special) 18:00 - 20:00	0	0
+Hinostroza Lozano Diego	Immediate 15:30 - 20:00	Restricted (School) 07:00 - 15:30	Break 17:30 - 17:45	0	0	0	0	0
+Lopez Torres Luis Enrique	Off	Restricted (School) 07:00 - 15:00	0	0	0	0	0	0
+Blanco Amesquita Daniel Humberto	Immediate 08:00 - 18:00	Restricted (Special) 06:30 - 08:00	General Absence 08:00 - 08:12	Break 10:15 - 10:30	Lunch 13:30 - 14:30	Break 15:30 - 15:45	Restricted (Special) 18:00 - 20:00	0
+Mancinas Estrada Claudia Azucena	Immediate 10:00 - 20:00	Break 12:00 - 12:15	Lunch 15:15 - 16:15	Break 17:15 - 17:30	0	0	0	0
+Medina Hernandez Cristopher Alejandro	Immediate 07:00 - 20:00	General Absence 07:00 - 20:00	Shift/Overtime Gap 11:00 - 18:00	0	0	0	0	0
+Estrada Mujica Alejandro	Immediate 09:45 - 13:45	Restricted (Special) 06:30 - 08:00	General Absence 09:45 - 13:45	Break 11:45 - 12:00	Restricted (Special) 18:00 - 20:00	0	0	0
+Ballesteros Medina Erendira Pamela	Immediate 08:30 - 14:30	Restricted (Special) 06:30 - 08:00	General Absence 08:30 - 08:34	Green Time 09:30 - 14:30	Break 11:30 - 11:50	Restricted (Special) 18:00 - 20:00	0	0

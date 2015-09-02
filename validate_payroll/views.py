@@ -10,13 +10,28 @@ class ValidatePayrollView(View):
     def post(self,request):
         date = request.POST.get('day')
         user = User.objects.get(id = request.user.id)
+        print date
         try:
             validate = ValidatePayroll.objects.get(date=date,user__id = user.id)
             return JsonResponse({'exist': True })
         except Exception :
             return JsonResponse({'exist': False })
 
+    def get(self,request):
+        return HttpResponse('Ok')
+
+
+class ValidatePayrollCreateView(View):
+
+    def post(self,request):
+        print 'Ok'
+        date = request.POST.get('day')
+        print date
+        user = User.objects.get(id = request.user.id)
+        validate = ValidatePayroll.objects.create(date=date,user = user)
+        validate.save()
+        return JsonResponse({'status' : 'Ok'})
 
     def get(self,request):
-
-        return JsonResponse({'validate': True})
+        print 'Ok'
+        return HttpResponse('Oki')
