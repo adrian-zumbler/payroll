@@ -345,3 +345,8 @@ table .select2-container {
 	width: 100%;
 	height: 150px;
 }
+
+.comment-container {
+	margin: 1em;
+	background: red;
+}

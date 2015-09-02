@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import View, ListView
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.contrib.auth.models import User
 from .models import Comment
-
+from django.core import serializers
+import json
 class CommentCreateView(View):
 
     def post(self,request):
@@ -22,13 +23,22 @@ class CommentCreateView(View):
 
         return JsonResponse({'success': 'The comment has been sended succesfull'})
 
-class CommentList(ListView):
-    model = Comment
-    context_object_name = 'comments_list'
-    queryset = Comment.objects.order_by('date')
-    template_name = 'comments/commentsList.html'
+class CommentList(View):
 
-    
+    def post(self,request):
+        date = request.POST.get('day')
+        comment = Comment.objects.filter(date=date)
+        data = serializers.serialize('json',comment)
+
+        return HttpResponse(data)
+
+    def get(self,request):
+        comment = Comment.objects.all().filter(validate=False)
+        data = serializers.serialize('json',comment)
+
+        return HttpResponse(data);
+
+
 
 
 
