@@ -38,6 +38,12 @@ class CommentList(View):
 
         return HttpResponse(data);
 
+class CommentView(View):
+
+    def get(self,request):
+        return render(request,'comments/commentsList.html')
+
+
 
 
 
