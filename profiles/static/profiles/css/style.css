@@ -217,6 +217,7 @@ tr:nth-child(even) {
 	color: #6F7E88;
 }
 
+
 .detail-box p:nth-child(2) {
 	font-size: 25px;
 	font-weight: lighter;
@@ -350,7 +351,6 @@ table .select2-container {
 	height: 150px;
 }
 
-<<<<<<< HEAD
 /*commentList.html*/
 .comment-table {
 	width: 80%;
