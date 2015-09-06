@@ -87,17 +87,6 @@ class PayRollSaveAjaxView(View):
 		paid_total = request.POST.get('paid_total')
 		status = request.POST.get('status')
 
-		print date
-		print payroll_number
-		print name
-		print schedule
-		print adjusted
-		print softphone
-		print avaya
-		print aux
-		print paid_total
-		print status
-
 		agent = Agent.objects.get(id = payroll_number)
 
 		payroll = Payroll.objects.create(
@@ -133,3 +122,20 @@ class PayrollWeekView(View):
 			return render(request, 'payroll/payweek.html')
 		else:
 			return redirect('%s?next=%s' % (settings.LOGIN_URL,request.path))
+
+class PayrollWeekAjaxView(View):
+
+	def get(self,request):
+		payroll_week = []
+		start_date = '2015-08-18'
+		end_date = '2015-08-25'
+		payrolls = Payroll.objects.all().filter(date__gte=start_date,date__lte=end_date)
+		payrolls = payrolls.filter(agent__user__username = request.user.username)
+		for payroll in payrolls:
+			data = {}
+			data['name'] = payroll.agent.first_name
+			data['date'] = str(payroll.date)
+			data['paid_total'] = payroll.paid_total
+			payroll_week.append(data)
+
+		return HttpResponse(json.dumps(payroll_week))

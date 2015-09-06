@@ -295,12 +295,15 @@ function saveComment() {
 function loadComments() {
 	ajaxSetup();
 	var line = '';
-	$.getJSON("http://localhost:8000/comments/list", function (data) {
+	$.getJSON("http://localhost:8000/comments/list/", function (data) {
+		console.log(data);
 		$.each(data, function(i, csr) {
-			line += '<tr>' + 
-						'<td>' + csr.fields.date + '</td>' +
-						'<td>' + csr.fields.user + '</td>' +
-						'<td>' + csr.fields.text + '</td>' +
+			console.log(csr);
+			line += '<tr>' +
+						'<td>' + csr.text + '</td>' +
+						'<td>' + csr.user + '</td>' +
+						'<td>' + csr.date + '</td>' +
+						'<td><a href="http://localhost:8000/comments/' + csr.id + '">' + 'Validar' + '</a></td>' +
 						'</tr>';
 						console.log(line);
 		});

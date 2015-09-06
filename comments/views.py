@@ -29,17 +29,30 @@ class CommentCreateView(View):
 class CommentList(View):
 
     def post(self,request):
-        date = request.POST.get('day')
-        comment = Comment.objects.filter(date=date)
-        data = serializers.serialize('json',comment)
+        comments = []
+        date = reques.POST.get('day')
+        for comment in Comments.objects.filter(validate=False).filter(date=date):
+            data = {}
+            data['text'] = comment.text
+            data['date'] = comment.date
+            data['user'] =  comment.user.username
+            data['validate'] = comment.validate
+            comments.append(data)
 
-        return HttpResponse(data)
+        return HttpResponse(json.dumps(comments))
 
     def get(self,request):
-        comment = Comment.objects.all().filter(validate=False)
-        data = serializers.serialize('json',comment)
+        comments = []
+        for comment in Comment.objects.filter(validate=False):
+            data = {}
+            data['id'] = comment.id
+            data['text'] = comment.text
+            data['date'] = str(comment.date)
+            data['user'] =  comment.user.username
+            data['validate'] = comment.validate
+            comments.append(data)
 
-        return HttpResponse(data);
+        return HttpResponse(json.dumps(comments))
 
 class CommentView(View):
 
