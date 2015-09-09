@@ -303,7 +303,7 @@ function loadComments() {
 						'<td>' + csr.text + '</td>' +
 						'<td>' + csr.user + '</td>' +
 						'<td>' + csr.date + '</td>' +
-						'<td><a href="http://localhost:8000/comments/' + csr.id + '">' + 'Validar' + '</a></td>' +
+						'<td><a href="http://localhost:8000/comments/' + csr.id + '/">' + 'Validar' + '</a></td>' +
 						'</tr>';
 						console.log(line);
 		});

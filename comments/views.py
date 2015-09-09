@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import View, ListView
 
 from django.http import JsonResponse, HttpResponse
@@ -58,6 +58,15 @@ class CommentView(View):
 
     def get(self,request):
         return render(request,'comments/commentsList.html')
+
+class UpdateCommentView(View):
+
+    def get(self,request,id):
+        comment = Comment.objects.get(id = id)
+        comment.status = True
+        comment.save()
+        return redirect('comments/commentsList.html')
+
 
 
 
