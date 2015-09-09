@@ -63,9 +63,9 @@ class UpdateCommentView(View):
 
     def get(self,request,id):
         comment = Comment.objects.get(id = id)
-        comment.status = True
+        comment.validate = True
         comment.save()
-        return redirect('comments/commentsList.html')
+        return HttpResponse(comment.text)
 
 
 
