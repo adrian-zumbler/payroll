@@ -129,13 +129,22 @@ class PayrollWeekAjaxView(View):
 		payroll_week = []
 		start_date = '2015-08-18'
 		end_date = '2015-08-25'
+		agents = Agent.objects.filter(user__id = request.user.id)
 		payrolls = Payroll.objects.all().filter(date__gte=start_date,date__lte=end_date)
 		payrolls = payrolls.filter(agent__user__username = request.user.username)
-		for payroll in payrolls:
-			data = {}
-			data['name'] = payroll.agent.first_name
-			data['date'] = str(payroll.date)
-			data['paid_total'] = payroll.paid_total
-			payroll_week.append(data)
+		for agent in agents:
+			agent_week = []
+			payrolls = Payroll.objects.all().filter(agent__id = agent.id)
+			payrolls = payrolls.filter(date__gte=start_date,date__lte=end_date)
+			for payroll in payrolls:
+				agent = []
+				data = {}
+				data['name'] = payroll.agent.first_name
+				data['date'] = str(payroll.date)
+				data['paid_total'] = payroll.paid_total
+
+				agent_week.append(data)
+			payroll_week.append(agent_week)
+
 
 		return HttpResponse(json.dumps(payroll_week))

@@ -6,6 +6,7 @@ urlpatterns = [
     url(r'^paid/', PayrollView.as_view()),
     url(r'^day/', PayrollDayView.as_view()),
     url(r'^save/', PayRollSaveAjaxView.as_view()),
+    url(r'^week/list/', PayrollWeekAjaxView.as_view()),
     url(r'^week/', PayrollWeekView.as_view()),
-    url(r'^list/', PayrollWeekAjaxView.as_view()),
+    
 ]
