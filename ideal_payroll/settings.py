@@ -48,7 +48,8 @@ INSTALLED_APPS = (
     'import_files',
     'period',
     'validate_payroll',
-    'comments'
+    'comments',
+    'import_export'
 )
 
 
