@@ -319,7 +319,15 @@ function loadWeek() {
 		url: "http://localhost:8000/payroll/week/list/",
 		dataType: "json",
 		success: function (data) {
+<<<<<<< HEAD
 			
+=======
+			for (var i = 0; i < data.length; i++) {
+				for (var i = 0; i < array.length; i++) {
+					array[i]
+				}
+			}
+>>>>>>> 4f414bd7371a67d586b59573f911f7ca4f27ac12
 		}
 	});
 }
