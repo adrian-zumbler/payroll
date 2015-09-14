@@ -311,8 +311,18 @@ function loadComments() {
 	});
 }
 
-
-
+//AJAX for week view
+function loadWeek() {
+	ajaxSetup();
+	$.ajax({
+		type: "POST",
+		url: "http://localhost:8000/payroll/week/list/",
+		dataType: "json",
+		success: function (data) {
+			
+		}
+	});
+}
 
 
 
