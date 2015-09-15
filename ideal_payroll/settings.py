@@ -49,7 +49,8 @@ INSTALLED_APPS = (
     'period',
     'validate_payroll',
     'comments',
-    'import_export'
+    'import_export',
+    'daterange_filter',
 )
 
 
