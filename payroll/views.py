@@ -15,6 +15,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Payroll
 import django_excel as excel
 import pyexcel.ext.xls
+from datetime import datetime, timedelta
 
 
 
@@ -128,10 +129,13 @@ class PayrollWeekView(View):
 
 class PayrollWeekAjaxView(View):
 
-	def get(self,request):
+	def post(self,request):
 		payroll_week = []
-		start_date = '2015-08-18'
-		end_date = '2015-08-25'
+		start_date = request.POST.get('day')
+		auxdate = datetime.strptime(start_date,'%Y-%m-%d')
+		end_date = auxdate + timedelta(days=7)
+		end_date = end_date.strftime('%Y-%m-%d')
+		print end_date
 		agents = Agent.objects.filter(user__id = request.user.id)
 		payrolls = Payroll.objects.all().filter(date__gte=start_date,date__lte=end_date)
 		payrolls = payrolls.filter(agent__user__username = request.user.username)
