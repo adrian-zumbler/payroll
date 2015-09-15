@@ -313,21 +313,25 @@ function loadComments() {
 
 //AJAX for week view
 function loadWeek() {
+	var line = '';
 	ajaxSetup();
 	$.ajax({
-		type: "POST",
+		type: "GET",
 		url: "http://localhost:8000/payroll/week/list/",
 		dataType: "json",
 		success: function (data) {
-<<<<<<< HEAD
-			
-=======
 			for (var i = 0; i < data.length; i++) {
-				for (var i = 0; i < array.length; i++) {
-					array[i]
+				line += '<tr><td>251111</td>' +
+								'<td>' + data[i][0].name + '</td>';
+								console.log(line);
+				for (var j = 0; i < data.length; j++) {
+					if(data[i][j] == undefined) break;
+					line += '<td>' + data[i][j].paid_total + '</td>';
+					console.log(line);
 				}
+				line += '</tr>';
 			}
->>>>>>> 4f414bd7371a67d586b59573f911f7ca4f27ac12
+			$('#week-bodytable').html(line);
 		}
 	});
 }

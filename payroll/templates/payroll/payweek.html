@@ -3,7 +3,7 @@
 {% block content %}
 <div class="global-content">
 	<div id="week-content">
-		<p id="super-text">Daniel Ruiz</p>
+		<p id="super-text">{{request.user.first_name }} {{ request.user.last_name }}</p>
 		<div id="fecha">
 			<p style="width: 150px; float: left;">Start date of week:</p>
 			<select name="" id="date-select" style="width: 150px; float: left;" >
@@ -31,46 +31,7 @@
 						<th>Paid Hours</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						<td>250175</td>
-						<td>Tony Ordoñez</td>
-						<td>25.0</td>
-						<td>6.0</td>
-						<td>5.0</td>
-						<td>4.0</td>
-						<td>5.0</td>
-						<td>3.0</td>
-						<td>0.0</td>
-						<td>0.0</td>
-						<td>48.0</td>
-					</tr>
-					<tr>
-						<td>250175</td>
-						<td>Tony Ordoñez</td>
-						<td>25.0</td>
-						<td>6.0</td>
-						<td>5.0</td>
-						<td>4.0</td>
-						<td>5.0</td>
-						<td>3.0</td>
-						<td>0.0</td>
-						<td>0.0</td>
-						<td>48.0</td>
-					</tr>
-					<tr>
-						<td>250175</td>
-						<td>Tony Ordoñez</td>
-						<td>25.0</td>
-						<td>6.0</td>
-						<td>5.0</td>
-						<td>4.0</td>
-						<td>5.0</td>
-						<td>3.0</td>
-						<td>0.0</td>
-						<td>0.0</td>
-						<td>48.0</td>
-					</tr>
+				<tbody id="week-bodytable">
 				</tbody>
 			</table>
 		</div>
