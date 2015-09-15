@@ -13,6 +13,9 @@ import pdb
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from .models import Payroll
+import django_excel as excel
+import pyexcel.ext.xls
+
 
 
 
@@ -148,3 +151,12 @@ class PayrollWeekAjaxView(View):
 
 
 		return HttpResponse(json.dumps(payroll_week))
+
+class ExportView(View):
+
+	def get(self,request):
+		payroll = Payroll.objects.all()
+		column_names = ['id']
+		payroll = {}
+		payroll['id'] = 1
+		return excel.make_response_from_query_sets(payroll,column_names,'xls')
