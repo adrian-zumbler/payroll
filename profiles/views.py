@@ -7,7 +7,8 @@ from django.contrib.auth import authenticate, login, logout
 class ProfileLoginView(View):
 
 	def get(self,request):
-
+		if(request.user.is_authenticated()):
+			return redirect('/payroll/day/')
 		if request.GET.get('next',False):
 			return render(request,'profiles/login.html',{'next' : request.GET['next']})
 		else:
