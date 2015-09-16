@@ -135,7 +135,6 @@ class PayrollWeekAjaxView(View):
 		auxdate = datetime.strptime(start_date,'%Y-%m-%d')
 		end_date = auxdate + timedelta(days=7)
 		end_date = end_date.strftime('%Y-%m-%d')
-		print end_date
 		agents = Agent.objects.filter(user__id = request.user.id)
 		payrolls = Payroll.objects.all().filter(date__gte=start_date,date__lte=end_date)
 		payrolls = payrolls.filter(agent__user__username = request.user.username)
@@ -146,9 +145,11 @@ class PayrollWeekAjaxView(View):
 			for payroll in payrolls:
 				agent = []
 				data = {}
+				data['payroll_number'] = payroll.agent.payroll_number
 				data['name'] = payroll.agent.first_name
 				data['date'] = str(payroll.date)
 				data['paid_total'] = payroll.paid_total
+				data['status'] = payroll.status
 
 				agent_week.append(data)
 			payroll_week.append(agent_week)

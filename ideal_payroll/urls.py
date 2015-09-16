@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 import debug_toolbar
+from profiles.views import ProfileLoginView
 
 
 urlpatterns = [
+
 	url(r'^agents/', include('agents.urls',namespace="agents")),
 	url(r'^occupancy/', include('occupancy.urls',namespace="occupancy")),
     url(r'^auxiliarReport/', include('auxiliar_report.urls',namespace="auxiliar_report")),
@@ -33,4 +35,5 @@ urlpatterns = [
     url(r'^period/',include('period.urls',namespace="period")),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^__debug__/', include(debug_toolbar.urls)),
+    url(r'^',ProfileLoginView.as_view()),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
