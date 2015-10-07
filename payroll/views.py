@@ -150,7 +150,7 @@ class PayrollWeekAjaxView(View):
 				data['date'] = str(payroll.date)
 				data['paid_total'] = payroll.paid_total
 				data['status'] = payroll.status
-
+				
 				agent_week.append(data)
 			payroll_week.append(agent_week)
 
