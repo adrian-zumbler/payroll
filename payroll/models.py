@@ -13,4 +13,4 @@ class Payroll(models.Model):
     agent = models.ForeignKey(Agent)
 
     def __unicode__(self):
-        return ('%s %s') % (agent.first_name, agent.last_name)
+        return ('%s %s') % (self.agent.first_name, self.agent.last_name)

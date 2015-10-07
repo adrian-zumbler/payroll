@@ -265,6 +265,10 @@ tr:nth-child(even) {
 	float: right;
 }
 
+.button-orange:hover {
+	background-color: #d35400;
+}
+
 table .select2-container {
 	width: 50px !important;
 }
@@ -381,4 +385,3 @@ table .select2-container {
 	border-radius: 4px;
 	display: inline;
 }
-

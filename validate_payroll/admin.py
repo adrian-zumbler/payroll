@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import ValidatePayroll
 
-# Register your models here.
+
+class validatePayrollAdmmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(ValidatePayroll,validatePayrollAdmmin)
