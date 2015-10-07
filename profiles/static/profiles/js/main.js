@@ -1,5 +1,7 @@
 var validate;
 
+var absurl = "http://172.31.48.144:8000/";
+
 $(document).ready(function () {
 	$('.date-select').datetimepicker({
 		timepicker: false,
@@ -25,6 +27,10 @@ $(document).ready(function () {
 	$('#comment-Reload').click(function() {
 		loadComments();
 	});
+	$('#week-reload').click(function() {
+		loadWeek();
+	})
+	fillDates();
 
 });
 
@@ -127,7 +133,14 @@ function setAttrValue(scheduled, paid) {
 	return data_send;
 }
 
-
+//FIll the choosebox for weekview
+function fillDates() {
+	$.getJSON(absurl + "period/list/", function (data) {
+		for(i = 0; i < data.length; i++) {
+			$('#date-select').append('<option value' + data[i].fields.start_date + '>' + data[i].fields.start_date + '</option>');
+		}
+	});
+}
 
 /*AJAX Request*/
 //Ajax request for the day view
@@ -138,7 +151,7 @@ function changeDay () {
 	ajaxSetup();
 	$.ajax({
 		type: "POST",
-		url: "http://localhost:8000/payroll/paid/",
+		url: absurl +"payroll/paid/",
 		data: send_data,
 		dataType: "json",
 		success: function (data) {
@@ -208,11 +221,12 @@ function savePayroll() {
 
 		$.ajax({
 			type: "POST",
-			url: "http://localhost:8000/payroll/save/",
+			url: absurl + "payroll/save/",
 			data: send_data,
 			dataType: "json",
 			success: function (data) {
-				console.log('Se enviaron con exitos los datos')
+				console.log('Se enviaron con exitos los datos');
+
 			},
 			fail: function(msg) {
 				console.log(msg);
@@ -231,7 +245,7 @@ function validatePayroll(){
 	ajaxSetup();
 	$.ajax({
 			type: "POST",
-			url: "http://localhost:8000/validate/status/",
+			url: absurl + "validate/status/",
 			async: false,
 			data: send_data,
 			dataType: "json",
@@ -254,13 +268,14 @@ function saveValidate() {
 	ajaxSetup();
 	$.ajax({
 			type: "POST",
-			url: "http://localhost:8000/validate/save/",
+			url: absurl + "validate/save/",
 			async: false,
 			data: send_data,
 			dataType: "json",
 			success: function(data) {
 				ret = data.status;
-				//console.log(ret);
+				$('#payday-check').prop('disabled', true).html("Ready");
+				//console.log("Validate succes}");
 			}
 		});
 	return ret;
@@ -278,7 +293,7 @@ function saveComment() {
 	ajaxSetup();
 	$.ajax({
 			type: "POST",
-			url: "http://localhost:8000/comments/create/",
+			url: absurl + "comments/create/",
 			async: false,
 			data: send_data,
 			dataType: "json",
@@ -295,7 +310,7 @@ function saveComment() {
 function loadComments() {
 	ajaxSetup();
 	var line = '';
-	$.getJSON("http://localhost:8000/comments/list/", function (data) {
+	$.getJSON(absurl + "comments/list/", function (data) {
 		console.log(data);
 		$.each(data, function(i, csr) {
 			console.log(csr);
@@ -303,7 +318,7 @@ function loadComments() {
 						'<td>' + csr.text + '</td>' +
 						'<td>' + csr.user + '</td>' +
 						'<td>' + csr.date + '</td>' +
-						'<td><a href="http://localhost:8000/comments/' + csr.id + '/">' + 'Validar' + '</a></td>' +
+						'<td><a href="' + absurl + 'comments/' + csr.id + '/">' + 'Validar' + '</a></td>' +
 						'</tr>';
 						console.log(line);
 		});
@@ -316,25 +331,34 @@ function loadWeek() {
 	var line = '';
 	ajaxSetup();
 	$.ajax({
-		type: "GET",
-		url: "http://localhost:8000/payroll/week/list/",
+		type: "POST",
+		url: absurl + "payroll/week/list/",
+		data: {'day': $('#date-select').val()},
 		dataType: "json",
 		success: function (data) {
+			changeDate();
 			for (var i = 0; i < data.length; i++) {
-				line += '<tr><td>251111</td>' +
-								'<td>' + data[i][0].name + '</td>';
-								console.log(line);
-				for (var j = 0; i < data.length; j++) {
-					if(data[i][j] == undefined) break;
-					line += '<td>' + data[i][j].paid_total + '</td>';
-					console.log(line);
+				console.log(i);
+				if(!(data[i].length == 0)) {
+					line += '<tr><td>' + 'id' +  '</td>' +
+									'<td>' + data[i][0].name + '</td>' +
+									'<td>28</td>'
+									console.log(line);
+					for (var j = 0; i < data.length; j++) {
+						if(data[i][j] == undefined) break;
+						line += '<td>' + data[i][j].paid_total + '</td>';
+						console.log(data);
+					}
+					line += '</tr>';
 				}
-				line += '</tr>';
+
 			}
 			$('#week-bodytable').html(line);
 		}
 	});
 }
+
+
 
 
 

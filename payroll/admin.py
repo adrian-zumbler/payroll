@@ -8,12 +8,12 @@ from daterange_filter.filter import DateRangeFilter
 class PayrollResource(resources.ModelResource):
     class Meta:
         model = Payroll
-        fields = ('id','date','paid_total','agent__first_name')
+        fields = ('id','date','agent__payroll_number','agent__first_name','agent__last_name','schedule_time','status','paid_total')
 
 
 
 class PayrollAdmin(ImportExportModelAdmin):
-    list_display = ['date', 'getAgentFullName',]
+    list_display = ['date', 'getAgentFullName','status','paid_total',]
     list_filter = (
         ('date', DateRangeFilter),
     )

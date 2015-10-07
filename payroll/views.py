@@ -40,7 +40,7 @@ class PayrollView(View):
 			data['aux_paid'] = 0
 			data['time_softphone'] = 0
 			data['name'] = '%s %s' % (agent.first_name,agent.last_name)
-			data['payroll_number'] =  agent.id
+			data['payroll_number'] =  agent.payroll_number
 			if agent.id_softphone != "":
 				occupancy = Occupancy.objects.all().filter(id_softphone = agent.id_softphone).filter(date=day)
 
@@ -91,7 +91,7 @@ class PayRollSaveAjaxView(View):
 		paid_total = request.POST.get('paid_total')
 		status = request.POST.get('status')
 
-		agent = Agent.objects.get(id = payroll_number)
+		agent = Agent.objects.get(payroll_number = payroll_number)
 
 		payroll = Payroll.objects.create(
 			date = date,
