@@ -1,6 +1,6 @@
 var validate;
 
-var absurl = "http://localhost:8000/";
+var absurl = "http://172.31.48.144:8000/";
 
 $(document).ready(function () {
 	$('.date-select').datetimepicker({
@@ -204,7 +204,7 @@ function savePayroll() {
 		avaya =  parseFloat($father.children[x].children[5].innerHTML);
 		aux =  parseFloat($father.children[x].children[6].innerHTML);
 		paid_total =  parseFloat($father.children[x].children[7].innerHTML);
-		status = $father.children[x].children[8].children[0].getElementsByClassName('selected')[0].value;
+		status = $father.children[x].children[8].children[0].value;
 		var send_data = {
 			'day' : date,
 			'payroll_number': payroll_number,
