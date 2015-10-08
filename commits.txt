@@ -1,0 +1,536 @@
+commit 609e33dce23d659ade19f17cc2905e024dc5b40a
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Wed Oct 7 08:02:38 2015 -0600
+
+    Added date and name description in the object validate_payroll
+
+commit f32d05849c92a7ffa42cb102bdefe27bab780e46
+Merge: 92d2052 ff0a235
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Wed Oct 7 07:55:37 2015 -0600
+
+    merge
+
+commit 92d20521d7ab7ad98a867f1678ab7029d1713654
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Wed Oct 7 07:54:11 2015 -0600
+
+    changued
+
+commit ff0a2351a658c4c774614c676e81518f9347ce62
+Author: CarlosWFM <carlos.garcia.92@hotmail.com>
+Date:   Wed Oct 7 07:21:41 2015 -0600
+
+    fix bug
+
+commit 705153cbdd537adde19820d21020f84ef173812a
+Merge: af7e601 da635cc
+Author: CarlosWFM <carlos.garcia.92@hotmail.com>
+Date:   Wed Sep 16 14:52:36 2015 -0600
+
+    Cambio
+
+commit af7e6012ce45f3593bf30b6025cc871724e0fa70
+Author: CarlosWFM <carlos.garcia.92@hotmail.com>
+Date:   Wed Sep 16 14:52:08 2015 -0600
+
+    Cambio
+
+commit da635cc2cc81a77daa7fdd6fcda893ea2ab7af8f
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Wed Sep 16 14:51:22 2015 -0600
+
+    Fix access to the week view
+
+commit c9008bcd30065c173908124976a2e5189fa64d2f
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Wed Sep 16 12:01:41 2015 -0600
+
+    Added json periods response
+
+commit b172e730c1ccd727955927ed12a8c690683d941a
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Tue Sep 15 15:18:13 2015 -0600
+
+    Se cambio el patron de creacion de los periodos
+
+commit bc3b11fde5221bbb9491cfc3013e97c73404eea5
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Tue Sep 15 14:14:25 2015 -0600
+
+    Added requirements for a pip installation
+
+commit 53ab1bc75fd931226e8247511471285bdf71a2ad
+Merge: 8647fb1 b36f222
+Author: CarlosWFM <carlos.garcia.92@hotmail.com>
+Date:   Tue Sep 15 14:11:00 2015 -0600
+
+    Cambio
+
+commit b36f22249492c8ad709b0990dd6e3546c5bf22be
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Tue Sep 15 14:07:20 2015 -0600
+
+    cambio
+
+commit 8647fb1fc7e503582049d2951803e064c69fa494
+Author: CarlosWFM <carlos.garcia.92@hotmail.com>
+Date:   Tue Sep 15 14:05:02 2015 -0600
+
+    Fusion rama front con master
+
+commit 7d88df948e529eba442ef1f3467e1372419442f2
+Author: CarlosWFM <carlos.garcia.92@hotmail.com>
+Date:   Tue Sep 15 14:03:44 2015 -0600
+
+    cambio
+
+commit aeac99af5a975915588b58753693013533a36e62
+Author: CarlosWFM <carlos.garcia.92@hotmail.com>
+Date:   Mon Sep 14 19:38:07 2015 -0600
+
+    Vistasemanal 40%
+
+commit d1793da47cf697253ddbfde0fac19d828d51d25d
+Author: CarlosWFM <carlos.garcia.92@hotmail.com>
+Date:   Mon Sep 14 17:08:55 2015 -0600
+
+    Reparado :)
+
+commit a5bbb956ff5d1453a38b72d4d31790c89cee544f
+Merge: 50e3719 4f414bd
+Author: CarlosWFM <carlos.garcia.92@hotmail.com>
+Date:   Mon Sep 14 16:47:39 2015 -0600
+
+    Error
+
+commit 50e3719873b523ae453447182cf93b43316fbf51
+Author: CarlosWFM <carlos.garcia.92@hotmail.com>
+Date:   Mon Sep 14 15:37:16 2015 -0600
+
+    Error
+
+commit 4f414bd7371a67d586b59573f911f7ca4f27ac12
+Merge: b270daa c739804
+Author: CarlosWFM <carlos.garcia.92@hotmail.com>
+Date:   Mon Sep 14 15:52:40 2015 -0600
+
+    Merge
+
+commit b270daa78af0122992e266f70ba26b2ffa5c2e6f
+Merge: 13b08d1 231b28b
+Author: CarlosWFM <carlos.garcia.92@hotmail.com>
+Date:   Mon Sep 14 15:51:07 2015 -0600
+
+    Merge
+
+commit c739804e64db62249e3227f779565d9bd65f345a
+Author: CarlosWFM <carlos.garcia.92@hotmail.com>
+Date:   Mon Sep 14 15:38:05 2015 -0600
+
+    Merge
+
+commit 13b08d1c55e0609222352e83f3656396b0274d39
+Author: CarlosWFM <carlos.garcia.92@hotmail.com>
+Date:   Mon Sep 14 15:37:16 2015 -0600
+
+    Merge
+
+commit 231b28b5a65279d68debc5bfdaf53d4b7c9efd7f
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Mon Sep 14 15:27:35 2015 -0600
+
+    Changued export_import of app
+
+commit 76dafaba22e4ff5dbebef5b2a394313f92f7b4d0
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Mon Sep 14 14:46:59 2015 -0600
+
+    Chagued patron to gitignore
+
+commit 7f21d64b34ec261a11d30d00f33390464ac84788
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Mon Sep 14 14:32:42 2015 -0600
+
+    Se agrego la opcion de exporte
+
+commit 6c2a6667b4b68309c4c9639e4405162907367d2b
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Fri Sep 11 07:10:31 2015 -0600
+
+    Added links for admin staff
+
+commit 1d1f1d97b51c132a9504a71c2d515c69f0f99a58
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Fri Sep 11 07:05:26 2015 -0600
+
+    Added module to export payroll information
+
+commit a35bcec2b5c30d4f64717eb0aa6f02728f049261
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Wed Sep 9 07:40:47 2015 -0600
+
+    Se cambio el resultado json, dando resultados con arreglos de asesores
+
+commit aed05cf281a5ccd3aa2566c05082a172e9df99d6
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Tue Sep 8 19:46:49 2015 -0600
+
+    Se cambio el acceso de la propiedad comment
+
+commit ace9d5551304d81884f3d5cc4b56b728939f10b9
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Tue Sep 8 19:44:31 2015 -0600
+
+    Se agrego funcion para realizar updates de los comentarios
+
+commit 1e34c79d9b450e5a3a4423884563eaa738f37742
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Tue Sep 8 18:54:34 2015 -0600
+
+    Se cambio el archivo de views
+
+commit 6d08e981a2d9bc5ff328bfbd0fa35ac89e330009
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Sun Sep 6 11:51:37 2015 -0600
+
+    Se agrego la vista para la nomina por semana
+
+commit 265d69a271faf6451df583d77440fb308615cb80
+Merge: 69f0e60 955470a
+Author: Adrian <adrianm1@outlook.com>
+Date:   Fri Sep 4 09:25:00 2015 -0500
+
+    CAmbio a url
+
+commit 69f0e60ef437a46b3b7b8672c8e0012917d496e8
+Author: Adrian <adrianm1@outlook.com>
+Date:   Fri Sep 4 09:22:14 2015 -0500
+
+    Se agrego un cambio
+
+commit 955470a6281bb443e8883312084043b69cbee538
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Wed Sep 2 13:02:00 2015 -0600
+
+    CAmbio en el url de los comentarios
+
+commit a92398fd1f48e5dabad5394c8a03155c5129fa7d
+Merge: c0cf71c ca432d5
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Wed Sep 2 12:56:04 2015 -0600
+
+    CAmbio
+
+commit c0cf71cc5d6deb6cd29b2efa24b0d07b2328a091
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Wed Sep 2 12:55:01 2015 -0600
+
+    Se cambiaron las vistas del usuario
+
+commit ca432d5d38ed4bdcb76571d43d311eb09826917d
+Merge: 7679f97 9aeae14
+Author: Adrian <adrianm1@outlook.com>
+Date:   Wed Sep 2 13:45:53 2015 -0500
+
+    Se corrigio el auto merge
+
+commit 7679f97afab3b5d1e764e312718c4a38f400ff90
+Author: Adrian <adrianm1@outlook.com>
+Date:   Wed Sep 2 13:40:16 2015 -0500
+
+    commentlist.html
+
+commit 9aeae14766874c083d999a2e2f2f89510d05353f
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Wed Sep 2 12:37:31 2015 -0600
+
+     Se agrego el request de la lista de comentarios
+
+commit e090d1d27bd6b4b801e9e4d67130f0d862bd60ca
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Mon Aug 31 21:13:03 2015 -0600
+
+    Se agrego el modulo de comentarios
+
+commit b49bdee7212e8a5e665e1d972c7506e27044270a
+Merge: 7e3ae24 9fa7854
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Mon Aug 31 15:10:23 2015 -0600
+
+    Se realizo el cambio para la validacion de la nomina
+
+commit 7e3ae24fdc7dababe49a4cf6061ea2f06ed92cd7
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Mon Aug 31 13:32:48 2015 -0600
+
+     Se agrego un cambio
+
+commit 9fa785474a84acdd3507d499522aea1863e46fc9
+Author: Adrian <adrianm1@outlook.com>
+Date:   Mon Aug 31 14:31:25 2015 -0500
+
+    Payweek view added
+
+commit dac1d914105fd554153fdff591823a4ced026082
+Author: Adrian <adrianm1@outlook.com>
+Date:   Mon Aug 31 11:05:39 2015 -0500
+
+    Validate check supervisor 30%
+
+commit f4fa1cd8370d22cc7cfc782fa915226ea97f66cf
+Author: Adrian <adrianm1@outlook.com>
+Date:   Mon Aug 31 10:13:45 2015 -0500
+
+    Cambio
+
+commit 25a2e99bc38cae335f72ecd6d46675e27b4e7624
+Merge: b87656b 961c02e
+Author: Adrian <adrianm1@outlook.com>
+Date:   Mon Aug 31 10:13:02 2015 -0500
+
+    Cambio
+
+commit b87656bf850d3e15c4436bd9629805216ae1f329
+Author: Adrian <adrianm1@outlook.com>
+Date:   Mon Aug 31 10:09:24 2015 -0500
+
+    Cambio
+
+commit 961c02ecd8d922af191c2f3074c25ff5c0219d89
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Sun Aug 30 21:34:20 2015 -0600
+
+    Se agrego la funcion para recuperar si una semana fue validada
+
+commit a68bb7584241e0799ffecaa880343b92cef4d9f9
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Mon Aug 24 12:50:35 2015 -0600
+
+    Se agrego la parte de comentarios de la nomina
+
+commit 0610b97e767b8f138b28742cdfcc9b62ac031322
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Sun Aug 23 12:24:09 2015 -0600
+
+    Se agrego la aplicacion de los periodos para la nomina
+
+commit 5a69e938413bf1882e10c0b78a77909a3516de03
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Fri Aug 21 13:20:54 2015 -0600
+
+    Se realizo cambio
+
+commit f96912a8e6d39ab45c8931f4f633e8ece727e989
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Fri Aug 21 13:19:03 2015 -0600
+
+    Se realizo cambio
+
+commit 02c02b85a337caa0bd0f0d104171004f564018d2
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Fri Aug 21 12:26:09 2015 -0600
+
+    Se agraron cambios a la ruta de acceso
+
+commit 76ca8f5c47abecc22c3db26fa466065dafb53d12
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Fri Aug 21 11:30:07 2015 -0600
+
+    Se agrego el parametro next para identificar la ruta del usuario antes del logueo
+
+commit e7d56fa9d6baa033ea41b3f82094b5f36db26899
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Fri Aug 21 08:52:16 2015 -0600
+
+    Se agrego el parametro next para detectear la ruta siguiente despues del logeo
+
+commit dbd7bcd15ba69305f1644cedc1f874d51a168849
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Fri Aug 21 07:25:29 2015 -0600
+
+    Agregado la requisicio de logeo en la vista ImportView
+
+commit e20056d8cdb7bcb7e4a74e93e38fc1bdf7172ce0
+Author: Adrian <adrianm1@outlook.com>
+Date:   Thu Aug 20 15:40:28 2015 -0500
+
+    Se agrego los archivos de la libreria dropit
+
+commit fc3fafa784793c82a311649de83d3b24ca9b2d12
+Author: Adrian <adrianm1@outlook.com>
+Date:   Thu Aug 20 15:31:59 2015 -0500
+
+    Se agrego menu desplegable en la aplicacion
+
+commit 2102f0e5d4b0ff4c1bc4b710badd9f5f75c65bb7
+Author: Adrian <adrianm1@outlook.com>
+Date:   Wed Aug 19 14:13:22 2015 -0500
+
+    pull
+
+commit 643a7661969c0cedce597a5222641a167c3d9bf3
+Merge: 461912b fc2a8a0
+Author: Adrian <adrianm1@outlook.com>
+Date:   Wed Aug 19 14:12:43 2015 -0500
+
+    Merge branch 'master' of https://github.com/adrian-zumbler/payroll
+
+commit 461912b962777392e3194b3ab386a0cf2087772e
+Author: Adrian <adrianm1@outlook.com>
+Date:   Wed Aug 19 14:12:26 2015 -0500
+
+    commit de carlos
+
+commit fc2a8a04b9345c9f7fa2a31250d69b927eee73c4
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Wed Aug 19 13:04:47 2015 -0600
+
+    Se corrigio el logout de un usuario
+
+commit d93530799fcfeae4f58d983591717f8c5e757d3d
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Wed Aug 19 11:02:10 2015 -0600
+
+    Se agrego la funcion de logout en el url y la vista
+
+commit 3a8a952a2e71d6853a21ad4a3bb205f5c4d9cf8c
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Wed Aug 19 10:40:06 2015 -0600
+
+    Se agrego la vista del logout
+
+commit bb95f4dd0e18e7b55016b1218a874f5f0ac8bd04
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Wed Aug 19 10:36:50 2015 -0600
+
+    Se agrego la ruta despues del logue del usuario
+
+commit b003c6e20aa659c22f3a8709d74c30efa2700705
+Author: Adrian <adrianm1@outlook.com>
+Date:   Wed Aug 19 11:17:03 2015 -0500
+
+    Se corregieron errores para importar los archivos
+
+commit f52bd19db6cbd982782353590d7cb53b596458ec
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Wed Aug 19 09:07:03 2015 -0600
+
+    Se agrego la funcion para importar lo horarios
+
+commit e2dd69ca716528a126b6fdef36f54aeffb6a7901
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Wed Aug 19 07:42:15 2015 -0600
+
+    Se agrego la function para importar los horarios
+
+commit bf327c59b943355584598f13a7c3ea62c680a9a3
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Wed Aug 19 07:36:18 2015 -0600
+
+    Se agrego la funcion para importar auxiliares
+
+commit a5a2456679c19f4761f18ab0cd7a245f342930e6
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Wed Aug 19 07:12:45 2015 -0600
+
+    Se corrigieron empalmes de codigo en el archivo base.html
+
+commit 2bebe00f00054960ad44a6c0de0780d908232752
+Merge: f888873 1359663
+Author: Adrian <adrianm1@outlook.com>
+Date:   Tue Aug 18 16:33:23 2015 -0500
+
+    Busqueda supervisor diario
+
+commit f88887318e657176149aca7f1849749f91fb9166
+Author: Adrian <adrianm1@outlook.com>
+Date:   Tue Aug 18 16:30:14 2015 -0500
+
+    Busqueda supervisor diario
+
+commit 13596638f091690f315fb31c43f2694a605e21e1
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Tue Aug 18 09:03:21 2015 -0600
+
+    cambio en el archivo de importacion
+
+commit defffb85b5b272472891f681ac829efd4e31cbba
+Merge: 3edb76d b681d9f
+Author: unknown <ameza@ICC-CC01D-0083.gcideal.com>
+Date:   Mon Aug 17 12:10:26 2015 -0500
+
+    Cambio
+
+commit 3edb76ded2541c288ecc38ebe9436d0f0e589cf0
+Author: unknown <ameza@ICC-CC01D-0083.gcideal.com>
+Date:   Mon Aug 17 12:01:22 2015 -0500
+
+    Cambios en la vista payday
+
+commit b681d9f6fe4314f84ec0033b121a02bc651e8091
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Mon Aug 17 06:49:47 2015 -0600
+
+    Se agrego las rutas para importar archivos
+
+commit 801ffb583af442983fcc6b2cf09573b3221c7f11
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Sun Aug 16 18:10:34 2015 -0600
+
+    Se agrego la apliacion para importar archivos
+
+commit 6c105f68278d0b0b48fd1b4a59ed4381b85069e9
+Author: unknown <ameza@ICC-CC01D-0083.gcideal.com>
+Date:   Wed Aug 12 15:34:09 2015 -0500
+
+    Filtros por supervisor en payday.html
+
+commit 2ff41a3bbeb78d9c1695a8886034f279a4d9202c
+Author: unknown <ameza@ICC-CC01D-0083.gcideal.com>
+Date:   Wed Aug 12 10:46:56 2015 -0500
+
+    SE agregaron los archivos para cargar a la base de datos
+
+commit 5c82a0da394768b69c616e545a7907c97d6e4c8b
+Author: unknown <ameza@ICC-CC01D-0083.gcideal.com>
+Date:   Wed Aug 12 10:30:02 2015 -0500
+
+    Se genera vista para supervisores
+
+commit 34808cc0bf666976cc5741dd2b408d235d26f5ea
+Author: unknown <ameza@ICC-CC01D-0083.gcideal.com>
+Date:   Mon Aug 10 14:18:55 2015 -0500
+
+    Payroll payday view added
+
+commit 3575a694f023fc531916ba71938316f53bfe301e
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Sun Aug 9 20:12:13 2015 -0600
+
+    Se agregaron los archivos estaticos de la aplicacion
+
+commit 3691cd9b803d6087b295da7fcbd0b848c12b68f6
+Author: Adrian Meza <adrianm1@outlook.com>
+Date:   Sun Aug 9 19:21:59 2015 -0600
+
+    Se agrego la pantalla de login
+
+commit ca510aaead19ec1924143590212c760fb1c9a60a
+Merge: e167e2f b9dc604
+Author: unknown <ameza@ICC-CC01D-0083.gcideal.com>
+Date:   Sun Aug 9 14:38:43 2015 -0500
+
+    Merge branch 'master' of https://github.com/adrian-zumbler/payroll
+
+commit b9dc6045249a6b19f7ef11a08d223c93f224b6dd
+Author: adrian-zumbler <adrianm1@outlook.com>
+Date:   Sun Aug 9 14:37:46 2015 -0500
+
+    Initial commit
+
+commit e167e2f912946a9fb3d879dbd1b30af901426d02
+Author: unknown <ameza@ICC-CC01D-0083.gcideal.com>
+Date:   Sun Aug 9 14:36:08 2015 -0500
+
+    Commit inicial de la aplicacion
