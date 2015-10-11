@@ -8,7 +8,7 @@ from daterange_filter.filter import DateRangeFilter
 class PayrollResource(resources.ModelResource):
     class Meta:
         model = Payroll
-        fields = ('id','date','agent__payroll_number','agent__first_name','agent__last_name','schedule_time','status','paid_total')
+        fields = ('id','date','agent__payroll_number','agent__first_name','agent__last_name','schedule_time','status','paid_total','adjusted','agent__user__first_name','agent__user__last_name','agent__start_date')
 
 
 

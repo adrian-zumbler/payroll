@@ -54,7 +54,6 @@ class AgentStatisticsView(View):
 			data['paid_time'] = 0
 			data['operation_work_hours'] = 0
 			data['OCC'] = 0
-
 			aux_avaya = AuxiliarReport.objects.all().filter(id_avaya = agent.id_avaya).filter(date__gte='2015-10-05',date__lte='2015-10-11')
 			for aux in aux_avaya:
 				data['calls'] += aux.calls_acd
@@ -72,6 +71,7 @@ class AgentStatisticsView(View):
 			payrolls = Payroll.objects.all().filter(agent__payroll_number=agent.payroll_number).filter(date__gte='2015-10-05',date__lte='2015-10-11')
 			for payroll in payrolls:
 				data['paid_time'] += payroll.paid_total
+
 
 			try:
 				data['aht'] = (data['time_conversation']*60)/data['calls']

@@ -127,6 +127,7 @@ function setAttrValue(scheduled, paid) {
 								'<option value="A">A</option>'+
 								'<option value="I">I</option>' +
 								'<option value="U">U</option>' +
+								'<option value="@">U</option>' +
 							'</select></td>' +
 						'</tr>';
 	}
@@ -161,12 +162,12 @@ function changeDay () {
 							'<td  class="payroll-user">'+ csr.payroll_number +'</td>' +
 							'<td>' + csr.name + '</td>' +
 							'<td>' + csr.schedule + '</td>' +
-							'<td>' + Math.round(csr.paid_time * 10) / 10 + '</td>' +
-							'<td>' + Math.round(csr.time_softphone *10) /10 + '</td>' +
-							'<td>' + Math.round(csr.time_avaya * 10) / 10+ '</td>' +
-							'<td>' + Math.round(csr.aux_paid *10) /10 +'</td>' +
-							'<td style="font-weight: bold;">' + Math.round(csr.paid_total *10) /10 + '</td>';
-				line += setAttrValue(csr.schedule, (Math.round(csr.paid_total *10) /10));
+							'<td>' + Math.round(csr.paid_time * 100) / 100 + '</td>' +
+							'<td>' + Math.round(csr.time_softphone *100) /100 + '</td>' +
+							'<td>' + Math.round(csr.time_avaya * 100) / 100+ '</td>' +
+							'<td>' + Math.round(csr.aux_paid *100) /100 +'</td>' +
+							'<td style="font-weight: bold;">' + Math.round(csr.paid_total *100) /100 + '</td>';
+				line += setAttrValue(csr.schedule, (Math.round(csr.paid_total *100) /100));
 			});
 			$("#payday-BodyTable").html(line);
 			if(validateState() == true) {
@@ -204,7 +205,7 @@ function savePayroll() {
 		avaya =  parseFloat($father.children[x].children[5].innerHTML);
 		aux =  parseFloat($father.children[x].children[6].innerHTML);
 		paid_total =  parseFloat($father.children[x].children[7].innerHTML);
-		status = $father.children[x].children[8].children[0].getElementsByClassName('selected')[0].value;
+		status = $father.children[x].children[8].children[0].value;
 		var send_data = {
 			'day' : date,
 			'payroll_number': payroll_number,

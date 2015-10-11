@@ -96,7 +96,7 @@ class OccupancyImportView(View):
 			conversation_time = (sum_conversation_time)/3600,
 			aht = aht,
 			occupancy_percentage = occupancy_percentage,
-			calls_handled = 0,
+			calls_handled = sum_calls_handled,
 		)
 		occupancy.save()
 		return render(request,'importFiles/import.html',{'success':'Se han cargado los datos con exito'})
