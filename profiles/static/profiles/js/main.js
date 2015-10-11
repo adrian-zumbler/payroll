@@ -1,6 +1,11 @@
 var validate;
+var production = false;
+if(debug) {
+		absurl = "http://172.31.48.144:8000/";
+} else {
+	absurl = "http://localhost:8000/";
+}
 
-var absurl = "http://172.31.48.144:8000/";
 
 $(document).ready(function () {
 	$('.date-select').datetimepicker({
