@@ -28,9 +28,9 @@ class PayrollView(View):
 		print request.POST
 		CARTERA_PAID = 'Cartera Desborde'
 		if request.user.is_staff:
-			agents = Agent.objects.all().filter(status='Activo')
+			agents = Agent.objects.all().filter(status='Activo').order_by('last_name')
 		else:
-			agents = Agent.objects.all().filter(user__username=request.user.username).filter(status='Activo')
+			agents = Agent.objects.all().filter(user__username=request.user.username).filter(status='Activo').order_by('last_name')
 		for agent in agents:
 			data = {}
 			data['schedule'] = 0
@@ -135,7 +135,10 @@ class PayrollWeekAjaxView(View):
 		auxdate = datetime.strptime(start_date,'%Y-%m-%d')
 		end_date = auxdate + timedelta(days=7)
 		end_date = end_date.strftime('%Y-%m-%d')
-		agents = Agent.objects.filter(user__id = request.user.id)
+		if request.user.is_staff:
+			agents = Agent.objects.all()
+		else:
+			agents = Agent.objects.filter(user__id = request.user.id)
 		payrolls = Payroll.objects.all().filter(date__gte=start_date,date__lte=end_date)
 		payrolls = payrolls.filter(agent__user__username = request.user.username)
 		for agent in agents:
@@ -150,7 +153,7 @@ class PayrollWeekAjaxView(View):
 				data['date'] = str(payroll.date)
 				data['paid_total'] = payroll.paid_total
 				data['status'] = payroll.status
-				
+
 				agent_week.append(data)
 			payroll_week.append(agent_week)
 
