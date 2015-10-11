@@ -76,4 +76,4 @@ class Agent(models.Model):
 		return u'%s %s'	% (self.first_name,self.last_name)
 
 	def fullName(self):
-		return u'%s %s'	% (self.first_name,self.last_name)
+		return '%s %s' % (self.first_name,self.last_name)
