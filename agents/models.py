@@ -77,3 +77,5 @@ class Agent(models.Model):
 
 	def fullName(self):
 		return '%s %s' % (self.first_name,self.last_name)
+
+	

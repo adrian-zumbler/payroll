@@ -43,7 +43,11 @@ def export(request):
 class AgentStatisticsView(View):
 
 	def get(self,request):
-		agents = Agent.objects.filter(status="Activo")
+		group_name =request.user.groups.values_list('name',flat=True)[0]
+		if group_name == 'Agent':
+			agents = Agent.objects.filter(id_softphone=request.user.profile.id_softphone)
+		else:
+			agents = Agent.objects.filter(status="Activo")
 		statistics = []
 		for agent in agents:
 			data = {}
