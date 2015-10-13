@@ -1,0 +1,54 @@
+{% extends 'occupancy/base.html' %}
+
+{% block content %}
+<div class="global-content">
+	<div id="content-day">
+		<p id="super-text">{{request.user.first_name }} {{ request.user.last_name }}</p>
+		<div class="row">
+			<div class="medium-5 columns">
+				<p style="width: 100px; float: left;">Start Date:</p>
+				<input type="text" class="date-select_start">
+			</div>
+			<div class="medium-5 columns">
+				<p style="width: 100px; float: left;">End date:</p>
+				<input type="text" class="date-select_end">
+			</div>
+			<a href="" id="statistics-Reload">Reload</a>
+		</div>
+
+		<br>
+		<br>
+		<div id="content-table-day">
+			<table>
+				<thead>
+					<tr>
+						<th>Payroll ID</th>
+						<th>Name</th>
+						<th>Calls</th>
+						<th>Conversation Time</th>
+						<th>AHT</th>
+						<th>Operational Time</th>
+						<th>OCC</th>
+						<th>Payroll</th>
+					</tr>
+				</thead>
+				<tbody id="payday-BodyTable">
+				</tbody>
+			</table>
+			{% if request.user.is_staff %}
+			{% else %}
+			<div>
+				<button id="payday-check" class="button-orange">Check</button>
+				<button id="comment-button" class="button-orange">Comment</button>
+			</div>
+			<div class="comment-content">
+				<textarea class="comment" name="comment" id="comment-text" rows="8" cols="40"></textarea>
+				<button id="send-comment" class="button-orange">Send Comment</button>
+			</div>
+
+			{% endif %}
+		</div>
+
+	</div>
+</div>
+{% endblock content%}

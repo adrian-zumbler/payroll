@@ -14,6 +14,15 @@ $(document).ready(function () {
 		timepicker: false,
 		format: 'd/m/Y'
 	});
+	$('.date-select_start').datetimepicker({
+		timepicker: false,
+		format: 'd/m/Y'
+	});
+	$('.date-select_end').datetimepicker({
+		timepicker: false,
+		format: 'd/m/Y'
+	});
+
 	$('.select-abbr').select2();
 	$('.menu').dropit();
 	$('#payday-Reload').click(function (event) {

@@ -43,6 +43,9 @@ def export(request):
 class AgentStatisticsView(View):
 
 	def get(self,request):
+		return render(request,'agents/statistics.html')
+
+	def post(self,request):
 		agents = Agent.objects.filter(status="Activo")
 		statistics = []
 		for agent in agents:
