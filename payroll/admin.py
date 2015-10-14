@@ -13,7 +13,7 @@ class PayrollResource(resources.ModelResource):
 
 
 class PayrollAdmin(ImportExportModelAdmin):
-    list_display = ['date', 'getAgentFullName','status','paid_total',]
+    list_display = ['date', 'getAgentFullName','status','paid_total','getSupervisorFullName']
     list_filter = (
         ('date', DateRangeFilter),
     )
@@ -22,6 +22,8 @@ class PayrollAdmin(ImportExportModelAdmin):
     def getAgentFullName(self,obj):
         return '%s %s' % (obj.agent.first_name, obj.agent.last_name)
 
+    def getSupervisorFullName(self,obj):
+        return '%s %s' % (obj.agent.user.first_name, obj.agent.user.last_name)
 
 
 admin.site.register(Payroll,PayrollAdmin)
