@@ -9,6 +9,8 @@ import json
 from auxiliar_report.models import AuxiliarReport
 from occupancy.models import Occupancy
 from payroll.models import Payroll
+import datetime
+from datetime import timedelta
 
 def export(request):
 	if request.method == 'POST':
@@ -40,21 +42,58 @@ def export(request):
 
 	return render(request,'agents/export.html')
 
+"""
+function to return the calls handle per agent since start_date to end_date
+"""
+
+def getCallsAgent(self,id_softphone,id_avaya,start_date,end_date):
+	calls = float()
+	aux_report = AuxiliarReport.objects.filter(id_avaya=id_softphone).filter(date__gte=start_date,date__lte=end_date)
+	for data in aux_report:
+		calls += data.calls_acd
+	occ_report = Occupancy.objects.filter(id_softphone=id_softphone).filter(date__gte=start_date,date__lte=end_date)
+	for data in occ_report:
+		calls += data.calls_handled
+
+	return calls
+
+"""
+function to return total conversation_time per agent since start_date to end_date
+"""
+
+def getConversationTimeAgent(self,id_softphone,id_avaya,start_date,end_date):
+	conversation_time = float()
+	aux_report = AuxiliarReport.objects.filter(id_avaya=id_softphone).filter(date__gte=start_date,date__lte=end_date)
+	for data in aux_report:
+		conversation_time +=  data.conversation_time/3600
+	occ_report = Occupancy.objects.filter(id_softphone=id_softphone).filter(date__gte=start_date,date__lte=end_date)
+	for data in occ_report:
+		conversation_time += data.conversation_time
+
+	return conversation_time
+
+def getPaidTimeAgent(self,payroll_number,start_date,end_date):
+	paid_time = float()
+	payroll = Payroll.objects.filter(agent__payroll_number=payroll_number).filter(date__gte=start_date,date__lte=end_date)
+	for data in payroll:
+		paid_time += data.paid_total
+
+	return paid_time
+
+
+
+
+
+
+
 class AgentStatisticsView(View):
 
 	def get(self,request):
-<<<<<<< HEAD
-		return render(request,'agents/statistics.html')
-
-	def post(self,request):
-		agents = Agent.objects.filter(status="Activo")
-=======
 		group_name =request.user.groups.values_list('name',flat=True)[0]
 		if group_name == 'Agent':
 			agents = Agent.objects.filter(id_softphone=request.user.profile.id_softphone)
 		else:
 			agents = Agent.objects.filter(status="Activo")
->>>>>>> d1a3f3b590659f50c92df3b5f7891cd0cf1016f7
 		statistics = []
 		for agent in agents:
 			data = {}
@@ -97,3 +136,15 @@ class AgentStatisticsView(View):
 			statistics.append(data)
 
 		return HttpResponse(json.dumps(statistics))
+
+class YesterdayStatistiscsView(View):
+
+	def get(self,request):
+		calls = getCallsAgent(self, 2052,1894,'2015-10-05','2015-10-11')
+		conversation_time = getConversationTimeAgent(self, 2052,1894,'2015-10-05','2015-10-11')
+		paid_time = getPaidTimeAgent(self,20928,'2015-10-05','2015-10-11')
+		try:
+			aht = (conversation_time*60)/calls
+		except ZeroDivisionError:
+			aht = 0
+		return HttpResponse(paid_time)
