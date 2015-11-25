@@ -5,15 +5,11 @@
 	<div id="content-day">
 		<p id="super-text">{{request.user.first_name }} {{ request.user.last_name }}</p>
 		<div class="row">
-			<div class="medium-5 columns">
-				<p style="width: 100px; float: left;">Start Date:</p>
-				<input type="text" class="date-select_start">
-			</div>
-			<div class="medium-5 columns">
-				<p style="width: 100px; float: left;">End date:</p>
-				<input type="text" class="date-select_end">
-			</div>
-			<a href="" id="statistics-Reload">Reload</a>
+			<ul class="button-group even-3">
+				  <li><a href="#" class="button">Yesterday</a></li>
+				  <li><a href="#" class="button">Month</a></li>
+				  <li><a href="#" class="button">Last Week</a></li>
+</ul>
 		</div>
 
 		<br>
@@ -52,3 +48,5 @@
 	</div>
 </div>
 {% endblock content%}
+
+CC01A011 Valenzuela Ana Porras

@@ -1,9 +1,9 @@
 var validate;
 
-var production = false;
+var production = true;
 
 if(production) {
-	absurl = "http://172.31.48.144:8000/";
+	absurl = "http://192.168.6.202:8000/";
 } else {
 	absurl = "http://localhost:8000/";
 }
