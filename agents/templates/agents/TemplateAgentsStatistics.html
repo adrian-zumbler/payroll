@@ -4,11 +4,14 @@
 <div class="global-content">
 	<div id="content-day">
 		<p id="super-text">{{request.user.first_name }} {{ request.user.last_name }}</p>
-		<div id="fecha">
-			<p style="width: 50px; float: left;">Date:</p>
-			<input type="text" class="date-select">
-			<a href="" id="payday-Reload">Reload</a>
+		<div class="row">
+			<ul class="button-group even-3">
+				  <li><a href="#" class="button">Yesterday</a></li>
+				  <li><a href="#" class="button">Month</a></li>
+				  <li><a href="#" class="button">Last Week</a></li>
+</ul>
 		</div>
+
 		<br>
 		<br>
 		<div id="content-table-day">
@@ -17,19 +20,19 @@
 					<tr>
 						<th>Payroll ID</th>
 						<th>Name</th>
-						<th>Scheduled Time</th>
-						<th>Adjusted</th>
-						<th>Softphone</th>
-						<th>Avaya</th>
-						<th>Aux</th>
-						<th>Total</th>
-						<th>Abbr</th>
+						<th>Calls</th>
+						<th>Conversation Time</th>
+						<th>AHT</th>
+						<th>Operational Time</th>
+						<th>OCC</th>
+						<th>Payroll</th>
 					</tr>
 				</thead>
 				<tbody id="payday-BodyTable">
 				</tbody>
 			</table>
-
+			{% if request.user.is_staff %}
+			{% else %}
 			<div>
 				<button id="payday-check" class="button-orange">Check</button>
 				<button id="comment-button" class="button-orange">Comment</button>
@@ -39,9 +42,11 @@
 				<button id="send-comment" class="button-orange">Send Comment</button>
 			</div>
 
-			
+			{% endif %}
 		</div>
 
 	</div>
 </div>
 {% endblock content%}
+
+CC01A011 Valenzuela Ana Porras

@@ -111,7 +111,10 @@ DATABASES = {
         'PORT': '',
     }
 }"""
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mailgun.org'
+EMAIL_HOST_USER = 'postmaster@sandboxcf2ec84fc4f64e8abafc4d66c44a147d.mailgun.org'
+EMAIL_HOST_PASSWORD = '9c1f366eea6f1a04c78651379c6ad473'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

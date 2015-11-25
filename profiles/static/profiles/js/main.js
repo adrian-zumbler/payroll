@@ -1,12 +1,28 @@
 var validate;
 
-var absurl = "http://172.31.48.144:8000/";
+var production = true;
+
+if(production) {
+	absurl = "http://192.168.6.202:8000/";
+} else {
+	absurl = "http://localhost:8000/";
+}
+
 
 $(document).ready(function () {
 	$('.date-select').datetimepicker({
 		timepicker: false,
 		format: 'd/m/Y'
 	});
+	$('.date-select_start').datetimepicker({
+		timepicker: false,
+		format: 'd/m/Y'
+	});
+	$('.date-select_end').datetimepicker({
+		timepicker: false,
+		format: 'd/m/Y'
+	});
+
 	$('.select-abbr').select2();
 	$('.menu').dropit();
 	$('#payday-Reload').click(function (event) {
