@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djangobower',
     'debug_toolbar',
     'agents',
     'occupancy',
@@ -84,6 +85,12 @@ TEMPLATES = [
         },
     },
 ]
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'djangobower.finders.BowerFinder',
+)
 
 
 
@@ -136,4 +143,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+
+BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'components')
+
 LOGIN_URL = '/profile/login/'
+
+BOWER_INSTALLED_APPS = (
+    'semantic-ui',
+)

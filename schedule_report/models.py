@@ -8,6 +8,7 @@ class ScheduleReport(models.Model):
 	dayly_hours = models.FloatField()
 	no_paid_time = models.FloatField()
 	paid_time = models.FloatField()
+	break_time = models.FloatField()
 
 	def __unicode__(self):
 		return self.name
