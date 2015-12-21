@@ -53,6 +53,7 @@ INSTALLED_APPS = (
     'import_export',
     'daterange_filter',
     'tasks',
+    'home',
 )
 
 
