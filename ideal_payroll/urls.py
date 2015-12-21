@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'^validate/',include('validate_payroll.urls',namespace="validate_payroll")),
     url(r'^comments/',include('comments.urls',namespace="comments")),
     url(r'^period/',include('period.urls',namespace="period")),
+    url(r'^tasks/',include('tasks.urls',namespace="tasks")),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^__debug__/', include(debug_toolbar.urls)),
     url(r'^',ProfileLoginView.as_view()),

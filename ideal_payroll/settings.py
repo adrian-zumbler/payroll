@@ -52,6 +52,7 @@ INSTALLED_APPS = (
     'comments',
     'import_export',
     'daterange_filter',
+    'tasks',
 )
 
 
@@ -73,7 +74,7 @@ ROOT_URLCONF = 'ideal_payroll.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,7 +127,7 @@ EMAIL_HOST_PASSWORD = '9c1f366eea6f1a04c78651379c6ad473'
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-mx'
 
 TIME_ZONE = 'UTC'
 

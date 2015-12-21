@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block content%}
+<section class="form-container">
+<form action="/tasks/" method="POST" class="ui form">
+  {% csrf_token %}
+  <div class="fields">
+    <div class="field">
+      <label>Buscar</label>
+      <div class="ui search">
+        <div class="ui icon input">
+          <input class="prompt" type="text" placeholder="Search countries..." name="name">
+          <i class="search icon"></i>
+        </div>
+        <div class="results"></div>
+      </div>
+    </div>
+    <div class="field">
+      <label>Actividad</label>
+      <select class="ui dropdown" name="activity">
+        <option value="0">Todas</option>
+        {% for activity in activities%}
+          <option value="{{activity.id}}">{{activity.name}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="field">
+      <label>Estatus</label>
+      <select class="ui dropdown" name="status">
+        <option value="0">Todos</option>
+        <option value="pendiente">Pendiente</option>
+        <option value="aprobado">Aplicado</option>
+        <option value="rechazada">Rechazado</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Supervisor</label>
+      <select class="ui dropdown" name="user">
+        <option value="0">Todos</option>
+        {% for user in users%}
+          <option value="{{user.id}}">{{user.first_name}} {{user.last_name}}</option>
+        {% endfor%}
+      </select>
+    </div>
+  </div>
+  <button class="ui blue button"> Buscar</button>
+
+</form>
+</section>
+<div class="ui divider">
+
+</div>
+<div class="ui cards">
+  {% for task in tasks %}
+  <div class="card">
+    <div class="content">
+      <a href="/tasks/detail/{{task.id}}"class="right floated ui circular button icon orange"><i class="unhide icon"></i></a>
+      <div class="header">
+        {{ task.agent.first_name }} {{task.agent.last_name}}
+      </div>
+      <div class="meta">
+        {{task.activity.name}}
+      </div>
+      <div class="meta">
+        Aplicar: {{task.date_to_do}}
+      </div>
+      <div class="meta">
+        {% if task.start_time != '' and task.end_time != '' %}
+          {{task.start_time}} - {{task.end_time}}
+        {% else %}
+          Todo el día
+        {% endif %}
+      </div>
+      <div class="meta">
+        {{task.user.first_name}} {{task.user.last_name}}
+      </div>
+      <div class="meta">
+        created: {{ task.created }}
+      </div>
+      {% if task.comment != '' %}
+      <p class="right floated ui icon"><i class="comment icon"></i></p>
+      {% endif %}
+    </div>
+    <div class="extra content">
+      {% if task.status == 'pendiente'  %}
+        <div class="ui two buttons">
+          <a href=/tasks/aprove/{{task.id}} class="ui basic green button">Approve</a>
+          <a href=/tasks/decline/{{task.id}} class="ui basic red button">Decline</a>
+        </div>
+      {% endif %}
+      {% if task.status == 'aprobado'  %}
+          <p class="ui green label">Aprobada</p>
+      {% endif %}
+      {% if task.status == 'rechazada'  %}
+          <p class="ui red label">Rechazada</p>
+      {% endif %}
+
+
+
+
+
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}
