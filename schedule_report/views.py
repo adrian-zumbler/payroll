@@ -32,6 +32,9 @@ class ScheduleReportImportView(View):
 		start_turn = str()
 		end_turn = str()
 		immediate = 'Immediate'
+		breakLabel = 'Break'
+		breakTime = float()
+
 		lunch = 'Lunch'
 		lunchpaid = 0
 		for l in file:
@@ -58,6 +61,8 @@ class ScheduleReportImportView(View):
 							if activity == lunch:
 									lunchpaid = (float(((t2.hour*60) + t2.minute)) - float(((t1.hour*60) + t1.minute)))
 									stayTime = stayTime - lunchpaid
+							if activity = breakLabel:
+									breakTime += breakTime
 							if activityObject.paid == False:
 								NoPaidTime += float(((t2.hour*60) + t2.minute)) - float(((t1.hour*60) + t1.minute))
 						except:
