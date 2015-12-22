@@ -36,6 +36,8 @@ class ScheduleReportImportView(View):
 		breakTime = float()
 
 		lunch = 'Lunch'
+		break_label = 'Break'
+		break_time = float()
 		lunchpaid = 0
 		for l in file:
 			line = l.split('\t')
@@ -61,8 +63,13 @@ class ScheduleReportImportView(View):
 							if activity == lunch:
 									lunchpaid = (float(((t2.hour*60) + t2.minute)) - float(((t1.hour*60) + t1.minute)))
 									stayTime = stayTime - lunchpaid
+<<<<<<< HEAD
 							if activity = breakLabel:
 									breakTime += breakTime
+=======
+							if activity == break_label:
+									break_time+= float(((t2.hour*60) + t2.minute)) - float(((t1.hour*60) + t1.minute))
+>>>>>>> 71b6b9cfbcc551aab67d65966209f458c60d041c
 							if activityObject.paid == False:
 								NoPaidTime += float(((t2.hour*60) + t2.minute)) - float(((t1.hour*60) + t1.minute))
 						except:
@@ -72,6 +79,7 @@ class ScheduleReportImportView(View):
 					stayTime = 0
 					start_turn = ''
 					end_turn = ''
+					break_time = 0
 
 			schedule = ScheduleReport.objects.create(
 				date = fecha,
@@ -80,7 +88,8 @@ class ScheduleReportImportView(View):
 				end_time = end_turn,
 				dayly_hours = float(stayTime/60),
 				no_paid_time = float(NoPaidTime/60),
-				paid_time = float(((paid_time - NoPaidTime)-lunchpaid)/60)
+				paid_time = float((((paid_time - break_time ) - NoPaidTime)-lunchpaid)/60),
+				break_time = float(break_time/60)
 				)
 			schedule.save()
 			NoPaidTime = 0
@@ -89,4 +98,5 @@ class ScheduleReportImportView(View):
 			stayTime = 0
 			start_turn = ''
 			end_turn = ''
+			break_time = 0
 		return render(request,'importFiles/import.html',{'success' : 'Se cargaron los datos con exito'})

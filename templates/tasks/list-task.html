@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="form-container">
+<form action="/tasks/list/" method="POST" class="ui form">
+  {% csrf_token %}
+  <div class="fields">
+    <div class="field">
+      <label>Buscar</label>
+      <div class="ui search">
+        <div class="ui icon input">
+          <input class="prompt" type="text" placeholder="Asesores" name="name">
+          <i class="search icon"></i>
+        </div>
+        <div class="results"></div>
+      </div>
+    </div>
+    <div class="field">
+      <label>Actividad</label>
+      <select class="ui dropdown" name="activity">
+        <option value="0">Todas</option>
+        {% for activity in activities%}
+          <option value="{{activity.id}}">{{activity.name}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="field">
+      <label>Estatus</label>
+      <select class="ui dropdown" name="status">
+        <option value="0">Todos</option>
+        <option value="pendiente">Pendiente</option>
+        <option value="aprobado">Aplicado</option>
+        <option value="rechazada">Rechazado</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Supervisor</label>
+      <select class="ui dropdown" name="user">
+        <option value="0">Todos</option>
+        {% for user in users%}
+          <option value="{{user.id}}">{{user.first_name}} {{user.last_name}}</option>
+        {% endfor%}
+      </select>
+    </div>
+    <div class="field">
+      <label>-</label>
+      <a href="/tasks/create/" class="ui green button">
+        <i class="plus icon"></i>
+        Crear Tarea
+      </a>
+    </div>
+  </div>
+  <button class="ui blue button"> Buscar</button>
+
+</form>
+</section>
+
+<!--<div class="ui four column grid">
+
+<div class="row">
+  <div class="column">
+    <button class="ui green button">
+      <i class="plus icon"></i>
+      Crear Tarea
+    </button>
+  </div>
+</div>
+</div>-->
+<div class="ui divider">
+
+</div>
+
+  <div class="wrap-content">
+  <div class="ui cards">
+    {% for task in tasks %}
+    <div class="card">
+      <div class="content">
+        <a href="/tasks/edit/{{task.id}}" class="right floated ui circular button icon blue"><i class="edit icon"></i></a>
+        <div class="header">
+          {{ task.agent.first_name }} {{task.agent.last_name}}
+        </div>
+        <div class="meta">
+          {{task.activity.name}}
+        </div>
+        <div class="meta">
+          Aplicar: {{task.date_to_do}}
+        </div>
+        <div class="meta">
+          {% if task.start_time != '' and task.end_time != '' %}
+            {{task.start_time}} - {{task.end_time}}
+          {% else %}
+            Todo el día
+          {% endif %}
+        </div>
+        <div class="meta">
+          {{task.user.first_name}} {{task.user.last_name}}
+        </div>
+        <div class="meta">
+          created: {{ task.created }}
+        </div>
+        {% if task.comment != '' %}
+        <p class="right floated ui icon"><i class="comment icon"></i></p>
+        {% endif %}
+      </div>
+      <div class="extra content">
+        {% if task.status == 'pendiente'  %}
+          <p class="ui yellow label">Pendiente</p>
+        {% endif %}
+        {% if task.status == 'aprobado'  %}
+            <p class="ui green label">Aprobada</p>
+        {% endif %}
+        {% if task.status == 'rechazada'  %}
+            <p class="ui red label">Rechazada</p>
+        {% endif %}
+
+
+
+
+
+      </div>
+    </div>
+    {% endfor %}
+
+
+{% endblock content %}

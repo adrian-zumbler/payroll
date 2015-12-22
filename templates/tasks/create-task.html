@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="ui three column grid">
+<div class="row">
+<div class="column">
+
+</div>
+<div class="column">
+<form class="ui small form" action="/tasks/create/" method="post">
+  {% csrf_token %}
+  <h4 class="ui dividing header">Crear Tarea</h4>
+  <div class="field">
+    <label>Name</label>
+    <select class="ui fluid dropdown" name="agent">
+      <option> Nombre asesor</option>
+      {% for agent in agents%}
+        <option value="{{ agent.id }}"> {{ agent.first_name }} {{ agent.last_name }} </option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="field">
+    <label>Actividad</label>
+    <select class="ui fluid dropdown" name="activity">
+      <option> Nombre Actividad</option>
+      {% for activity in activities %}
+        <option value="{{ activity.id }}"> {{ activity.name }} </option>
+      {% endfor %}
+
+    </select>
+  </div>
+  <div class="field">
+    <label>Cuando aplicar</label>
+    <input id="txtDate-do" type="text" name="toDo" placeholder="Aplicar">
+  </div>
+  <div class="inline field">
+    <div class="ui toggle checkbox">
+      <input type="checkbox" tabindex="0" class="hidden" id="toggle-allDay">
+      <label>Todo el dia</label>
+    </div>
+  </div>
+  <div class="field" id="startEndBlock">
+    <label for="">Inicio - Termino</label>
+    <div class="two fields">
+      <div class="field">
+        <input type="text" id="txtStart" name="startTime" placeholder="Inicio">
+      </div>
+      <div class="field">
+        <input type="text" name="endTime" id="txtEnd" placeholder="Termina">
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <label for="">Comentarios</label>
+    <textarea name="comment" rows="8" cols="40"></textarea>
+  </div>
+  <button class="ui primary button" type="submit">Crear</button>
+</form>
+</div>
+</div>
+</div>
+{% endblock content %}

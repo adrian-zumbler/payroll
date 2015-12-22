@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="ui two column centered grid">
+  <div class="column">
+    <button class=" massive disabled fluid ui button">Nomina</button>
+  </div>
+</div>
+<div class="ui two column centered grid">
+  <div class="column">
+    {% if request.user.is_staff %}
+        <a href="/tasks/" class="massive fluid ui green button">Tareas</a>
+    {% else %}
+        <a href="/tasks/list/" class="massive fluid ui green button">Tareas</a>
+    {% endif %}
+  </div>
+</div>
+{% endblock content %}

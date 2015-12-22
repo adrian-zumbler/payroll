@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djangobower',
     'debug_toolbar',
     'agents',
     'occupancy',
@@ -51,6 +52,8 @@ INSTALLED_APPS = (
     'comments',
     'import_export',
     'daterange_filter',
+    'tasks',
+    'home',
 )
 
 
@@ -72,7 +75,7 @@ ROOT_URLCONF = 'ideal_payroll.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -84,6 +87,12 @@ TEMPLATES = [
         },
     },
 ]
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'djangobower.finders.BowerFinder',
+)
 
 
 
@@ -119,7 +128,7 @@ EMAIL_HOST_PASSWORD = '9c1f366eea6f1a04c78651379c6ad473'
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-mx'
 
 TIME_ZONE = 'UTC'
 
@@ -136,4 +145,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+
+BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'components')
+
 LOGIN_URL = '/profile/login/'
+
+BOWER_INSTALLED_APPS = (
+    'semantic-ui',
+)

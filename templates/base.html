@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static "semantic/dist/semantic.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/main.css" %}" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="{% static "profiles/css/select2.min.css" %}">
+    <link rel="stylesheet" href="{% static "profiles/css/jquery.datetimepicker.css" %}">
+    <link rel="stylesheet" href="{% static "profiles/css/dropit.css" %}">
+
+  </head>
+  <body>
+    <div class="ui top attached demo menu">
+
+    <a class="item" id="menu-toggle">
+      <i class="sidebar icon"></i>
+      Menu
+    </a>
+
+</div>
+    <div class="ui sidebar inverted vertical menu">
+
+    <a class="item" id="menu-toggle">
+        <i class="sidebar icon"></i>
+        Menu
+    </a>
+    <a href="#" class="item">
+      {{request.user.first_name}} {{request.user.last_name}}
+    </a>
+    <a href="/tasks/" class="item">
+      Tareas
+    </a>
+    <a href="/admin/" class="item">
+      Admin
+    </a>
+    <a href="/profile/logout/" class="item">
+      logout
+    </a>
+  </div>
+  <div class="pusher">
+    <div class="wrap-content" id="content">
+        {% block content %}{% endblock %}
+    </div>
+
+  </div>
+
+
+  </body>
+
+  <script src="{% static "jquery/dist/jquery.min.js" %}"></script>
+  <script src="{% static "semantic/dist/semantic.min.js" %}"></script>
+  <script src="{% static "profiles/js/vendor/modernizr.js" %}"></script>
+  <script src="{% static "profiles/js/moment.js" %}"></script>
+  <script src="{% static "profiles/js/select2.full.min.js" %}"></script>
+  <script src="{% static "profiles/js/jquery.datetimepicker.js" %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <script src="{% static "profiles/js/dropit.js" %}"></script>
+  <script src="{% static "js/app.js" %}"></script>
+</html>
