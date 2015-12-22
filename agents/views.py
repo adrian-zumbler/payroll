@@ -10,6 +10,7 @@ from auxiliar_report.models import AuxiliarReport
 from occupancy.models import Occupancy
 from payroll.models import Payroll
 import datetime
+from datetime import date
 from datetime import timedelta
 from django.db.models import Sum
 
@@ -87,12 +88,6 @@ def getOperationalWorkTimeAgent(self,id_softphone,id_avaya,start_date,end_date):
 	available_time_avaya =  aux_report.aggregate(Sum('available_time'))
 
 
-
-
-
-
-
-
 class MontlyAgentStatisticsView(View):
 
 	def get(self,request):
@@ -143,14 +138,29 @@ class MontlyAgentStatisticsView(View):
 class YesterdayStatistiscsView(View):
 
 	def get(self,request):
-		calls = getCallsAgent(self, 2052,1894,'2015-10-05','2015-10-11')
-		conversation_time = getConversationTimeAgent(self, 2052,1894,'2015-10-05','2015-10-11')
-		paid_time = getPaidTimeAgent(self,23502,'2015-10-05','2015-10-11')
-		try:
-			aht = (conversation_time*60)/calls
-		except ZeroDivisionError:
-			aht = 0
-		return HttpResponse(paid_time)
+		yesterday = date.today() + timedelta(days=-1)
+		agents = Agent.objects.filter(status="Activo")
+		statics = []
+		for agent in agents:
+			calls = getCallsAgent(self, agent.id_avaya,agent.id_softphone,yesterday.isoformat(),yesterday.isoformat())
+			conversation_time = getConversationTimeAgent(self, agent.id_avaya,agent.id_softphone,yesterday.isoformat(),yesterday.isoformat())
+			paid_time = getPaidTimeAgent(self,agent.payroll_number,yesterday.isoformat(),yesterday.isoformat())
+
+
+			try:
+				aht = (conversation_time*60)/calls
+			except ZeroDivisionError:
+				aht = 0
+			data = {
+				'payroll_number': agent.payroll_number,
+				'name': '%s %s' % (agent.first_name,agent.last_name),
+				'calls': calls,
+				'conversation_time': conversation_time,
+				'paid_time': paid_time,
+				'aht': aht,
+			}
+			statics.append(data)
+		return HttpResponse(statics)
 
 class TemplateAgentStatistics(View):
 

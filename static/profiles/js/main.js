@@ -1,11 +1,28 @@
+var validate;
+
+var production = true;
+
+if(production) {
+	absurl = "http://192.168.6.202:8000/";
+} else {
+	absurl = "http://localhost:8000/";
+}
 
 
 $(document).ready(function () {
-	var validate;
 	$('.date-select').datetimepicker({
 		timepicker: false,
 		format: 'd/m/Y'
 	});
+	$('.date-select_start').datetimepicker({
+		timepicker: false,
+		format: 'd/m/Y'
+	});
+	$('.date-select_end').datetimepicker({
+		timepicker: false,
+		format: 'd/m/Y'
+	});
+
 	$('.select-abbr').select2();
 	$('.menu').dropit();
 	$('#payday-Reload').click(function (event) {
@@ -15,9 +32,21 @@ $(document).ready(function () {
 	$('#comment-button').click(function(){
 		$('.comment-content').toggle();
 	});
-	$('#checkpay').click(function(){
+
+	$('#payday-check').click(function(){
+		saveValidate();
 		savePayroll();
 	});
+	$('#send-comment').click(function(){
+		saveComment()
+	});
+	$('#comment-Reload').click(function() {
+		loadComments();
+	});
+	$('#week-reload').click(function() {
+		loadWeek();
+	})
+	fillDates();
 
 });
 
@@ -114,13 +143,21 @@ function setAttrValue(scheduled, paid) {
 								'<option value="A">A</option>'+
 								'<option value="I">I</option>' +
 								'<option value="U">U</option>' +
+								'<option value="@">U</option>' +
 							'</select></td>' +
 						'</tr>';
 	}
 	return data_send;
 }
 
-
+//FIll the choosebox for weekview
+function fillDates() {
+	$.getJSON(absurl + "period/list/", function (data) {
+		for(i = 0; i < data.length; i++) {
+			$('#date-select').append('<option value' + data[i].fields.start_date + '>' + data[i].fields.start_date + '</option>');
+		}
+	});
+}
 
 /*AJAX Request*/
 //Ajax request for the day view
@@ -131,7 +168,7 @@ function changeDay () {
 	ajaxSetup();
 	$.ajax({
 		type: "POST",
-		url: "http://172.31.48.248:8000/payroll/paid/",
+		url: absurl +"payroll/paid/",
 		data: send_data,
 		dataType: "json",
 		success: function (data) {
@@ -141,16 +178,21 @@ function changeDay () {
 							'<td  class="payroll-user">'+ csr.payroll_number +'</td>' +
 							'<td>' + csr.name + '</td>' +
 							'<td>' + csr.schedule + '</td>' +
-							'<td>' + Math.round(csr.paid_time * 10) / 10 + '</td>' +
-							'<td>' + Math.round(csr.time_softphone *10) /10 + '</td>' +
-							'<td>' + Math.round(csr.time_avaya * 10) / 10+ '</td>' +
-							'<td>' + Math.round(csr.aux_paid *10) /10 +'</td>' +
-							'<td style="font-weight: bold;">' + Math.round(csr.paid_total *10) /10 + '</td>';
-				line += setAttrValue(csr.schedule, (Math.round(csr.paid_total *10) /10));
+							'<td>' + Math.round(csr.paid_time * 100) / 100 + '</td>' +
+							'<td>' + Math.round(csr.time_softphone *100) /100 + '</td>' +
+							'<td>' + Math.round(csr.time_avaya * 100) / 100+ '</td>' +
+							'<td>' + Math.round(csr.aux_paid *100) /100 +'</td>' +
+							'<td style="font-weight: bold;">' + Math.round(csr.paid_total *100) /100 + '</td>';
+				line += setAttrValue(csr.schedule, (Math.round(csr.paid_total *100) /100));
 			});
 			$("#payday-BodyTable").html(line);
-		},
-		fail: function(msg) {
+			if(validateState() == true) {
+				$('#payday-check').prop("disabled", true).html("Ready");
+			}else {
+				$('#payday-check').prop("disabled", false).html("Check");
+			}
+		}
+		,fail: function(msg) {
 			console.log(msg);
 		}
 	});
@@ -171,15 +213,15 @@ function savePayroll() {
 	var status;
 	ajaxSetup();
 	for(x = 0; x < $father.children.length;x++){
-		payroll_number = $father.children[x].children[0].innerText;
-		name = $father.children[x].children[1].innerText;
-		schedule = parseFloat($father.children[x].children[2].innerText);
-		adjusted = parseFloat($father.children[x].children[3].innerText);
-		softphone =  parseFloat($father.children[x].children[4].innerText);
-		avaya =  parseFloat($father.children[x].children[5].innerText);
-		aux =  parseFloat($father.children[x].children[6].innerText);
-		paid_total =  parseFloat($father.children[x].children[7].innerText);
-		status = $father.children[x].children[8].children[0].getElementsByClassName('selected')[0].value;
+		payroll_number = $father.children[x].children[0].innerHTML;
+		name = $father.children[x].children[1].innerHTML;
+		schedule = parseFloat($father.children[x].children[2].innerHTML);
+		adjusted = parseFloat($father.children[x].children[3].innerHTML);
+		softphone =  parseFloat($father.children[x].children[4].innerHTML);
+		avaya =  parseFloat($father.children[x].children[5].innerHTML);
+		aux =  parseFloat($father.children[x].children[6].innerHTML);
+		paid_total =  parseFloat($father.children[x].children[7].innerHTML);
+		status = $father.children[x].children[8].children[0].value;
 		var send_data = {
 			'day' : date,
 			'payroll_number': payroll_number,
@@ -192,13 +234,16 @@ function savePayroll() {
 			'paid_total': paid_total,
 			'status': status
 		}
+		//console.log(send_data);
+
 		$.ajax({
 			type: "POST",
-			url: "http://localhost:8000/payroll/save/",
+			url: absurl + "payroll/save/",
 			data: send_data,
 			dataType: "json",
 			success: function (data) {
-				console.log('Se enviaron con exitos los datos')
+				console.log('Se enviaron con exitos los datos');
+
 			},
 			fail: function(msg) {
 				console.log(msg);
@@ -210,47 +255,124 @@ function savePayroll() {
 
 
 
-function validatePayroll(handleData){
-
+function validatePayroll(){
 	var date = moment($('.date-select').val().split("/").reverse().join("/")).format("YYYY-MM-DD");
 	var send_data = {'day': date};
+	var ret;
 	ajaxSetup();
 	$.ajax({
 			type: "POST",
-			url: "http://localhost:8000/validate/",
+			url: absurl + "validate/status/",
+			async: false,
 			data: send_data,
 			dataType: "json",
 			success: function(data) {
-				handleData(data);
+				ret = data.exist;
+				//console.log(ret);
 			}
 		});
+	return ret;
 }
 
 function validateState() {
-	var s;
-	validatePayroll(function(output){
-		console.log(output);
-		s = output;
-	});
-	return s;
+	return validatePayroll();
 }
 
-function saveComment() {
+function saveValidate() {
 	var date = moment($('.date-select').val().split("/").reverse().join("/")).format("YYYY-MM-DD");
-	$text = $('#comment-text').val()
-	var send_data = {
-		'day': date,
-		'text': $text };
+	var send_data = {'day': date};
+	var ret;
 	ajaxSetup();
 	$.ajax({
 			type: "POST",
-			url: "http://localhost:8000/comments/create",
+			url: absurl + "validate/save/",
+			async: false,
 			data: send_data,
 			dataType: "json",
 			success: function(data) {
-				handleData(data);
+				ret = data.status;
+				$('#payday-check').prop('disabled', true).html("Ready");
+				//console.log("Validate succes}");
 			}
 		});
+	return ret;
+}
+
+
+function saveComment() {
+	var date = moment($('.date-select').val().split("/").reverse().join("/")).format("YYYY-MM-DD");
+	var $text = $('#comment-text').val()
+	var send_data = {
+		'day': date,
+		'comment': $text
+	};
+	var ret;
+	ajaxSetup();
+	$.ajax({
+			type: "POST",
+			url: absurl + "comments/create/",
+			async: false,
+			data: send_data,
+			dataType: "json",
+			success: function(data) {
+				$('.comment-content').hide();
+				ret = data.success;
+				alert(ret);
+			}
+		});
+	return ret;
+}
+
+//AJAX to read comments
+function loadComments() {
+	ajaxSetup();
+	var line = '';
+	$.getJSON(absurl + "comments/list/", function (data) {
+		console.log(data);
+		$.each(data, function(i, csr) {
+			console.log(csr);
+			line += '<tr>' +
+						'<td>' + csr.text + '</td>' +
+						'<td>' + csr.user + '</td>' +
+						'<td>' + csr.date + '</td>' +
+						'<td><a href="' + absurl + 'comments/' + csr.id + '/">' + 'Validar' + '</a></td>' +
+						'</tr>';
+						console.log(line);
+		});
+		$('#comment-BodyTable').html(line);
+	});
+}
+
+//AJAX for week view
+function loadWeek() {
+	var line = '';
+	ajaxSetup();
+	$.ajax({
+		type: "POST",
+		url: absurl + "payroll/week/list/",
+		data: {'day': $('#date-select').val()},
+		dataType: "json",
+		success: function (data) {
+			changeDate();
+			for (var i = 0; i < data.length; i++) {
+				console.log(i);
+				if(!(data[i].length == 0)) {
+					line += '<tr><td>' + 'id' +  '</td>' +
+									'<td>' + data[i][0].name + '</td>' +
+									'<td>28</td>'
+									console.log(line);
+					for (var j = 0; i < data.length; j++) {
+						if(data[i][j] == undefined) break;
+						line += '<td>' + data[i][j].paid_total + '</td>';
+						console.log(data);
+					}
+					line += '</tr>';
+				}
+
+			}
+			$('#week-bodytable').html(line);
+		}
+	});
 }
 
 

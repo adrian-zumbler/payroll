@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="wrap-content">
+  <div class="ui three column grid">
+  <div class="row">
+  <div class="column">
+
+  </div>
+  <div class="column">
+  <div class="ui segments">
+    <div class="ui segment orange inverted">
+        <h3>{{task.agent.first_name}} {{task.agent.last_name}}</h3>
+    </div>
+    <div class="ui segment">
+      <p>{{task.activity.name}}</p>
+    </div>
+    <div class="ui segment">
+      <p>{{task.date_to_do}}</p>
+    </div>
+    <div class="ui segment">
+      {% if task.start_time != '' and task.end_time != '' %}
+        <p>{{task.start_time}} - {{task.end_time}}</p>
+      {% else %}
+        <p>Todo el día</p>
+      {% endif %}
+    </div>
+    <div class="ui segment">
+      <p>{{task.user.first_name}} {{task.user.last_name}}</p>
+    </div>
+    <div class="ui segment">
+      {% if task.comment != '' %}
+      <p>{{task.comment}}</p>
+      {% else %}
+      <p>
+        No hay comentario
+      </p>
+      {% endif %}
+    </div>
+
+    <div class="ui segment">
+      <div class="ui two buttons">
+        <a href=/tasks/aprove/{{task.id}} class="ui basic green button">Approve</a>
+        <a href=/tasks/decline/{{task.id}} class="ui basic red button">Decline</a>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock content %}

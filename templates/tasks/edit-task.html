@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="ui three column grid">
+<div class="row">
+<div class="column">
+
+</div>
+<div class="column">
+<form class="ui small form" action="/tasks/edit/" method="post">
+  {% csrf_token %}
+  <h4 class="ui dividing header">Crear Tarea</h4>
+  <input type="hidden" name="task" value="{{task.id}}">
+  <div class="field">
+    <label>Name</label>
+    <select class="ui fluid dropdown" name="agent">
+      <option> Nombre asesor</option>
+        <option selected value="{{ task.agent.id }}"> {{ task.agent.first_name }} {{ task.agent.last_name }} </option>
+    </select>
+  </div>
+  <div class="field">
+    <label>Actividad</label>
+    <select class="ui fluid dropdown" name="activity">
+      <option> Nombre Actividad</option>
+      {% for activity in activities %}
+        {% if task.activity.id == activity.id  %}
+            <option selected value="{{ activity.id }}"> {{ activity.name }} </option>
+        {% endif %}
+        <option value="{{ activity.id }}"> {{ activity.name }} </option>
+      {% endfor %}
+
+    </select>
+  </div>
+  <div class="field">
+    <label>Cuando aplicar</label>
+    <input value="{{task.date_to_do|date:"Y-m-d"}}" id="txtDate-do" type="text" name="toDo" placeholder="Aplicar">
+  </div>
+  <div class="inline field">
+    <div class="ui toggle checkbox">
+      <input type="checkbox" tabindex="0" class="hidden" id="toggle-allDay">
+      <label>Todo el dia</label>
+    </div>
+  </div>
+  <div class="field" id="startEndBlock">
+    <label for="">Inicio - Termino</label>
+    <div class="two fields">
+      <div class="field">
+        <input class="hidden" value="{{task.start_time}}" type="text" id="txtStart" name="startTime" placeholder="Inicio">
+      </div>
+      <div class="field">
+        <input type="text" value="{{task.end_time}}" name="endTime" id="txtEnd" placeholder="Termina">
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <label for="">Comentarios</label>
+    <textarea value="{{task.comment}}" name="comment" rows="8" cols="40"></textarea>
+  </div>
+  <button class="ui primary button" type="submit">Guardar</button>
+  <a href="/tasks/remove/{{task.id}}" class="ui red button" type="submit">Eliminar</a>
+
+</form>
+</div>
+</div>
+</div>
+{% endblock content %}
