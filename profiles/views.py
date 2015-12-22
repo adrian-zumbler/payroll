@@ -27,12 +27,12 @@ class ProfileLoginView(View):
 				if request.GET.get('next',False):
 					return redirect(request.GET.get('next'))
 				else:
-					return redirect('/payroll/day/')
+					return redirect('/')
 		else:
-			return redirect('/profile/login')
+			return redirect('/profile/login/')
 
 class ProfileLogoutView(View):
 
 	def get(self, request):
 		logout(request)
-		return redirect('/profile/login')
+		return redirect('/profile/login/')
