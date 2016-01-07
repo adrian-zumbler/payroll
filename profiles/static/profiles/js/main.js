@@ -3,7 +3,7 @@ var validate;
 var production = true;
 
 if(production) {
-	absurl = "http://192.168.6.202:8000/";
+	absurl = "http://172.31.48.128:8000/";
 } else {
 	absurl = "http://localhost:8000/";
 }

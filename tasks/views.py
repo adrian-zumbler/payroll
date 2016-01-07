@@ -10,11 +10,20 @@ from django.core.mail import send_mail
 #utilities
 from datetime import date
 
+def send_response_to_supervisor(self,first_name,last_name,id,status,user_email):
+    send_mail(
+    'Tarea de %s %s' %(first_name,last_name),
+    "La solicitud con numero %s del agente %s %s fue %s" %(id,first_name,last_name,status),
+     "wfm@idealccs.com",
+      [user_email],
+       fail_silently=True)
+
+
 class TemplateView(View):
 
     def get(self,request):
         if request.user.is_staff:
-            tasks = Task.objects.filter(status='pendiente')
+            tasks = Task.objects.filter(status='pendiente').order_by('created')
             activities = Activity.objects.all()
             users = User.objects.all()
             dic = {
@@ -31,9 +40,9 @@ class TemplateView(View):
 
         print status
         if status == '0':
-            tasks = Task.objects.all()
+            tasks = Task.objects.all().order_by('-created')
         else:
-            tasks = Task.objects.filter(status=status)
+            tasks = Task.objects.filter(status=status).order_by('-created')
         activities = Activity.objects.all()
         users = User.objects.all()
         dic = {
@@ -48,7 +57,7 @@ class CreateTaskView(View):
 
     def get(self,request):
         user = User.objects.get(id=request.user.id)
-        agents = Agent.objects.filter(user__id = user.id)
+        agents = Agent.objects.filter(user__id = user.id).filter(status="Activo")
         activities = Activity.objects.all()
         dic = {
             'agents':agents,
@@ -90,19 +99,22 @@ class TaskDetailView(View):
         return render(request,'tasks/detail-task.html',dic)
 class AproveView(View):
 
-    def get(self,reques,id):
+    def get(self,request,id):
         task = get_object_or_404(Task,pk=id)
+        user_email = task.user.email
         task.status = 'aprobado'
-        #task.save()
-        send_mail('Tarea de %s' %(task.agent.first_name), "<h1>Solicitud fue aprobada</h1>", "wfm@idealccs.com", ["adrian.meza@idealccs.com"], fail_silently=True)
+        task.save()
+        send_response_to_supervisor(self,task.agent.first_name,task.agent.last_name,task.id,task.status,user_email)
         return redirect('/tasks/')
 
 class DeclineView(View):
 
-    def get(self,reques,id):
+    def get(self,request,id):
         task = get_object_or_404(Task,pk=id)
+        user_email = task.user.email
         task.status = 'rechazada'
         task.save()
+        send_response_to_supervisor(self,task.agent.first_name,task.agent.last_name,task.id,task.status,user_email)
         return redirect('/tasks/')
 
 class TaskListView(View):
@@ -141,7 +153,7 @@ class TaskEditView(View):
     def get(self,request,id):
         task = get_object_or_404(Task,pk=id)
         user = User.objects.get(id=request.user.id)
-        agents = Agent.objects.filter(user__id = user.id)
+        agents = Agent.objects.filter(user__id = user.id).filter(status="Activo")
         activities = Activity.objects.all()
         dic = {
             'agents':agents,

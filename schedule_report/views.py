@@ -32,6 +32,9 @@ class ScheduleReportImportView(View):
 		start_turn = str()
 		end_turn = str()
 		immediate = 'Immediate'
+		breakLabel = 'Break'
+		breakTime = float()
+
 		lunch = 'Lunch'
 		break_label = 'Break'
 		break_time = float()
