@@ -63,13 +63,8 @@ class ScheduleReportImportView(View):
 							if activity == lunch:
 									lunchpaid = (float(((t2.hour*60) + t2.minute)) - float(((t1.hour*60) + t1.minute)))
 									stayTime = stayTime - lunchpaid
-<<<<<<< HEAD
-							if activity = breakLabel:
-									breakTime += breakTime
-=======
 							if activity == break_label:
 									break_time+= float(((t2.hour*60) + t2.minute)) - float(((t1.hour*60) + t1.minute))
->>>>>>> 71b6b9cfbcc551aab67d65966209f458c60d041c
 							if activityObject.paid == False:
 								NoPaidTime += float(((t2.hour*60) + t2.minute)) - float(((t1.hour*60) + t1.minute))
 						except:
