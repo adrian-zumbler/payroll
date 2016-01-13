@@ -27,3 +27,4 @@ class Task(models.Model):
     created = models.DateField(default=date.today().isoformat())
     status = models.CharField(max_length=200,choices=STATUS,default="pendiente")
     document = models.ManyToManyField(File)
+    date_to_finish = models.DateField(blank=True,null=True)
