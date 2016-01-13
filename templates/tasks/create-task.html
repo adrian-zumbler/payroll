@@ -20,7 +20,7 @@
   </div>
   <div class="field">
     <label>Actividad</label>
-    <select class="ui fluid dropdown" name="activity">
+    <select class="ui fluid dropdown" id="slcActivity" name="activity">
       <option> Nombre Actividad</option>
       {% for activity in activities %}
         <option value="{{ activity.id }}"> {{ activity.name }} </option>
@@ -32,6 +32,22 @@
     <label>Cuando aplicar</label>
     <input id="txtDate-do" type="text" name="toDo" placeholder="Aplicar">
   </div>
+  <div class="restrictionContainer hidden">
+    <div class="field">
+      <label>Cuando Termina</label>
+      <input id="txtDate-finish" type="text" name="toFinish" placeholder="Aplicar">
+    </div>
+
+    <div class="field">
+      <label>Adjunta Restriccion</label>
+      <input id="txtFile"  type="file" name="restrictionFile" placeholder="Termina">
+    </div>
+    <div class="field">
+      <label>Adjunta Evidencia</label>
+      <input id="txtFile"  type="file" name="evidenceFile" placeholder="Aplicar">
+    </div>
+  </div>
+
   <div class="inline field">
     <div class="ui toggle checkbox">
       <input type="checkbox" tabindex="0" class="hidden" id="toggle-allDay">

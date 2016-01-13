@@ -30,6 +30,12 @@ $('#txtDate-do').datetimepicker({
   		timepicker: false,
   		format: 'Y-m-d'
   	});
+
+$('#txtDate-finish').datetimepicker({
+      		timepicker: false,
+      		format: 'Y-m-d'
+});
+
 $('#txtStart').datetimepicker({
           datepicker:false,
       		timepicker: true,
@@ -45,6 +51,16 @@ $('#dateSearch').datetimepicker({
           datepicker:true,
       		timepicker: false,
       		format: 'Y-m-d'
+});
+
+$('#slcActivity').change(function() {
+  idActivity = $('#slcActivity').val();
+  //Evalua si una actividad es una resticción por un id
+  if (idActivity == 10) {
+    $('.restrictionContainer').fadeToggle();
+  } else {
+    $('.restrictionContainer').fadeOut();
+  }
 });
 
 
