@@ -2,17 +2,20 @@ from django.shortcuts import render
 from django.core.files.storage import default_storage
 from django.http import HttpResponse
 from django.core.files.base import ContentFile
-from .models import Agent
+from django.db.models import Sum
 from django.views.generic import View
-import unicodedata
-import json
+from django.core import serializers
+#own models
+from .models import Agent
 from auxiliar_report.models import AuxiliarReport
 from occupancy.models import Occupancy
 from payroll.models import Payroll
+#utilities
 import datetime
 from datetime import date
 from datetime import timedelta
-from django.db.models import Sum
+import unicodedata
+import json
 
 def export(request):
 	if request.method == 'POST':
@@ -161,6 +164,12 @@ class YesterdayStatistiscsView(View):
 			}
 			statics.append(data)
 		return HttpResponse(statics)
+
+def get_agents(request):
+	agents = serializers.serialize('json',Agent.objects.filter(status='Activo'))
+	return HttpResponse(agents)
+
+
 
 class TemplateAgentStatistics(View):
 

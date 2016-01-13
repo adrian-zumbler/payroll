@@ -1,5 +1,7 @@
 from django.db import models
 
+from tasks.models import Task
+
 class Occupancy(models.Model):
 	date = models.DateField()
 	business_line = models.CharField(max_length=255)

@@ -54,6 +54,8 @@ INSTALLED_APPS = (
     'daterange_filter',
     'tasks',
     'home',
+    'files',
+
 )
 
 

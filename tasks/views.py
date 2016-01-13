@@ -37,16 +37,10 @@ class TemplateView(View):
 
     def post(self,request):
         status = request.POST.get('status')
-
-        print status
-        if status == '0':
-            tasks = Task.objects.all().order_by('-created')
-        else:
-            tasks = Task.objects.filter(status=status).order_by('-created')
         activities = Activity.objects.all()
         users = User.objects.all()
         dic = {
-            'tasks':tasks,
+            'tasks':advancedSearch(request),
             'activities':activities,
             'users': users,
         }
@@ -80,14 +74,8 @@ class CreateTaskView(View):
             end_time = endTime,
             comment = comment,
             agent = agent,
-            activity = activity,
-            user = user,
-            created = date.today().isoformat()
-
         )
-        task.save()
-
-        return redirect('/tasks/list/')
+        return render(request,'tasks/detail-task.html',dic)
 
 class TaskDetailView(View):
 
@@ -97,6 +85,7 @@ class TaskDetailView(View):
             'task':task
         }
         return render(request,'tasks/detail-task.html',dic)
+
 class AproveView(View):
 
     def get(self,request,id):
@@ -192,3 +181,28 @@ class TaskDeleteView(View):
         task = get_object_or_404(Task,pk=id)
         task.delete()
         return redirect('/tasks/list/')
+
+
+def advancedSearch(request):
+    status = request.POST.get('status')
+    activity = request.POST.get('activity')
+    supervisor = request.POST.get('user')
+    date = request.POST.get('date')
+    print status
+    print activity
+    if status != "0":
+        results = Task.objects.filter(status=status).order_by('-created')
+    else:
+        results = Task.objects.all().order_by('-created')
+        print results
+    if activity != "0":
+        results = results.filter(activity_id=activity)
+    if supervisor != "0":
+        results = results.filter(user_id = supervisor)
+    if date != "":
+        results = results.filter(created=date)
+        print date
+
+
+
+    return results
