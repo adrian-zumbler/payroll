@@ -6,7 +6,7 @@
 
 </div>
 <div class="column">
-<form class="ui small form" action="/tasks/create/" method="post">
+<form class="ui small form" action="/tasks/create/" method="post" enctype="multipart/form-data">
   {% csrf_token %}
   <h4 class="ui dividing header">Crear Tarea</h4>
   <div class="field">

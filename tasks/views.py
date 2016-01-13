@@ -74,8 +74,10 @@ class CreateTaskView(View):
             end_time = endTime,
             comment = comment,
             agent = agent,
+            activity = activity,
+            user = user,
         )
-        return render(request,'tasks/detail-task.html',dic)
+        return redirect('/tasks/list/')
 
 class TaskDetailView(View):
 
