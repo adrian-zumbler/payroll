@@ -54,9 +54,9 @@ $('#dateSearch').datetimepicker({
 });
 
 $('#slcActivity').change(function() {
-  idActivity = $('#slcActivity').val();
-  //Evalua si una actividad es una resticción por un id
-  if (idActivity == 10) {
+  idActivity = $('#slcActivity option:selected').text()
+  //Evalua si una actividad es una resticción por su nombre
+  if (idActivity == " Restriction ") {
     $('.restrictionContainer').fadeToggle();
   } else {
     $('.restrictionContainer').fadeOut();
