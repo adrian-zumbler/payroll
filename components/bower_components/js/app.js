@@ -9,7 +9,7 @@ function get_all_agents() {
   var agents;
   var data = []
   $.ajax({
-    url:"http://localhost:8000/agents/all/",
+    url:"http://172.31.48.128:8000/agents/all/",
     success: function(data) {
       agents = data;
     },async:false

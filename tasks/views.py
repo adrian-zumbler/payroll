@@ -74,6 +74,7 @@ class CreateTaskView(View):
             end_time = endTime,
             comment = comment,
             agent = agent,
+            activity = activity,
         )
         return render(request,'tasks/detail-task.html',dic)
 
