@@ -1,8 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
+#import local models
 from agents.models import Agent
 from activities.models import Activity
+from files.models import File
+
+
+#import python utilities
 from datetime import date
+
+
 
 class Task(models.Model):
     STATUS = (
@@ -19,3 +26,4 @@ class Task(models.Model):
     activity = models.ForeignKey(Activity)
     created = models.DateField(default=date.today().isoformat())
     status = models.CharField(max_length=200,choices=STATUS,default="pendiente")
+    document = models.ManyToManyField(File)

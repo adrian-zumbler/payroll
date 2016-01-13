@@ -3,33 +3,21 @@ $('#menu-toggle').click(function() {
     $('.ui.sidebar').sidebar('toggle');
 });
 
-var content = [
-  { title: 'Andorra' },
-  { title: 'United Arab Emirates' },
-  { title: 'Afghanistan' },
-  { title: 'Antigua' },
-  { title: 'Anguilla' },
-  { title: 'Albania' },
-  { title: 'Armenia' },
-  { title: 'Netherlands Antilles' },
-  { title: 'Angola' },
-  { title: 'Argentina' },
-  { title: 'American Samoa' },
-  { title: 'Austria' },
-  { title: 'Australia' },
-  { title: 'Aruba' },
-  { title: 'Aland Islands' },
-  { title: 'Azerbaijan' },
-  { title: 'Bosnia' },
-  { title: 'Barbados' },
-  { title: 'Bangladesh' },
-  { title: 'Belgium' },
-  { title: 'Burkina Faso' },
-  { title: 'Bulgaria' },
-  { title: 'Bahrain' },
-  { title: 'Burundi' }
-  // etc
-];
+var content =  get_all_agents();
+
+function get_all_agents() {
+  var agents;
+  var data = []
+  $.ajax({
+    url:"http://localhost:8000/agents/all/",
+    success: function(data) {
+      agents = data;
+    },async:false
+  });
+  agents = JSON.parse(agents);
+  for(i=0;i<agents.length;i++){data.push({title: agents[i].fields.first_name +" "+  agents[i].fields.last_name })}
+  return data;
+}
 
 $('.ui.dropdown').dropdown();
 
@@ -51,6 +39,12 @@ $('#txtEnd').datetimepicker({
           datepicker:false,
       		timepicker: true,
       		format: 'H:m'
+});
+
+$('#dateSearch').datetimepicker({
+          datepicker:true,
+      		timepicker: false,
+      		format: 'Y-m-d'
 });
 
 

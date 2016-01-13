@@ -54,7 +54,8 @@ INSTALLED_APPS = (
     'daterange_filter',
     'tasks',
     'home',
-    'restriction_files'
+    'files',
+
 )
 
 

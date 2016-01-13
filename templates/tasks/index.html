@@ -9,7 +9,7 @@
       <label>Buscar</label>
       <div class="ui search">
         <div class="ui icon input">
-          <input class="prompt" type="text" placeholder="Search countries..." name="name">
+          <input class="prompt" type="text" placeholder="Buscar asesores" name="name">
           <i class="search icon"></i>
         </div>
         <div class="results"></div>
@@ -41,6 +41,10 @@
           <option value="{{user.id}}">{{user.first_name}} {{user.last_name}}</option>
         {% endfor%}
       </select>
+    </div>
+    <div class="field">
+      <label>Fecha de Creación</label>
+      <input type="text" name="date" value="" id="dateSearch">
     </div>
   </div>
   <button class="ui blue button"> Buscar</button>
