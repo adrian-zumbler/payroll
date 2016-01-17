@@ -38,6 +38,12 @@
       </p>
       {% endif %}
     </div>
+    <div class="ui segment">
+      {% for d in task.document.all  %}
+          <a href="{{d.document.url}}">{{d.document}}</a>
+      {% endfor %}
+
+    </div>
 
     <div class="ui segment">
       <div class="ui two buttons">
