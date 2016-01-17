@@ -89,7 +89,7 @@ class CreateTaskView(View):
             evidence_file_object.save()
             task.document.add(restriction_file_object)
             task.document.add(evidence_file_object)
-        
+
         return redirect('/tasks/list/')
 
 class TaskDetailView(View):
