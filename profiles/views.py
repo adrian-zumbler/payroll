@@ -27,7 +27,7 @@ class ProfileLoginView(View):
 				if request.GET.get('next',False):
 					return redirect(request.GET.get('next'))
 				else:
-					return redirect('/')
+					return redirect('/home/')
 		else:
 			return redirect('/profile/login/')
 

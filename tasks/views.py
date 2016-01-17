@@ -77,6 +77,7 @@ class CreateTaskView(View):
             agent = agent,
             activity = activity,
             user = user,
+
         )
         task.save()
         if request.FILES:
@@ -88,7 +89,7 @@ class CreateTaskView(View):
             evidence_file_object.save()
             task.document.add(restriction_file_object)
             task.document.add(evidence_file_object)
-        
+
         return redirect('/tasks/list/')
 
 class TaskDetailView(View):

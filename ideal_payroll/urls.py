@@ -22,7 +22,6 @@ from profiles.views import ProfileLoginView
 
 
 urlpatterns = [
-
 	url(r'^agents/', include('agents.urls',namespace="agents")),
 	url(r'^occupancy/', include('occupancy.urls',namespace="occupancy")),
     url(r'^auxiliarReport/', include('auxiliar_report.urls',namespace="auxiliar_report")),
@@ -37,10 +36,11 @@ urlpatterns = [
     url(r'^/media/media/restriction_files/(?P<path>.*)$','django.views.static.serve',{'document_root': settings.MEDIA_ROOT}),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^__debug__/', include(debug_toolbar.urls)),
-    url(r'^',include('home.urls')),
+    url(r'^home/',include('home.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
+
      urlpatterns += [
         url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
         'document_root': settings.MEDIA_ROOT})
