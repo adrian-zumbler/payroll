@@ -9,7 +9,7 @@ function get_all_agents() {
   var agents;
   var data = []
   $.ajax({
-    url:"http://localhost:8000/agents/all/",
+    url:"/agents/all/",
     success: function(data) {
       agents = data;
     },async:false
