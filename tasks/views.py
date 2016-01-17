@@ -1,11 +1,12 @@
 from django.shortcuts import render, get_object_or_404,redirect
 from django.views.generic import View
 from django.contrib.auth.models import User
+from django.core.mail import send_mail
 # my models
 from agents.models import Agent
 from activities.models import Activity
 from .models import Task
-from django.core.mail import send_mail
+from files.models import File
 
 #utilities
 from datetime import date
@@ -78,6 +79,17 @@ class CreateTaskView(View):
             user = user,
 
         )
+        task.save()
+        if request.FILES:
+            restriction_file = request.FILES['restrictionFile']
+            evidence_file = request.FILES['evidenceFile']
+            restriction_file_object = File(document = restriction_file)
+            restriction_file_object.save()
+            evidence_file_object = File(document = evidence_file)
+            evidence_file_object.save()
+            task.document.add(restriction_file_object)
+            task.document.add(evidence_file_object)
+        
         return redirect('/tasks/list/')
 
 class TaskDetailView(View):

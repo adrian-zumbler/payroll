@@ -34,12 +34,8 @@ urlpatterns = [
     url(r'^comments/',include('comments.urls',namespace="comments")),
     url(r'^period/',include('period.urls',namespace="period")),
     url(r'^tasks/',include('tasks.urls',namespace="tasks")),
+    url(r'^media/media/restriction_files/(?P<path>.*)$','django.views.static.serve',{'document_root': settings.MEDIA_ROOT}),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^__debug__/', include(debug_toolbar.urls)),
     url(r'^',include('home.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-if settings.DEBUG:
-	urlpatterns += [
-        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
-        'document_root': settings.MEDIA_ROOT})]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
